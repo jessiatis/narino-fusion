@@ -1,17 +1,31 @@
-import { View, Text, StatusBar, Pressable } from 'react-native'
 import React from 'react'
+import { View, Text, StatusBar, Pressable } from 'react-native'
+import { heightPercentageToDP as hp  } from 'react-native-responsive-screen'
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({navigation}: any) {
   return (
-    <View className="flex-1 justify-center items-center space-y-10 bg-amber-500">
+    <View className="flex-1 justify-center items-center space-y-10 bg-amber-500" style={{padding: hp(3)}}>
       <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
       <View className="flex-1 justify-center items-center">
-        <Text className="text-3xl text-center text-white font-bold px-10">Pantalla de bienvenida</Text>
-        <Text className="text-xl text-white text-center font-light py-4 px-6">Esta es una pantalla de bienvenida de pero solo para el ejemplo.</Text>
+        <Text className="text-center text-white font-bold" style={{fontSize: hp(4), marginBottom: hp(0.7)}}>
+          Pantalla de bienvenida
+        </Text>
+        <Text className="text-white text-center font-light" style={{fontSize: hp(2.5)}}>
+          Esta es una pantalla de bienvenida de pero solo para el ejemplo.
+        </Text>
       </View>
-      <View className="p-4">
-        <Pressable className="bg-white px-8 py-4 rounded-full">
-          <Text className="text-amber-500 text-xl font-semibold">Siguiente</Text>
+      <View>
+        <Pressable
+          className="bg-white rounded-full active:scale-95"
+          onPress={() => navigation.navigate('Home')}
+          style={{
+            paddingHorizontal: hp(4),
+            paddingVertical: hp(2),
+          }}
+        >
+          <Text className="text-amber-500 font-semibold" style={{fontSize: hp(2.5)}}>
+            Siguiente
+          </Text>
         </Pressable>
       </View>
     </View>
