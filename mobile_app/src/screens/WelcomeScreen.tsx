@@ -17,7 +17,7 @@ export default function WelcomeScreen({navigation}: any) {
       <View>
         <Pressable
           className="bg-white rounded-full active:scale-95"
-          onPress={() => navigation.navigate('Home')}
+          onPress={() => navigation.navigate('MainTabs')}
           style={{
             paddingHorizontal: hp(4),
             paddingVertical: hp(2),

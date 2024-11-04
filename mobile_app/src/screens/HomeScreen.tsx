@@ -1,12 +1,9 @@
-import { View, Text, StatusBar, ScrollView, Pressable, Alert, TextInput, Dimensions } from 'react-native'
+import { View, Text, StatusBar, ScrollView, Pressable, Alert, TextInput } from 'react-native'
 import React from 'react'
 import { LanguageIcon, MagnifyingGlassIcon } from 'react-native-heroicons/outline'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
-import Carousel from 'react-native-reanimated-carousel'
-import FoodCard from '../components/FoodCard'
-import RegionCard from '../components/RegionCard'
 
-const width = Dimensions.get('window').width
+import RegionCard from '../components/RegionCard'
 
 export default function HomeScreen() {
   const regions = [
@@ -24,12 +21,12 @@ export default function HomeScreen() {
   ]
 
   return (
-    <View className="flex-1 bg-primary-900" style={{ paddingTop: hp(5) }}>
+    <View className="flex-1 bg-primary-800" style={{ paddingTop: hp(5) }}>
       <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
 
       {/* Header */}
       <View
-        className="flex-row justify-between items-center -mb-7 bg-primary-900 fixed z-30"
+        className="flex-row justify-between items-center -mb-7 bg-primary-800 fixed z-30"
         style={{ padding: hp(2), borderBottomLeftRadius: hp(3), borderBottomRightRadius: hp(3) }}
       >
         <Text
@@ -55,20 +52,20 @@ export default function HomeScreen() {
           style={{ marginHorizontal: hp(2), marginTop: hp(2) }}
         >
           <Text
-            className="text-zinc-300 font-light"
+            className="text-primary-100 font-light"
             style={{ fontSize: hp(3.6), marginBottom: hp(-1.3) }}
           >
             Explora nuestra
           </Text>
           <Text
-            className="text-zinc-300 font-light"
+            className="text-primary-100 font-light"
             style={{ fontSize: hp(3.6) }}
-          ><Text className="text-secondary-400 font-semibold">gastronomía cultural</Text> aquí</Text>
+          ><Text className="text-primary-50 font-semibold">gastronomía cultural</Text> aquí</Text>
         </View>
 
         {/* Campo de búsqueda */}
         <View
-          className="flex-row items-center rounded-full bg-gray-200 border-gray-700 border mb-8"
+          className="flex-row items-center rounded-full bg-gray-50 mb-8"
           style={{ marginHorizontal: hp(2), padding: hp(0.7) }}
         >
           <TextInput
@@ -78,7 +75,7 @@ export default function HomeScreen() {
             style={{ fontSize: hp(2.4), marginBottom: hp(0.3), paddingLeft: hp(3) }}
           />
           <Pressable
-            className="bg-primary-600/20 rounded-full"
+            className="bg-zinc-500/20 rounded-full"
             onPress={() => Alert.alert('[📌Pendiente]')}
             style={{ padding: hp(2) }}
           >
@@ -88,7 +85,7 @@ export default function HomeScreen() {
 
         {/* Regiones */}
         <View
-          className="w-full bg-white shadow-md pb-10 items-center px-3 mt-12"
+          className="w-full pb-10 items-center bg-gray-50 px-3 mt-12"
           style={{
             borderTopLeftRadius: hp(7),
             borderTopRightRadius: hp(7),
@@ -99,7 +96,7 @@ export default function HomeScreen() {
         </View>
 
         {/* Recomendados */}
-        <View className="bg-white">
+        <View className="bg-gray-50 h-screen">
           <Text
             className="text-gray-600 font-semibold"
             style={{
@@ -110,13 +107,6 @@ export default function HomeScreen() {
           >
             Recomendados
           </Text>
-          <Carousel
-            width={width * 0.7}
-            height={hp(40)}
-            data={recommendedFood}
-            renderItem={({item}) => <FoodCard {...item} />}
-            style={{ flex: 1, overflow: 'visible' }}
-          />
         </View>
       </ScrollView>
     </View>
