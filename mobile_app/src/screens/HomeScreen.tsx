@@ -13,11 +13,14 @@ export default function HomeScreen() {
   ]
 
   const recommendedFood = [
-    {id: 1, name: 'Comida 1', image: require('../assets/food/example-1.png')},
-    {id: 2, name: 'Comida 2', image: require('../assets/food/example-2.png')},
-    {id: 3, name: 'Comida 3', image: require('../assets/food/example-3.png')},
-    {id: 4, name: 'Comida 4', image: require('../assets/food/example-4.png')},
-    {id: 5, name: 'Comida 5', image: require('../assets/food/example-5.png')},
+    {id: 1, name: 'Comida 1', image: require('../assets/food/food1.png')},
+    {id: 2, name: 'Comida 2', image: require('../assets/food/food2.png')},
+    {id: 3, name: 'Comida 3', image: require('../assets/food/food3.png')},
+    {id: 4, name: 'Comida 4', image: require('../assets/food/food4.png')},
+    {id: 5, name: 'Comida 5', image: require('../assets/food/food5.png')},
+    {id: 6, name: 'Comida 6', image: require('../assets/food/food6.png')},
+    {id: 7, name: 'Comida 7', image: require('../assets/food/food7.png')},
+    {id: 8, name: 'Comida 8', image: require('../assets/food/food8.png')},
   ]
 
   return (
