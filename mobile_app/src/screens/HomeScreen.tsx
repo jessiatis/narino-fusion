@@ -24,24 +24,24 @@ export default function HomeScreen() {
   ]
 
   return (
-    <View className="flex-1 bg-stone-900" style={{ paddingTop: hp(5) }}>
+    <View className="flex-1 bg-primary-900" style={{ paddingTop: hp(5) }}>
       <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
 
       {/* Header */}
       <View
-        className="flex-row justify-between items-center -mb-7 bg-stone-900 fixed z-30"
+        className="flex-row justify-between items-center -mb-7 bg-primary-900 fixed z-30"
         style={{ padding: hp(2), borderBottomLeftRadius: hp(3), borderBottomRightRadius: hp(3) }}
       >
         <Text
-          className="font-light text-stone-200"
+          className="font-light text-zinc-200"
           style={{ fontSize: hp(3) }}
         >
-          <Text className="text-amber-500 font-bold">Nariño</Text> Fusión
+          <Text className="text-primary-400 font-bold">Nariño</Text> Fusión
         </Text>
         <Pressable
           onPress={() => Alert.alert('[📌 Pendiente]')}
         >
-          <LanguageIcon size={hp(4)} color="white" />
+          <LanguageIcon size={hp(4)} color="#a9bd5f"/>
         </Pressable>
       </View>
 
@@ -55,34 +55,34 @@ export default function HomeScreen() {
           style={{ marginHorizontal: hp(2), marginTop: hp(2) }}
         >
           <Text
-            className="text-stone-300 font-light"
+            className="text-zinc-300 font-light"
             style={{ fontSize: hp(3.6), marginBottom: hp(-1.3) }}
           >
             Explora nuestra
           </Text>
           <Text
-            className="text-stone-300 font-light"
+            className="text-zinc-300 font-light"
             style={{ fontSize: hp(3.6) }}
-          ><Text className="text-stone-200 font-semibold">gastronomía cultural</Text> aquí</Text>
+          ><Text className="text-secondary-400 font-semibold">gastronomía cultural</Text> aquí</Text>
         </View>
 
         {/* Campo de búsqueda */}
         <View
-          className="flex-row items-center rounded-full bg-stone-900 border-stone-700 border mb-8"
+          className="flex-row items-center rounded-full bg-gray-200 border-gray-700 border mb-8"
           style={{ marginHorizontal: hp(2), padding: hp(0.7) }}
         >
           <TextInput
             className="flex-1 text-base tracking-wider"
-            placeholder="Buscar platos"
+            placeholder={`Buscar plato (Ej: ${recommendedFood[4].name})`}
             placeholderTextColor="#9ca3af"
             style={{ fontSize: hp(2.4), marginBottom: hp(0.3), paddingLeft: hp(3) }}
           />
           <Pressable
-            className=" bg-white/10 rounded-full"
+            className="bg-primary-600/20 rounded-full"
             onPress={() => Alert.alert('[📌Pendiente]')}
             style={{ padding: hp(2) }}
           >
-            <MagnifyingGlassIcon size={hp(3.6)} strokeWidth={2.3} color="#c0c0c0" />
+            <MagnifyingGlassIcon size={hp(3.6)} strokeWidth={2.3} color="#555b25" />
           </Pressable>
         </View>
 
@@ -101,7 +101,7 @@ export default function HomeScreen() {
         {/* Recomendados */}
         <View className="bg-white">
           <Text
-            className="text-stone-600 font-semibold"
+            className="text-gray-600 font-semibold"
             style={{
               fontSize: hp(3),
               marginBottom: hp(2),
