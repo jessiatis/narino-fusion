@@ -4,23 +4,22 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { View } from 'react-native'
 import Svg, { Path } from 'react-native-svg'
-import HomeScreen from './src/screens/HomeScreen'
 import WelcomeScreen from './src/screens/WelcomeScreen'
-import { HomeIcon } from 'react-native-heroicons/outline'
+import { MENU_NAV } from './src/constants'
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
 
 const CustomTabBarBackground = () => {
   return (
-    <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, backgroundColor: '#111111' }}>
+    <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, backgroundColor: '#010101' }}>
       <Svg
         height="100%"
         width="100%"
         viewBox="0 0 294 44"
         style={{ position: 'absolute', top: -70 }}
       >
-        <Path fill="#111111" d="M250,39H44C21.39,39,2.77,21.94,0.29,0H0v44h294V0h-0.29C291.23,21.94,272.61,39,250,39z"/>
+        <Path fill="#010101" d="M250,39H44C21.39,39,2.77,21.94,0.29,0H0v44h294V0h-0.29C291.23,21.94,272.61,39,250,39z"/>
       </Svg>
     </View>
   )
@@ -31,7 +30,8 @@ const tabBarBackground = () => <CustomTabBarBackground />
 const TabNavigator = () => {
   return (
     <Tab.Navigator
-      screenOptions={() => ({
+      initialRouteName="Home"
+      screenOptions={({ route }) => ({
         tabBarShowLabel: false,
         headerShown: false,
         tabBarStyle: {
@@ -41,26 +41,25 @@ const TabNavigator = () => {
           right: 0,
           height: 80,
           borderTopWidth: 0,
-          backgroundColor: '#111111',
+          backgroundColor: '#010101',
         },
         tabBarActiveTintColor: '#ffffff',
         tabBarInactiveTintColor: '#7a7a7a',
         tabBarIcon: ({ focused, color, size }) => {
-          const IconComponent = HomeIcon
+          const { icon: Icon } = MENU_NAV.find(({ name }) => name === route.name)!
           const backgroundColor = focused ? '#70811c' : 'transparent'
           return (
             <View style={{ backgroundColor, padding: 14, borderRadius: 25 }}>
-              <IconComponent color={color} size={size} strokeWidth="1.9" />
+              <Icon color={color} size={size} strokeWidth={1.3} />
             </View>
           )
         },
         tabBarBackground,
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Home2" component={HomeScreen} />
-      <Tab.Screen name="Home3" component={HomeScreen} />
-      <Tab.Screen name="Home4" component={HomeScreen} />
+      {MENU_NAV.map(({ name, component: Screen }) => (
+        <Tab.Screen key={name} name={name} component={Screen} />
+      ))}
     </Tab.Navigator>
   )
 }
