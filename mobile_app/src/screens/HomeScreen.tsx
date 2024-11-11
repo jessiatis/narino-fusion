@@ -1,12 +1,13 @@
-import { View, Text, StatusBar, ScrollView, Pressable, Alert, TextInput } from 'react-native'
+import { View, Text, StatusBar, ScrollView, Pressable, Alert } from 'react-native'
 import React from 'react'
-import { LanguageIcon, MagnifyingGlassIcon } from 'react-native-heroicons/outline'
+import { LanguageIcon } from 'react-native-heroicons/outline'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { useNavigation } from '@react-navigation/native'
 
 import RegionCard from '../components/RegionCard'
 import FoodCarousel from '../components/FoodCarousel'
 import { REGIONS } from '../constants'
+import InputSearch from '../components/InputSearch'
 
 export default function HomeScreen() {
   const navigation: any = useNavigation()
@@ -97,23 +98,8 @@ export default function HomeScreen() {
         </View>
 
         {/* Campo de búsqueda */}
-        <View
-          className="flex-row items-center rounded-full bg-gray-50 mb-8"
-          style={{ marginHorizontal: hp(2), padding: hp(0.7) }}
-        >
-          <TextInput
-            className="flex-1 text-base tracking-wider"
-            placeholder={'Buscar plato (Ej: Pan de Maíz)'}
-            placeholderTextColor="#9ca3af"
-            style={{ fontSize: hp(2.4), marginBottom: hp(0.3), paddingLeft: hp(3) }}
-          />
-          <Pressable
-            className="bg-zinc-500/20 rounded-full"
-            onPress={() => Alert.alert('[📌Pendiente]')}
-            style={{ padding: hp(2) }}
-          >
-            <MagnifyingGlassIcon size={hp(3.6)} strokeWidth={2.3} color="#555b25" />
-          </Pressable>
+        <View className="mb-8">
+          <InputSearch />
         </View>
 
         {/* Regiones */}
@@ -129,7 +115,7 @@ export default function HomeScreen() {
         </View>
 
         {/* Recomendados */}
-        <View className="bg-gray-50 pb-40">
+        <View className="bg-gray-50 pb-32">
           <View className="flex-row justify-between items-center px-4 mb-3">
             <Text className="text-gray-600 text-2xl font-semibold">
               Recomendados
