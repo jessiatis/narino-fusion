@@ -2,10 +2,11 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import Svg, { Path } from 'react-native-svg'
 import WelcomeScreen from './src/screens/WelcomeScreen'
 import { MENU_NAV } from './src/constants'
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -46,11 +47,14 @@ const TabNavigator = () => {
         tabBarActiveTintColor: '#ffffff',
         tabBarInactiveTintColor: '#7a7a7a',
         tabBarIcon: ({ focused, color, size }) => {
-          const { icon: Icon } = MENU_NAV.find(({ name }) => name === route.name)!
+          const { icon: Icon, label } = MENU_NAV.find(({ name }) => name === route.name)!
           const backgroundColor = focused ? '#70811c' : 'transparent'
           return (
-            <View style={{ backgroundColor, padding: 14, borderRadius: 25 }}>
-              <Icon color={color} size={size} strokeWidth={1.3} />
+            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+              <View style={{ backgroundColor, padding: 10, borderRadius: 25 }}>
+                <Icon color={color} size={size} strokeWidth={1.3} />
+              </View>
+              <Text style={{ color, fontSize: hp(1.5), marginTop: 2 }}>{label}</Text>
             </View>
           )
         },

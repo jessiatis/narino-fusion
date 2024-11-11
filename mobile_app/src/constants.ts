@@ -1,24 +1,18 @@
 import HomeScreen from './screens/HomeScreen'
-import { EllipsisHorizontalIcon, HeartIcon, HomeIcon, MapPinIcon, QueueListIcon } from 'react-native-heroicons/outline'
+import { EllipsisHorizontalIcon, HomeIcon, MapPinIcon, QueueListIcon } from 'react-native-heroicons/outline'
 import DishesScreen from './screens/DishesScreen'
 
 export const MENU_NAV = [
   {
-    name: 'Favorites',
-    label: 'Favoritos',
-    icon: HeartIcon,
+    name: 'Home',
+    label: 'Inicio',
+    icon: HomeIcon,
     component: HomeScreen,
   },
   {
     name: 'Regions',
     label: 'Regiones',
     icon: MapPinIcon,
-    component: HomeScreen,
-  },
-  {
-    name: 'Home',
-    label: 'Inicio',
-    icon: HomeIcon,
     component: HomeScreen,
   },
   {
