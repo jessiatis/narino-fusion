@@ -6,7 +6,8 @@ interface Region {
   id: number;
   name: string;
   image: any;
-  description?: string;
+  description: string;
+  color: string;
 }
 
 export default function RegionCard({ region }: { region: Region }) {
@@ -14,7 +15,7 @@ export default function RegionCard({ region }: { region: Region }) {
     <Pressable
       className="w-full flex-col relative -mt-20"
       style={{
-        height: hp(30),
+        height: hp(40),
         backgroundColor: 'white',
         borderRadius: hp(2),
         overflow: 'hidden',
@@ -31,25 +32,28 @@ export default function RegionCard({ region }: { region: Region }) {
     >
       <Image
         className="flex-1"
-        source={region.image}
+        source={{ uri: region.image }}
         style={{ width: '100%' }}
         resizeMode="cover"
       />
-      <View className="bg-stone-900/40 absolute bottom-0 inset-x-0" style={{ padding: hp(2) }}>
+      <View className="bg-primary-900/70 absolute bottom-0 inset-x-0" style={{ padding: hp(2) }}>
+        <View className="flex-row items-center gap-2 mb-1">
+          <View className="w-2.5 h-2.5 rounded-full aspect-square" style={{backgroundColor: region.color}} />
+          <Text
+            className="font-bold text-white"
+            style={{ fontSize: hp(2.7) }}
+          >
+            Región {region.name}
+          </Text>
+        </View>
         <Text
-          className="font-bold text-white"
-          style={{ fontSize: hp(2.7) }}
-        >
-          {region.name}
-        </Text>
-        <Text
-          className="text-stone-300"
+          className="text-primary-100 font-light"
           style={{
-            fontSize: hp(2.2),
-            marginTop: hp(1),
+            fontSize: hp(2),
+            marginTop: hp(0.5),
           }}
         >
-          {region.description || 'Descripción corta de la región, sus características o algún dato interesante.'}
+          {region.description}
         </Text>
       </View>
     </Pressable>

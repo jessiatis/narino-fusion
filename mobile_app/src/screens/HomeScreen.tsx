@@ -11,9 +11,24 @@ export default function HomeScreen() {
   const navigation: any = useNavigation()
 
   const regions = [
-    { id: 1, name: 'Región 1', image: require('../assets/regions/placeholder.png') },
-    { id: 2, name: 'Región 2', image: require('../assets/regions/placeholder.png') },
-    { id: 3, name: 'Región 3', image: require('../assets/regions/placeholder.png') },
+    { id: 1,
+       name: 'Andina',
+       color: '#d97706',
+       description: 'Descripción corta de la región, sus caracteristicas o algún dato interesante.',
+       image: 'https://www.cotelconarino.org/images/narino/la-cocha.jpg',
+    },
+    { id: 2,
+       name: 'Pacífica',
+       color: '#2563eb',
+       description: 'Descripción corta de la región, sus caracteristicas o algún dato interesante.',
+       image: 'https://www.cotelconarino.org/images/narino/la-cocha.jpg',
+    },
+    { id: 3,
+       name: 'Amazónica',
+       color: '#16a34a',
+       description: 'Descripción corta de la región, sus caracteristicas o algún dato interesante.',
+       image: 'https://www.cotelconarino.org/images/narino/la-cocha.jpg',
+    },
   ]
 
   const recommendedFood = [
@@ -72,7 +87,7 @@ export default function HomeScreen() {
           className="font-light text-zinc-200 tracking-wider"
           style={{ fontSize: hp(3) }}
         >
-          <Text className="text-primary-50 font-bold uppercase">Nariño</Text> Fusión
+          <Text className="text-primary-400 font-bold uppercase">Nariño</Text> Fusión
         </Text>
         <Pressable
           onPress={() => Alert.alert('[📌 Pendiente]')}
@@ -124,7 +139,7 @@ export default function HomeScreen() {
 
         {/* Regiones */}
         <View
-          className="w-full pb-10 items-center bg-gray-50 px-3 mt-12"
+          className="w-full pb-7 items-center bg-gray-50 px-3 mt-12"
           style={{
             borderTopLeftRadius: hp(7),
             borderTopRightRadius: hp(7),
@@ -141,13 +156,12 @@ export default function HomeScreen() {
               Recomendados
             </Text>
             <Pressable onPress={() => navigation.navigate('Welcome')}>
-              <Text>Ver todos</Text>
+              <Text className="text-primary-600">Ver todos</Text>
             </Pressable>
           </View>
+
           {/* FoodCarousel */}
-          <View className="px-4 flex-row">
-            <FoodCarousel data={recommendedFood} />
-          </View>
+          <FoodCarousel data={recommendedFood} />
         </View>
       </ScrollView>
     </View>
