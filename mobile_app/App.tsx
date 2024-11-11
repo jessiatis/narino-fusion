@@ -31,7 +31,7 @@ const tabBarBackground = () => <CustomTabBarBackground />
 const TabNavigator = () => {
   return (
     <Tab.Navigator
-      screenOptions={({ route }) => ({
+      screenOptions={() => ({
         tabBarShowLabel: false,
         headerShown: false,
         tabBarStyle: {
@@ -46,17 +46,13 @@ const TabNavigator = () => {
         tabBarActiveTintColor: '#ffffff',
         tabBarInactiveTintColor: '#7a7a7a',
         tabBarIcon: ({ focused, color, size }) => {
-          let IconComponent = HomeIcon
-
-          if (route.name === 'Home' && focused) {
-            return (
-              <View style={{ backgroundColor: '#70811c', padding: 14, borderRadius: 25 }}>
-                <IconComponent color={color} size={size} strokeWidth="1.9" />
-              </View>
-            )
-          }
-
-          return <IconComponent color={color} size={size} strokeWidth="1.5" />
+          const IconComponent = HomeIcon
+          const backgroundColor = focused ? '#70811c' : 'transparent'
+          return (
+            <View style={{ backgroundColor, padding: 14, borderRadius: 25 }}>
+              <IconComponent color={color} size={size} strokeWidth="1.9" />
+            </View>
+          )
         },
         tabBarBackground,
       })}
