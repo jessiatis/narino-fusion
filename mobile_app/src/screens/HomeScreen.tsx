@@ -134,7 +134,7 @@ export default function HomeScreen() {
             <Text className="text-gray-600 text-2xl font-semibold">
               Recomendados
             </Text>
-            <Pressable onPress={() => navigation.navigate('Welcome')}>
+            <Pressable onPress={() => navigation.navigate('Dishes')}>
               <Text className="text-primary-600">Ver todos</Text>
             </Pressable>
           </View>

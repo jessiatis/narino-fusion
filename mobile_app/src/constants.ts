@@ -1,5 +1,6 @@
 import HomeScreen from './screens/HomeScreen'
 import { EllipsisHorizontalIcon, HeartIcon, HomeIcon, MapPinIcon, QueueListIcon } from 'react-native-heroicons/outline'
+import DishesScreen from './screens/DishesScreen'
 
 export const MENU_NAV = [
   {
@@ -21,10 +22,10 @@ export const MENU_NAV = [
     component: HomeScreen,
   },
   {
-    name: 'Plates',
+    name: 'Dishes',
     label: 'Lista de platos',
     icon: QueueListIcon,
-    component: HomeScreen,
+    component: DishesScreen,
   },
   {
     name: 'More',
