@@ -18,7 +18,6 @@ export default function RegionCard({ region }: { region: Region }) {
         backgroundColor: 'white',
         borderRadius: hp(2),
         overflow: 'hidden',
-        marginBottom: hp(2),
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.3,

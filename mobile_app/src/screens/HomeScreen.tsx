@@ -4,6 +4,7 @@ import { LanguageIcon, MagnifyingGlassIcon } from 'react-native-heroicons/outlin
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 
 import RegionCard from '../components/RegionCard'
+import FoodCarousel from '../components/FoodCarousel'
 
 export default function HomeScreen() {
   const regions = [
@@ -13,14 +14,46 @@ export default function HomeScreen() {
   ]
 
   const recommendedFood = [
-    {id: 1, name: 'Comida 1', image: require('../assets/food/food1.png')},
-    {id: 2, name: 'Comida 2', image: require('../assets/food/food2.png')},
-    {id: 3, name: 'Comida 3', image: require('../assets/food/food3.png')},
-    {id: 4, name: 'Comida 4', image: require('../assets/food/food4.png')},
-    {id: 5, name: 'Comida 5', image: require('../assets/food/food5.png')},
-    {id: 6, name: 'Comida 6', image: require('../assets/food/food6.png')},
-    {id: 7, name: 'Comida 7', image: require('../assets/food/food7.png')},
-    {id: 8, name: 'Comida 8', image: require('../assets/food/food8.png')},
+    {
+      id: 1,
+      backgroundImg: 'https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg',
+      region: {name: 'Andina', color: '#c026d3'},
+      dishName: 'Pan de Maíz',
+      description: 'Vereda Tola de las Lajas',
+      isFavorite: false,
+    },
+    {
+      id: 2,
+      backgroundImg: 'https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp',
+      region: {name: 'Caribe', color: '#16a34a'},
+      dishName: 'Arepa de Huevo',
+      description: 'Costa Atlántica',
+      isFavorite: true,
+    },
+    {
+      id: 3,
+      backgroundImg: 'https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg',
+      region: {name: 'Pacífica', color: '#d97706'},
+      dishName: 'Sancocho de Pescado',
+      description: 'Buenaventura',
+      isFavorite: false,
+    },
+    {
+      id: 4,
+      backgroundImg: 'https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp',
+      region: {name: 'Amazónica', color: '#2563eb'},
+      dishName: 'Pirarucú Asado',
+      description: 'Leticia',
+      isFavorite: true,
+    },
+    {
+      id: 5,
+      backgroundImg: 'https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg',
+      region: {name: 'Orinoquía', color: '#dc2626'},
+      dishName: 'Mamona',
+      description: 'Villavicencio',
+      isFavorite: false,
+    },
   ]
 
   return (
@@ -33,10 +66,10 @@ export default function HomeScreen() {
         style={{ padding: hp(2), borderBottomLeftRadius: hp(3), borderBottomRightRadius: hp(3) }}
       >
         <Text
-          className="font-light text-zinc-200"
+          className="font-light text-zinc-200 tracking-wider"
           style={{ fontSize: hp(3) }}
         >
-          <Text className="text-primary-400 font-bold">Nariño</Text> Fusión
+          <Text className="text-primary-50 font-bold uppercase">Nariño</Text> Fusión
         </Text>
         <Pressable
           onPress={() => Alert.alert('[📌 Pendiente]')}
@@ -73,7 +106,7 @@ export default function HomeScreen() {
         >
           <TextInput
             className="flex-1 text-base tracking-wider"
-            placeholder={`Buscar plato (Ej: ${recommendedFood[4].name})`}
+            placeholder={'Buscar plato (Ej: Pan de Maíz)'}
             placeholderTextColor="#9ca3af"
             style={{ fontSize: hp(2.4), marginBottom: hp(0.3), paddingLeft: hp(3) }}
           />
@@ -99,7 +132,7 @@ export default function HomeScreen() {
         </View>
 
         {/* Recomendados */}
-        <View className="bg-gray-50 h-screen">
+        <View className="bg-gray-50 pb-40">
           <Text
             className="text-gray-600 font-semibold"
             style={{
@@ -110,6 +143,10 @@ export default function HomeScreen() {
           >
             Recomendados
           </Text>
+          {/* FoodCarousel */}
+          <View className="px-4 flex-row">
+            <FoodCarousel data={recommendedFood} />
+          </View>
         </View>
       </ScrollView>
     </View>
