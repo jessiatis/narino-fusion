@@ -2,11 +2,14 @@ import { View, Text, StatusBar, ScrollView, Pressable, Alert, TextInput } from '
 import React from 'react'
 import { LanguageIcon, MagnifyingGlassIcon } from 'react-native-heroicons/outline'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
+import { useNavigation } from '@react-navigation/native'
 
 import RegionCard from '../components/RegionCard'
 import FoodCarousel from '../components/FoodCarousel'
 
 export default function HomeScreen() {
+  const navigation: any = useNavigation()
+
   const regions = [
     { id: 1, name: 'Región 1', image: require('../assets/regions/placeholder.png') },
     { id: 2, name: 'Región 2', image: require('../assets/regions/placeholder.png') },
@@ -133,16 +136,14 @@ export default function HomeScreen() {
 
         {/* Recomendados */}
         <View className="bg-gray-50 pb-40">
-          <Text
-            className="text-gray-600 font-semibold"
-            style={{
-              fontSize: hp(3),
-              marginBottom: hp(2),
-              paddingHorizontal: hp(3),
-            }}
-          >
-            Recomendados
-          </Text>
+          <View className="flex-row justify-between items-center px-4 mb-3">
+            <Text className="text-gray-600 text-2xl font-semibold">
+              Recomendados
+            </Text>
+            <Pressable onPress={() => navigation.navigate('Welcome')}>
+              <Text>Ver todos</Text>
+            </Pressable>
+          </View>
           {/* FoodCarousel */}
           <View className="px-4 flex-row">
             <FoodCarousel data={recommendedFood} />
