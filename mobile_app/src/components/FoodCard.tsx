@@ -2,14 +2,12 @@ import React from 'react'
 import { View, Text, Image, TouchableOpacity, Alert } from 'react-native'
 import { HeartIcon } from 'react-native-heroicons/solid'
 import { CubeIcon, HeartIcon as HeartOutlineIcon } from 'react-native-heroicons/outline'
+import { REGIONS } from '../constants'
 
 export interface FoodCardProps {
   id: number;
   backgroundImg: string;
-  region: {
-    name: string;
-    color: string;
-  };
+  regionId: number;
   dishName: string;
   description: string;
   isFavorite: boolean;
@@ -20,7 +18,7 @@ export interface FoodCardProps {
 
 const FoodCard: React.FC<FoodCardProps> = ({
   backgroundImg,
-  region,
+  regionId,
   dishName,
   description,
   isFavorite = false,
@@ -28,8 +26,9 @@ const FoodCard: React.FC<FoodCardProps> = ({
   onMapPress = () => { Alert.alert('[📌 Pendiente: Mapa]') },
   onArPress = () => { Alert.alert('[📌 Pendiente: AR]') },
 }) => {
+  const region = REGIONS.find(({id})=> id === regionId)!
   return (
-    <View className="relative rounded-2xl overflow-hidden shadow-lg mr-5" style={{ width: 330, height: 400 }}>
+    <View className="relative rounded-2xl overflow-hidden shadow-lg mr-5" style={{ width: 300, height: 370 }}>
       {/* Background Image */}
       <Image source={{ uri: backgroundImg }} className="absolute inset-0 w-full h-full" resizeMode="cover" />
 
@@ -44,7 +43,7 @@ const FoodCard: React.FC<FoodCardProps> = ({
           <View className="flex-row items-center gap-1.5 mb-1">
             <View className="w-1.5 h-1.5 rounded-full aspect-square" style={{backgroundColor: region.color}} />
             <Text className="uppercase text-xs tracking-widest font-semibold opacity-90" style={{color: region.color}}>
-              {region.name}
+              Región {region.name}
             </Text>
           </View>
           <Text className="text-lg font-bold text-primary-900/80" numberOfLines={1} ellipsizeMode="tail">

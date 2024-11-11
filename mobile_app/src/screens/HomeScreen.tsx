@@ -6,36 +6,15 @@ import { useNavigation } from '@react-navigation/native'
 
 import RegionCard from '../components/RegionCard'
 import FoodCarousel from '../components/FoodCarousel'
+import { REGIONS } from '../constants'
 
 export default function HomeScreen() {
   const navigation: any = useNavigation()
-
-  const regions = [
-    { id: 1,
-       name: 'Andina',
-       color: '#d97706',
-       description: 'Descripción corta de la región, sus caracteristicas o algún dato interesante.',
-       image: 'https://www.cotelconarino.org/images/narino/la-cocha.jpg',
-    },
-    { id: 2,
-       name: 'Pacífica',
-       color: '#2563eb',
-       description: 'Descripción corta de la región, sus caracteristicas o algún dato interesante.',
-       image: 'https://www.cotelconarino.org/images/narino/la-cocha.jpg',
-    },
-    { id: 3,
-       name: 'Amazónica',
-       color: '#16a34a',
-       description: 'Descripción corta de la región, sus caracteristicas o algún dato interesante.',
-       image: 'https://www.cotelconarino.org/images/narino/la-cocha.jpg',
-    },
-  ]
-
   const recommendedFood = [
     {
       id: 1,
       backgroundImg: 'https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg',
-      region: {name: 'Andina', color: '#c026d3'},
+      regionId: 1,
       dishName: 'Pan de Maíz',
       description: 'Vereda Tola de las Lajas',
       isFavorite: false,
@@ -43,7 +22,7 @@ export default function HomeScreen() {
     {
       id: 2,
       backgroundImg: 'https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp',
-      region: {name: 'Caribe', color: '#16a34a'},
+      regionId: 2,
       dishName: 'Arepa de Huevo',
       description: 'Costa Atlántica',
       isFavorite: true,
@@ -51,7 +30,7 @@ export default function HomeScreen() {
     {
       id: 3,
       backgroundImg: 'https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg',
-      region: {name: 'Pacífica', color: '#d97706'},
+      regionId: 3,
       dishName: 'Sancocho de Pescado',
       description: 'Buenaventura',
       isFavorite: false,
@@ -59,7 +38,7 @@ export default function HomeScreen() {
     {
       id: 4,
       backgroundImg: 'https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp',
-      region: {name: 'Amazónica', color: '#2563eb'},
+      regionId: 3,
       dishName: 'Pirarucú Asado',
       description: 'Leticia',
       isFavorite: true,
@@ -67,7 +46,7 @@ export default function HomeScreen() {
     {
       id: 5,
       backgroundImg: 'https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg',
-      region: {name: 'Orinoquía', color: '#dc2626'},
+      regionId: 1,
       dishName: 'Mamona',
       description: 'Villavicencio',
       isFavorite: false,
@@ -146,7 +125,7 @@ export default function HomeScreen() {
             paddingVertical: hp(3),
           }}
         >
-          <RegionCard region={regions[0]} />
+          <RegionCard region={REGIONS[0]} />
         </View>
 
         {/* Recomendados */}

@@ -11,17 +11,7 @@ const FoodCarousel: React.FC<FoodCarouselProps> = ({ data }) => {
     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
       {data.map((item, index) => (
         <TouchableOpacity key={index} className="ml-4">
-          <FoodCard
-            id={item.id}
-            backgroundImg={item.backgroundImg}
-            region={item.region}
-            dishName={item.dishName}
-            description={item.description}
-            isFavorite={item.isFavorite}
-            onFavoritePress={item.onFavoritePress}
-            onMapPress={item.onMapPress}
-            onArPress={item.onArPress}
-          />
+          <FoodCard {...item} />
         </TouchableOpacity>
       ))}
     </ScrollView>
