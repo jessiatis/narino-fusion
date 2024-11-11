@@ -16,7 +16,7 @@ export default function InputSearch() {
         style={{ fontSize: hp(2.4), marginBottom: hp(0.3), paddingLeft: hp(3) }}
       />
       <Pressable
-        className="bg-zinc-500/20 rounded-full"
+        className="bg-slate-200 rounded-full"
         onPress={() => Alert.alert('[📌Pendiente]')}
         style={{ padding: hp(2) }}
       >
