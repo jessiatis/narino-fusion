@@ -4,19 +4,14 @@ import { HeartIcon } from 'react-native-heroicons/solid'
 import { CubeIcon, HeartIcon as HeartOutlineIcon } from 'react-native-heroicons/outline'
 import { REGIONS } from '../constants'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
+import { DishType } from '../types'
 
-export interface FoodCardProps {
-  id: number;
-  backgroundImg: string;
-  regionId: number;
-  dishName: string;
-  description: string;
-  isFavorite: boolean;
+export interface FoodCardProps extends DishType {
   minified?: boolean;
   className?: string;
-  onFavoritePress?: () => void;
-  onMapPress?: () => void;
-  onArPress?: () => void;
+  onFavorite?: () => void;
+  onMap?: () => void;
+  onAR?: () => void;
 }
 
 const FoodCard: React.FC<FoodCardProps> = ({
@@ -26,9 +21,9 @@ const FoodCard: React.FC<FoodCardProps> = ({
   description,
   isFavorite = false,
   minified = false,
-  onFavoritePress = () => { Alert.alert('[📌 Pendiente: Favorito]') },
-  onMapPress = () => { Alert.alert('[📌 Pendiente: Mapa]') },
-  onArPress = () => { Alert.alert('[📌 Pendiente: AR]') },
+  onFavorite = () => { Alert.alert('[📌 Pendiente: Favorito]') },
+  onMap = () => { Alert.alert('[📌 Pendiente: Mapa]') },
+  onAR = () => { Alert.alert('[📌 Pendiente: AR]') },
 }) => {
   const region = REGIONS.find(({id})=> id === regionId)!
   return (
@@ -59,7 +54,7 @@ const FoodCard: React.FC<FoodCardProps> = ({
         <TouchableOpacity
           className="absolute top-3 left-3 bg-white rounded-lg shadow-md"
           style={{ width: 60, height: 60 }}
-          onPress={onMapPress}
+          onPress={onMap}
         >
           <Image source={{ uri: 'https://raw.githubusercontent.com/gist/hepplerj/2f405df580f66923091ad604ccf2fffc/raw/bc7097cf7a072ce0cbd0c5350db33781529e4618/thumbnail.png' }} className="w-full h-full rounded-md" resizeMode="cover" />
         </TouchableOpacity>
@@ -92,7 +87,7 @@ const FoodCard: React.FC<FoodCardProps> = ({
 
         {/* AR Button */}
         {!minified && (
-          <TouchableOpacity className="bg-primary-600 -mr-8 aspect-square border border-primary-800/50 shadow-lg shadow-primary-700 rounded justify-center items-center px-4 ml-4" onPress={onArPress}>
+          <TouchableOpacity className="bg-primary-600 -mr-8 aspect-square border border-primary-800/50 shadow-lg shadow-primary-700 rounded justify-center items-center px-4 ml-4" onPress={onAR}>
             <CubeIcon color="#f6ff52" size={30} />
             <Text className="text-[#f6ff52] font-bold">3D</Text>
           </TouchableOpacity>
@@ -100,7 +95,7 @@ const FoodCard: React.FC<FoodCardProps> = ({
       </View>
 
       {/* Favorite Button */}
-      <TouchableOpacity className="absolute top-3 right-3 bg-primary-700/70 p-3 rounded-full" onPress={onFavoritePress}>
+      <TouchableOpacity className="absolute top-3 right-3 bg-primary-700/70 p-3 rounded-full" onPress={onFavorite}>
         <Text className="aspect-square text-center">
           {
             isFavorite

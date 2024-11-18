@@ -1,4 +1,6 @@
-export const DISHES = [
+import { DishType } from '../types'
+
+export const DISHES: DishType[] = [
   {
     id: 1,
     backgroundImg: 'https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg',
