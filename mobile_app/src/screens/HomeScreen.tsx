@@ -3,7 +3,6 @@ import React from 'react'
 import { LanguageIcon } from 'react-native-heroicons/outline'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { useNavigation } from '@react-navigation/native'
-
 import RegionCard from '../components/RegionCard'
 import FoodCarousel from '../components/FoodCarousel'
 import { REGIONS } from '../constants'
@@ -86,7 +85,7 @@ export default function HomeScreen() {
           </View>
 
           {/* FoodCarousel */}
-          <FoodCarousel data={recommendedFood} />
+          <FoodCarousel dishes={recommendedFood} />
         </View>
       </ScrollView>
     </View>

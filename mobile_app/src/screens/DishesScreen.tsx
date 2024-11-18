@@ -5,8 +5,10 @@ import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import InputSearch from '../components/InputSearch'
 import { DISHES } from '../mocks/dishes'
 import { REGIONS } from '../constants'
+import { useNavigation } from '@react-navigation/native'
 
 export default function DishesScreen() {
+  const navigation: any = useNavigation()
   const filteredDishes = DISHES
   const regions = REGIONS.map(({name}) => ({label: `Región ${name}`, actived: false}))
   const horizontalFilters = [
@@ -48,9 +50,9 @@ export default function DishesScreen() {
         {/* Lista de platos */}
         <View className="gap-y-2 p-3">
           {filteredDishes.map((dish)=>(
-            <View key={dish.id}>
+            <TouchableOpacity key={dish.id} onPress={() => navigation.navigate('DishDetails', { dish })}>
               <FoodCard minified {...dish} />
-            </View>
+            </TouchableOpacity>
           ))}
         </View>
 

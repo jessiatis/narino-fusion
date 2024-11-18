@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { View, Text } from 'react-native'
 import Svg, { Path } from 'react-native-svg'
 import WelcomeScreen from './src/screens/WelcomeScreen'
+import DishesScreen from './src/screens/DishesScreen'
+import DishDetailsScreen from './src/screens/DishDetailsScreen'
 import { MENU_NAV } from './src/constants'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 
@@ -74,6 +76,8 @@ export default function App() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="MainTabs" component={TabNavigator} />
+        <Stack.Screen name="Dishes" component={DishesScreen} />
+        <Stack.Screen name="DishDetails" component={DishDetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )
