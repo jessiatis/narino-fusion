@@ -7,7 +7,7 @@ export default function InputSearch() {
   return (
     <View
       className="flex-row items-center rounded-full bg-gray-50"
-      style={{ marginHorizontal: hp(2), padding: hp(0.7) }}
+      style={{ marginHorizontal: hp(2), padding: hp(0.4) }}
     >
       <TextInput
         className="flex-1 text-base tracking-wider"

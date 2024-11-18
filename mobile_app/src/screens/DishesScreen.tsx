@@ -16,14 +16,14 @@ export default function DishesScreen() {
   ]
 
   return (
-    <View className="flex-1 bg-slate-200" style={{ paddingTop: hp(5)}}>
+    <View className="flex-1 bg-slate-200" style={{ paddingTop: hp(2)}}>
       <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
 
       <ScrollView
         showsVerticalScrollIndicator={false}
         className="mt-10"
       >
-        <Text className="text-primary-800 font-light text-3xl text-center mb-3">
+        <Text className="text-primary-900 font-light text-3xl text-center mb-3 mt-5">
           Lista de platos
         </Text>
 
@@ -37,10 +37,10 @@ export default function DishesScreen() {
               key={label}
               className="rounded-full px-4 py-2 mr-1"
               style={{
-                backgroundColor: actived ? 'rgb(96 99 26 / 0.7)' : 'transparent',
+                backgroundColor: actived ? 'rgba(96,99,26,0.7)' : 'transparent',
               }}
             >
-              <Text style={{color: actived ? '#f6ff52' : ''}}>{label}</Text>
+              <Text className="text-slate-700" style={{color: actived ? '#f6ff52' : ''}}>{label}</Text>
             </TouchableOpacity>
           ))}
         </ScrollView>
