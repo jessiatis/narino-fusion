@@ -3,6 +3,11 @@ import { EllipsisHorizontalIcon, HomeIcon, MapPinIcon, QueueListIcon } from 'rea
 import DishesScreen from './screens/DishesScreen'
 import MoreScreen from './screens/MoreScreen'
 
+export const COLORS = {
+  primary: '#61682a',
+  accent: '#f6ff52',
+}
+
 export const MENU_NAV = [
   {
     name: 'Home',
