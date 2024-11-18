@@ -4,5 +4,6 @@ export interface DishType {
   regionId: number;
   dishName: string;
   description: string;
+  ingredients: string[];
   isFavorite: boolean;
 }
