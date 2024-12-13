@@ -1,29 +1,113 @@
 import React from 'react'
-import { Text, Image, ScrollView, Pressable } from 'react-native'
+import { Text, View, Image, ScrollView, StatusBar, TouchableOpacity, Alert, Pressable } from 'react-native'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { useNavigation } from '@react-navigation/native'
 import { DishType } from '../types'
-import { ArrowLeftIcon } from 'react-native-heroicons/outline'
+import { ArrowLeftIcon, CubeIcon } from 'react-native-heroicons/outline'
+import { COLORS, REGIONS } from '../constants'
+import { HeartIcon, MapPinIcon } from 'react-native-heroicons/solid'
 
 type Props = { route?: { params: { dish: DishType }}}
 
 const DishDetailsScreen = ({ route }: Props) => {
   const { dish } = route!.params
   const navigation = useNavigation()
+  const region = REGIONS.find(({id})=> id === dish.regionId)!
+  const lastIngredient = dish.ingredients.pop()
+  const onFavorite = () => Alert.alert('[🚩 Pendiente]: Favorito')
+  const onImage = (uri: string) => Alert.alert(`[🚩 Pendiente]: Imagen (${uri})`)
+  const onMap = () => Alert.alert('[🚩 Pendiente]: MAP')
+  const onAR = () => Alert.alert('[🚩 Pendiente]: AR')
 
   return (
-    <ScrollView contentContainerStyle={{paddingTop: hp(6)}}>
-      <Pressable className="w-auto self-start p-2" onPress={() => navigation.goBack()}>
-        <ArrowLeftIcon size={26} color="black" />
-      </Pressable>
-      <Image
-        className="w-full h-60 mb-6"
-        resizeMode="cover"
-        source={{ uri: dish.backgroundImg }}
-      />
-      <Text className="text-3xl">{dish.dishName}</Text>
-      <Text>{dish.description}</Text>
-    </ScrollView>
+    <View className="flex-1">
+      <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
+
+      {/* Imagen de fondo */}
+      <View className="w-full absolute inset-0">
+        <Image
+          className="w-full"
+          resizeMode="cover"
+          source={{ uri: dish.backgroundImg }}
+          style={{height: hp(40)}}
+        />
+      </View>
+
+      <View className="w-full h-screen absolute inset-0 bg-black/60" />
+
+      <ScrollView contentContainerStyle={{ minHeight: hp(100), paddingTop: hp(6) }}>
+        <View className="flex-row justify-between" style={{ marginBottom: hp(16), marginHorizontal: hp(1) }}>
+          {/* Botón de ir atrás */}
+          <TouchableOpacity
+            className="w-auto self-start p-3 bg-primary-600/80 rounded-full"
+            onPress={() => navigation.goBack()}
+          >
+            <ArrowLeftIcon size={24} strokeWidth={1.8} color={COLORS.accent} />
+          </TouchableOpacity>
+
+          {/* Botón favorito */}
+          <TouchableOpacity className="w-auto self-end bg-white shadow-lg shadow-primary-800 p-3 rounded-full" onPress={onFavorite}>
+            <Text className="aspect-square text-center">
+              <HeartIcon
+                size={30}
+                color={COLORS[dish.isFavorite ? 'secondary' : 'primary']}
+                opacity={dish.isFavorite ? 1 : 0.5}
+              />
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        <View className="h-full bg-slate-100 pt-7" style={{borderTopLeftRadius: 25, borderTopRightRadius: 25}}>
+          <View className="absolute -top-7 right-7 flex-row gap-1">
+            {/* Botón Mapa */}
+            <TouchableOpacity className="h-auto bg-primary-600 p-3 rounded-full flex-row items-center" onPress={onMap}>
+              <MapPinIcon color={COLORS.accent} size={30} />
+            </TouchableOpacity>
+
+            {/* Botón AR */}
+            <TouchableOpacity className="h-auto bg-primary-600 shadow-lg shadow-primary-800 p-3 rounded-full flex-row items-center" onPress={onAR}>
+              <CubeIcon color={COLORS.accent} size={30} />
+              <Text className="font-bold text-xl text-primary-100 ml-1">3D</Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* Título y región */}
+          <View className="px-4">
+            <Text className="text-3xl font-bold mb-2 text-slate-700">{dish.dishName}</Text>
+            <View className="flex-row items-center gap-1.5 mb-5">
+              <View className="w-2 h-2 rounded-full aspect-square" style={{backgroundColor: region.color}} />
+              <Text className="uppercase text-sm tracking-widest font-semibold opacity-90" style={{color: region.color}}>
+                Región {region.name}
+              </Text>
+            </View>
+          </View>
+
+          {/* Fotografías */}
+          <View className="w-full h-40 mb-4">
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+              {dish.photographs.map((photo, index) => (
+                <Pressable key={index} className={'h-full ml-3 ' + (index === dish.photographs.length - 1 && 'mr-3')} onPress={() => onImage(photo)}>
+                  <Image
+                    className="w-60 h-40 rounded-lg"
+                    source={{ uri: photo }}
+                    resizeMode="cover"
+                  />
+                </Pressable>
+              ))}
+            </ScrollView>
+          </View>
+
+          {/* Detalles e ingredientes */}
+          <View className="px-4 mb-7">
+            <Text className="text-base text-slate-800 font-light mb-5">{dish.description}</Text>
+            <Text className="text-xl font-semibold text-slate-700 mb-1">Ingredientes</Text>
+            <Text className="text-base text-slate-800 font-light">
+              {`${dish.ingredients.join(', ')} y ${lastIngredient}.`}
+            </Text>
+          </View>
+        </View>
+      </ScrollView>
+    </View>
   )
 }
 

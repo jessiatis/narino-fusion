@@ -8,7 +8,14 @@ import WelcomeScreen from './src/screens/WelcomeScreen'
 import DishesScreen from './src/screens/DishesScreen'
 import DishDetailsScreen from './src/screens/DishDetailsScreen'
 import { MENU_NAV } from './src/constants'
-import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
+import { configureReanimatedLogger, ReanimatedLogLevel } from 'react-native-reanimated'
+
+// Desactivar modo estricto de Reanimated
+configureReanimatedLogger({
+  level: ReanimatedLogLevel.warn,
+  strict: false,
+})
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -17,10 +24,10 @@ const CustomTabBarBackground = () => {
   return (
     <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, backgroundColor: '#010101' }}>
       <Svg
-        height="100%"
-        width="100%"
+        width={wp(102)}
+        height={wp(101) * (44 / 294)}
         viewBox="0 0 294 44"
-        style={{ position: 'absolute', top: -70 }}
+        style={{ position: 'absolute', top: -wp(98) * (44 / 294), left: -wp(1) }}
       >
         <Path fill="#010101" d="M250,39H44C21.39,39,2.77,21.94,0.29,0H0v44h294V0h-0.29C291.23,21.94,272.61,39,250,39z"/>
       </Svg>
