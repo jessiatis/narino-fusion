@@ -1,8 +1,8 @@
 import React from 'react'
 import { View, Text, Image, TouchableOpacity, Alert } from 'react-native'
 import { HeartIcon } from 'react-native-heroicons/solid'
-import { CubeIcon, HeartIcon as HeartOutlineIcon } from 'react-native-heroicons/outline'
-import { REGIONS } from '../constants'
+import { CubeIcon } from 'react-native-heroicons/outline'
+import { COLORS, REGIONS } from '../constants'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { DishType } from '../types'
 
@@ -95,14 +95,12 @@ const FoodCard: React.FC<FoodCardProps> = ({
       </View>
 
       {/* Favorite Button */}
-      <TouchableOpacity className="absolute top-3 right-3 bg-primary-700/70 p-3 rounded-full" onPress={onFavorite}>
-        <Text className="aspect-square text-center">
-          {
-            isFavorite
-            ? (<HeartIcon color="#f6ff52" size={minified ? 20 : 30 } />)
-            : (<HeartOutlineIcon color="#f6ff52" size={minified ? 20 : 30} />)
-          }
-        </Text>
+      <TouchableOpacity className="absolute top-3 right-3 bg-slate-50 p-3 shadow-lg shadow-primary-800 rounded-full" onPress={onFavorite}>
+        <HeartIcon
+          size={minified ? 20 : 30 }
+          color={COLORS[isFavorite ? 'secondary' : 'primary']}
+          opacity={isFavorite ? 1 : 0.5}
+        />
       </TouchableOpacity>
     </View>
   )
