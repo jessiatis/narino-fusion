@@ -8,6 +8,13 @@ export const DISHES: DishType[] = [
     dishName: 'Pan de Maíz',
     description: 'Vereda Tola de las Lajas',
     ingredients: ['Maíz', 'Agua', 'Sal', 'Azúcar', 'Levadura'],
+    photographs: [
+      'https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg',
+      'https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp',
+      'https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg',
+      'https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp',
+      'https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg',
+    ],
     isFavorite: false,
   },
   {
@@ -17,6 +24,13 @@ export const DISHES: DishType[] = [
     dishName: 'Arepa de Huevo',
     ingredients: ['Harina de maíz', 'Huevo', 'Agua', 'Sal', 'Aceite'],
     description: 'Costa Atlántica',
+    photographs: [
+      'https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg',
+      'https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp',
+      'https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg',
+      'https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg',
+      'https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp',
+    ],
     isFavorite: true,
   },
   {
@@ -24,8 +38,15 @@ export const DISHES: DishType[] = [
     backgroundImg: 'https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg',
     regionId: 3,
     dishName: 'Sancocho de Pescado',
-    ingredients: ['Pescado', 'Yuca', 'Plátano', 'Papa', 'Cilantro', 'Ñame', 'Cebolla', 'Ajo'],
     description: 'Buenaventura',
+    ingredients: ['Pescado', 'Yuca', 'Plátano', 'Papa', 'Cilantro', 'Ñame', 'Cebolla', 'Ajo'],
+    photographs: [
+      'https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg',
+      'https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp',
+      'https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg',
+      'https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp',
+      'https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg',
+    ],
     isFavorite: false,
   },
   {
@@ -35,6 +56,13 @@ export const DISHES: DishType[] = [
     dishName: 'Pirarucú Asado',
     description: 'Leticia',
     ingredients: ['Pirarucú', 'Ajo', 'Limón', 'Sal', 'Pimienta', 'Aceite'],
+    photographs: [
+      'https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg',
+      'https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp',
+      'https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg',
+      'https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg',
+      'https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp',
+    ],
     isFavorite: true,
   },
   {
@@ -44,6 +72,13 @@ export const DISHES: DishType[] = [
     dishName: 'Mamona',
     description: 'Villavicencio',
     ingredients: ['Carne de res', 'Ajo', 'Sal', 'Pimienta', 'Cerveza'],
+    photographs: [
+      'https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg',
+      'https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp',
+      'https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg',
+      'https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp',
+      'https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg',
+    ],
     isFavorite: false,
   },
 ]
