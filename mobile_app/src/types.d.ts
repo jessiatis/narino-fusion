@@ -5,5 +5,6 @@ export interface DishType {
   dishName: string;
   description: string;
   ingredients: string[];
+  photographs: string[];
   isFavorite: boolean;
 }
