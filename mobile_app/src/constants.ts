@@ -4,8 +4,9 @@ import DishesScreen from './screens/DishesScreen'
 import MoreScreen from './screens/MoreScreen'
 
 export const COLORS = {
-  primary: '#61682a',
+  primary: '#646633',
   accent: '#f6ff52',
+  secondary: '#d02427',
 }
 
 export const MENU_NAV = [
