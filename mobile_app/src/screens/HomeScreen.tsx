@@ -15,7 +15,7 @@ export default function HomeScreen() {
 
   return (
     <View className="flex-1 bg-primary-800" style={{ paddingTop: hp(4) }}>
-      <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
+      <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
 
       {/* Header */}
       <View

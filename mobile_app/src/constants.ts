@@ -2,6 +2,7 @@ import HomeScreen from './screens/HomeScreen'
 import { EllipsisHorizontalIcon, HomeIcon, MapPinIcon, QueueListIcon } from 'react-native-heroicons/outline'
 import DishesScreen from './screens/DishesScreen'
 import MoreScreen from './screens/MoreScreen'
+import RegionsScreen from './screens/RegionsScreen'
 
 export const COLORS = {
   primary: '#646633',
@@ -20,7 +21,7 @@ export const MENU_NAV = [
     name: 'Regions',
     label: 'Regiones',
     icon: MapPinIcon,
-    component: HomeScreen,
+    component: RegionsScreen,
   },
   {
     name: 'Dishes',
