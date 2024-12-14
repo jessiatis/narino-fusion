@@ -112,7 +112,7 @@ const DishDetailsScreen = ({ route }: Props) => {
           </View>
 
           {/* CTA mapa */}
-          <View className="w-full px-4">
+          <View className="w-full px-4 mb-6">
             <Text className="text-xl font-medium text-slate-700 mb-2">Sabores con origen</Text>
             <View className="flex-row items-center">
               <Pressable className="w-14 aspect-square border-4 rounded-lg border-white mr-4" onPress={onMap}>
@@ -120,10 +120,26 @@ const DishDetailsScreen = ({ route }: Props) => {
                   className="rounded-md aspect-square"
                   resizeMode="cover"
                   source={{ uri: 'https://raw.githubusercontent.com/gist/hepplerj/2f405df580f66923091ad604ccf2fffc/raw/bc7097cf7a072ce0cbd0c5350db33781529e4618/thumbnail.png' }}
-                  />
+                />
               </Pressable>
               <Text className="flex-grow text-slate-500 text-lg leading-5">Descubre las regiones donde puedes deleitarte con este exquisito plato.</Text>
             </View>
+          </View>
+
+          {/* Botón AR */}
+          <View className="w-full px-4 mb-4">
+            <TouchableOpacity className="bg-primary-600 shadow-lg shadow-primary-600 p-4 rounded-xl flex-row justify-between items-center overflow-hidden" onPress={onAR}>
+              <View>
+                <Text className="flex-grow text-white font-bold text-2xl">¡Servir plato en</Text>
+                <Text className="flex-grow text-white font-medium text-xl">Realidad Aumentada!</Text>
+              </View>
+              <View className="-m-16 -mr-7">
+                <CubeIcon color={COLORS.accent} size={120} />
+              </View>
+              <View className="-m-16 -mr-7 absolute right-9">
+                <CubeIcon color={COLORS.accent} size={80} />
+              </View>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
