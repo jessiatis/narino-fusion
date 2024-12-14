@@ -1,11 +1,11 @@
-import { View, Text, StatusBar, ScrollView, Pressable, Alert } from 'react-native'
+import { View, Text, StatusBar, ScrollView, Pressable, Alert, Image } from 'react-native'
 import React from 'react'
 import { LanguageIcon } from 'react-native-heroicons/outline'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { useNavigation } from '@react-navigation/native'
 import RegionCard from '../components/RegionCard'
 import FoodCarousel from '../components/FoodCarousel'
-import { REGIONS } from '../constants'
+import { COLORS, REGIONS } from '../constants'
 import InputSearch from '../components/InputSearch'
 import { DISHES } from '../mocks/dishes'
 
@@ -14,30 +14,30 @@ export default function HomeScreen() {
   const recommendedFood = DISHES
 
   return (
-    <View className="flex-1 bg-primary-800" style={{ paddingTop: hp(5) }}>
+    <View className="flex-1 bg-primary-800" style={{ paddingTop: hp(4) }}>
       <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
 
       {/* Header */}
       <View
-        className="flex-row justify-between items-center -mb-7 bg-primary-800 fixed z-30"
+        className="flex-row justify-between items-start -mb-7 bg-primary-800 fixed z-30"
         style={{ padding: hp(2), borderBottomLeftRadius: hp(3), borderBottomRightRadius: hp(3) }}
       >
-        <Text
-          className="font-light text-zinc-200 tracking-wider"
-          style={{ fontSize: hp(3) }}
-        >
-          <Text className="text-primary-400 font-bold uppercase">Nariño</Text> Fusión
-        </Text>
+        <Image
+          className="w-24 h-24 -mt-4 -mb-12"
+          resizeMode="contain"
+          alt="Logo SENA"
+          source={{uri: 'https://narinofusion.co/wp-content/uploads/2024/09/Vertical-negativo.png'}}
+        />
         <Pressable
           onPress={() => Alert.alert('[📌 Pendiente]')}
         >
-          <LanguageIcon size={hp(4)} color="#a9bd5f"/>
+          <LanguageIcon size={hp(4)} color={COLORS.accent} />
         </Pressable>
       </View>
 
       <ScrollView
         showsVerticalScrollIndicator={false}
-        className="mt-10"
+        className="pt-16"
       >
         {/* Título */}
         <View
@@ -74,7 +74,7 @@ export default function HomeScreen() {
         </View>
 
         {/* Recomendados */}
-        <View className="bg-gray-50 pb-32">
+        <View className="bg-gray-50 pb-44 -mt-1">
           <View className="flex-row justify-between items-center px-4 mb-3">
             <Text className="text-gray-600 text-2xl font-semibold">
               Recomendados
