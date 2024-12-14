@@ -13,7 +13,6 @@ const DishDetailsScreen = ({ route }: Props) => {
   const { dish } = route!.params
   const navigation = useNavigation()
   const region = REGIONS.find(({id})=> id === dish.regionId)!
-  const lastIngredient = dish.ingredients.pop()
   const onFavorite = () => Alert.alert('[🚩 Pendiente]: Favorito')
   const onImage = (uri: string) => Alert.alert(`[🚩 Pendiente]: Imagen (${uri})`)
   const onMap = () => Alert.alert('[🚩 Pendiente]: MAP')
@@ -73,8 +72,8 @@ const DishDetailsScreen = ({ route }: Props) => {
 
           {/* Título y región */}
           <View className="px-4">
-            <Text className="text-3xl font-bold mb-2 text-slate-700">{dish.dishName}</Text>
-            <View className="flex-row items-center gap-1.5 mb-5">
+            <Text className="text-3xl font-medium mb-2 text-slate-700">{dish.dishName}</Text>
+            <View className="flex-row items-center gap-1.5 mb-4">
               <View className="w-2 h-2 rounded-full aspect-square" style={{backgroundColor: region.color}} />
               <Text className="uppercase text-sm tracking-widest font-semibold opacity-90" style={{color: region.color}}>
                 Región {region.name}
@@ -98,24 +97,33 @@ const DishDetailsScreen = ({ route }: Props) => {
           </View>
 
           {/* Detalles e ingredientes */}
-          <View className="px-4 mb-7">
-            <Text className="text-base text-slate-800 font-light mb-5">{dish.description}</Text>
-            <Text className="text-xl font-semibold text-slate-700 mb-1">Ingredientes</Text>
-            <Text className="text-base text-slate-800 font-light">
-              {`${dish.ingredients.join(', ')} y ${lastIngredient}.`}
-            </Text>
+          <View className="mb-6 px-4">
+            <Text className="text-base text-slate-500 mb-5">{dish.description}</Text>
+            <Text className="text-xl font-medium text-slate-700 mb-2">Ingredientes</Text>
+            <View className="flex-row flex-wrap gap-1.5">
+              {dish.ingredients.map(ingredient => (
+                <View key={ingredient} className="bg-slate-200 border border-slate-300/80 px-4 py-2 rounded-full">
+                  <Text className="text-sm text-slate-700">
+                    {ingredient}
+                  </Text>
+                </View>
+              ))}
+            </View>
           </View>
 
           {/* CTA mapa */}
-          <View className="w-full bg-slate-200/70 px-4 py-7 flex-row items-center">
-            <Pressable className="w-14 aspect-square border-4 rounded-lg border-white mr-4" onPress={onMap}>
-              <Image
-                className="rounded-md aspect-square"
-                resizeMode="cover"
-                source={{ uri: 'https://raw.githubusercontent.com/gist/hepplerj/2f405df580f66923091ad604ccf2fffc/raw/bc7097cf7a072ce0cbd0c5350db33781529e4618/thumbnail.png' }}
-              />
-            </Pressable>
-            <Text className="flex-grow text-slate-700 text-lg leading-5">Descubre las regiones donde puedes deleitarte con este exquisito plato.</Text>
+          <View className="w-full px-4">
+            <Text className="text-xl font-medium text-slate-700 mb-2">Sabores con origen</Text>
+            <View className="flex-row items-center">
+              <Pressable className="w-14 aspect-square border-4 rounded-lg border-white mr-4" onPress={onMap}>
+                <Image
+                  className="rounded-md aspect-square"
+                  resizeMode="cover"
+                  source={{ uri: 'https://raw.githubusercontent.com/gist/hepplerj/2f405df580f66923091ad604ccf2fffc/raw/bc7097cf7a072ce0cbd0c5350db33781529e4618/thumbnail.png' }}
+                  />
+              </Pressable>
+              <Text className="flex-grow text-slate-500 text-lg leading-5">Descubre las regiones donde puedes deleitarte con este exquisito plato.</Text>
+            </View>
           </View>
         </View>
       </ScrollView>
