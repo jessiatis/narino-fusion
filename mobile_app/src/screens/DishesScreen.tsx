@@ -9,7 +9,9 @@ import { useNavigation } from '@react-navigation/native'
 
 export default function DishesScreen() {
   const navigation: any = useNavigation()
-  const filteredDishes = DISHES
+
+  const region = navigation?.getState()?.routes[navigation.getState().index]?.params?.region
+  const filteredDishes = region ? DISHES.filter((dish) => dish.regionId === region) : DISHES
   const regions = REGIONS.map(({name}) => ({label: `Región ${name}`, actived: false}))
   const horizontalFilters = [
     {label: 'Todo', actived: true },
