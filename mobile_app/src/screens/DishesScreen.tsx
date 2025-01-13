@@ -7,6 +7,7 @@ import { DISHES } from '../mocks/dishes'
 import { REGIONS } from '../constants'
 import { useNavigation } from '@react-navigation/native'
 import { DishType } from '../types'
+import { InboxIcon } from 'react-native-heroicons/outline'
 
 const CATEGORY_FILTERS = [
   'Todo',
@@ -115,9 +116,10 @@ export default function DishesScreen() {
           ))}
         </View>
 
-        <View className="pb-28 pt-5">
-          <Text className="text-center text-slate-500">
-            ¡Has llegado al final!
+        <View className="pb-28 pt-5 items-center">
+          {!filteredDishes.length && <InboxIcon color='#64748b' opacity={0.7} size={70} strokeWidth={1} />}
+          <Text className="text-center text-slate-500 text-lg">
+            {filteredDishes.length ? '¡Has llegado al final!' : 'Receta no encontrada.' }
           </Text>
         </View>
       </ScrollView>
