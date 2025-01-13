@@ -9,13 +9,6 @@ import DishesScreen from './src/screens/DishesScreen'
 import DishDetailsScreen from './src/screens/DishDetailsScreen'
 import { MENU_NAV } from './src/constants'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
-import { configureReanimatedLogger, ReanimatedLogLevel } from 'react-native-reanimated'
-
-// Desactivar modo estricto de Reanimated
-configureReanimatedLogger({
-  level: ReanimatedLogLevel.warn,
-  strict: false,
-})
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
