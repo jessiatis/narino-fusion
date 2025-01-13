@@ -31,7 +31,7 @@ export const MENU_NAV = [
   },
   {
     name: 'More',
-    label: 'Más...',
+    label: 'Más',
     icon: EllipsisHorizontalIcon,
     component: MoreScreen,
   },

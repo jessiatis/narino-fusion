@@ -72,7 +72,7 @@ const DishDetailsScreen = ({ route }: Props) => {
 
           {/* Título y región */}
           <View className="px-4">
-            <Text className="text-3xl font-medium mb-2 text-slate-700">{dish.dishName}</Text>
+            <Text className="text-3xl font-medium mb-2 text-slate-700">{dish.name}</Text>
             <View className="flex-row items-center gap-1.5 mb-4">
               <View className="w-2 h-2 rounded-full aspect-square" style={{backgroundColor: region.color}} />
               <Text className="uppercase text-sm tracking-widest font-semibold opacity-90" style={{color: region.color}}>

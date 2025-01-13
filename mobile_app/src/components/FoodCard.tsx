@@ -17,7 +17,7 @@ export interface FoodCardProps extends DishType {
 const FoodCard: React.FC<FoodCardProps> = ({
   backgroundImg,
   regionId,
-  dishName,
+  name: dishName,
   description,
   isFavorite = false,
   minified = false,
