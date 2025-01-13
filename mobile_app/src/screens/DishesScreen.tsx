@@ -16,36 +16,41 @@ const CATEGORY_FILTERS = [
   'No-Favoritos',
 ]
 
+const INITIAL_FILTERS = {
+  category: 'Todo',
+  searchText: ''
+}
+
 export default function DishesScreen() {
   const [filteredDishes, setFilteredDishes] = useState<DishType[]>([])
+  const [filters, setFilters] = useState(INITIAL_FILTERS)
   
   const navigation: any = useNavigation()
   const currentRoute = navigation.getState().index
   const params = navigation?.getState()?.routes[currentRoute]?.params
 
-  const [filters, setFilters] = useState({
-    category: 'Todo',
-    regionId: params?.region ?? null,
-    searchText: params?.dishName ?? ''
-  })
-  
-  // Eliminar los parámetros
   useEffect(() => {
-    if (params?.region) {
-      setFilters(prev => ({...prev, regionId: params.region}))
-    }
-    if (params?.dishName) {
-      setFilters(prev => ({...prev, searchText: params.dishName}))
-    }
-  }, [params])
+    const unsubscribe = navigation.addListener('blur', () => {
+      navigation.setParams({ regionId: null, dishName: null })
+      setFilters(INITIAL_FILTERS)
+    })
+    return unsubscribe
+  }, [navigation])
 
   // Aplicar filtros
   useEffect(() => {
     let filtered = DISHES 
+    
+    // Filtrar por nombre (Parámetro)
+    if (params?.dishName) {
+      console.log({dishName: params.dishName});
+      filtered = filtered.filter(dish => dish.name === params.dishName)
+    }
 
-    // Filtrar por región
-    if (filters.regionId) {
-      filtered = filtered.filter(dish => dish.regionId === filters.regionId)
+    // Filtrar por región (Parámetro)
+    if (params?.regionId) {
+      console.log({regionId: params.regionId});
+      filtered = filtered.filter(dish => dish.regionId === params.regionId)
     }
 
     // Filtrar por texto de búsqueda
@@ -71,7 +76,7 @@ export default function DishesScreen() {
       }
     }
     setFilteredDishes(filtered)
-  }, [filters])
+  }, [filters, params])
 
   return (
     <View className="flex-1 bg-slate-200" style={{ paddingTop: hp(2)}}>
