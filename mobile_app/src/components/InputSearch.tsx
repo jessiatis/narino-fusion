@@ -3,7 +3,7 @@ import React from 'react'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { MagnifyingGlassIcon } from 'react-native-heroicons/outline'
 
-export default function InputSearch() {
+export default function InputSearch({value, onChangeText}: {value: string, onChangeText: (text: string) => void}) {
   return (
     <View
       className="flex-row items-center rounded-full bg-gray-50"
@@ -11,6 +11,8 @@ export default function InputSearch() {
     >
       <TextInput
         className="flex-1 text-base tracking-wider"
+        value={value}
+        onChangeText={onChangeText}
         placeholder={'Buscar plato (Ej: Pan de Maíz)'}
         placeholderTextColor="#9ca3af"
         style={{ fontSize: hp(2.4), marginBottom: hp(0.3), paddingLeft: hp(3) }}

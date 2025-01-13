@@ -1,5 +1,5 @@
 import { View, Text, StatusBar, ScrollView, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import FoodCard from '../components/FoodCard'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import InputSearch from '../components/InputSearch'
@@ -9,9 +9,15 @@ import { useNavigation } from '@react-navigation/native'
 
 export default function DishesScreen() {
   const navigation: any = useNavigation()
+  const [searchText, setSearchText] = useState('')
 
   const region = navigation?.getState()?.routes[navigation.getState().index]?.params?.region
   const filteredDishes = region ? DISHES.filter((dish) => dish.regionId === region) : DISHES
+  const searchFilteredDishes = filteredDishes.filter(dish => 
+    dish.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(
+      searchText.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    )
+  )
   const regions = REGIONS.map(({name}) => ({label: `Región ${name}`, actived: false}))
   const horizontalFilters = [
     {label: 'Todo', actived: true },
@@ -32,7 +38,7 @@ export default function DishesScreen() {
         </Text>
 
         {/* Campo de búsqueda */}
-        <InputSearch />
+        <InputSearch value={searchText} onChangeText={setSearchText} />
 
         {/* Filtros horizontales */}
         <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-5 mb-2 px-3">
@@ -51,7 +57,7 @@ export default function DishesScreen() {
 
         {/* Lista de platos */}
         <View className="gap-y-2 p-3">
-          {filteredDishes.map((dish)=>(
+          {searchFilteredDishes.map((dish)=>(
             <TouchableOpacity key={dish.id} onPress={() => navigation.navigate('DishDetails', { dish })}>
               <FoodCard minified {...dish} />
             </TouchableOpacity>
