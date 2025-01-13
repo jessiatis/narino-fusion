@@ -1,5 +1,5 @@
 import { View, Text, StatusBar, ScrollView, Pressable, Alert, Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { LanguageIcon } from 'react-native-heroicons/outline'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { useNavigation } from '@react-navigation/native'
@@ -8,18 +8,25 @@ import FoodCarousel from '../components/FoodCarousel'
 import { COLORS, REGIONS } from '../constants'
 import InputSearch from '../components/InputSearch'
 import { DISHES } from '../mocks/dishes'
+import LinearGradient from 'react-native-linear-gradient'
 
 export default function HomeScreen() {
+  const [searchText, setSearchText] = useState('')
   const navigation: any = useNavigation()
   const recommendedFood = DISHES
 
   return (
-    <View className="flex-1 bg-primary-800" style={{ paddingTop: hp(4) }}>
+    <LinearGradient 
+      colors={['rgb(43, 45, 10)', 'rgb(133, 141, 12)']}
+      locations={[0.1, 0.9]}
+      className="flex-1 bg-primary-800"
+      style={{ paddingTop: hp(5) }}
+    >
       <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
 
       {/* Header */}
       <View
-        className="flex-row justify-between items-start -mb-7 bg-primary-800 fixed z-30"
+        className="flex-row justify-between items-start -mb-5 bg-primary-800 fixed z-30"
         style={{ padding: hp(2), borderBottomLeftRadius: hp(3), borderBottomRightRadius: hp(3) }}
       >
         <Image
@@ -58,7 +65,7 @@ export default function HomeScreen() {
 
         {/* Campo de búsqueda */}
         <View className="mb-8">
-          <InputSearch />
+          <InputSearch value={searchText} onChangeText={setSearchText} />
         </View>
 
         {/* Regiones */}
@@ -88,6 +95,6 @@ export default function HomeScreen() {
           <FoodCarousel dishes={recommendedFood} />
         </View>
       </ScrollView>
-    </View>
+    </LinearGradient>
   )
 }
