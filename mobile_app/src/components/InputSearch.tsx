@@ -1,7 +1,8 @@
 import { View, TextInput, Pressable, Alert } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { MagnifyingGlassIcon } from 'react-native-heroicons/outline'
+import { useNavigation } from '@react-navigation/native'
 
 interface InputSearchProps {
   value: string
@@ -10,6 +11,15 @@ interface InputSearchProps {
 }
 
 export default function InputSearch({value, onChangeText, onSearch }: InputSearchProps) {
+  const navigation = useNavigation()
+  
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('blur', () => {
+      onChangeText('')
+    })
+    return unsubscribe
+  }, [navigation])
+  
   return (
     <View
       className="flex-row items-center rounded-full bg-gray-50"
