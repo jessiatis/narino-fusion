@@ -23,6 +23,7 @@ export default function TabNavigator () {
           borderTopWidth: 0,
           backgroundColor: '#010101',
         },
+        tabBarHideOnKeyboard: true,
         tabBarActiveTintColor: '#ffffff',
         tabBarInactiveTintColor: '#7a7a7a',
         tabBarIcon: ({ focused, color, size }) => {
