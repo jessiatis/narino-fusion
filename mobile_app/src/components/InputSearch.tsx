@@ -3,7 +3,13 @@ import React from 'react'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { MagnifyingGlassIcon } from 'react-native-heroicons/outline'
 
-export default function InputSearch({value, onChangeText}: {value: string, onChangeText: (text: string) => void}) {
+interface InputSearchProps {
+  value: string
+  onChangeText: (text: string) => void
+  onSearch?: () => void
+}
+
+export default function InputSearch({value, onChangeText, onSearch }: InputSearchProps) {
   return (
     <View
       className="flex-row items-center rounded-full bg-gray-50"
@@ -19,8 +25,8 @@ export default function InputSearch({value, onChangeText}: {value: string, onCha
       />
       <Pressable
         className="bg-slate-200 rounded-full"
-        onPress={() => Alert.alert('[📌Pendiente]')}
         style={{ padding: hp(2) }}
+        onPress={onSearch}
       >
         <MagnifyingGlassIcon size={hp(3.6)} strokeWidth={2.3} color="#555b25" />
       </Pressable>

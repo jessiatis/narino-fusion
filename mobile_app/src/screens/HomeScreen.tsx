@@ -65,7 +65,11 @@ export default function HomeScreen() {
 
         {/* Campo de búsqueda */}
         <View className="mb-8">
-          <InputSearch value={searchText} onChangeText={setSearchText} />
+          <InputSearch 
+            value={searchText} 
+            onChangeText={setSearchText} 
+            onSearch={() => navigation.navigate('Dishes', { dishName: searchText })}
+          />
         </View>
 
         {/* Regiones */}
