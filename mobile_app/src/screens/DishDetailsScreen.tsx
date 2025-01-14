@@ -4,8 +4,9 @@ import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { useNavigation } from '@react-navigation/native'
 import { DishType } from '../types'
 import { ArrowLeftIcon, CubeIcon } from 'react-native-heroicons/outline'
-import { COLORS, REGIONS } from '../constants'
+import { REGIONS } from '../constants/regions'
 import { HeartIcon, MapPinIcon } from 'react-native-heroicons/solid'
+import { COLORS } from '../constants/theme'
 
 type Props = { route?: { params: { dish: DishType }}}
 

@@ -2,9 +2,10 @@ import React from 'react'
 import { View, Text, Image, TouchableOpacity, Alert } from 'react-native'
 import { HeartIcon } from 'react-native-heroicons/solid'
 import { CubeIcon } from 'react-native-heroicons/outline'
-import { COLORS, REGIONS } from '../constants'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { DishType } from '../types'
+import { REGIONS } from '../constants/regions'
+import { COLORS } from '../constants/theme'
 
 export interface FoodCardProps extends DishType {
   minified?: boolean;

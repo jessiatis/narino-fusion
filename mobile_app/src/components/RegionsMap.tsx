@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native'
 import * as React from 'react'
 import { Svg, SvgProps, Path } from 'react-native-svg'
-import { REGIONS } from '../constants'
+import { REGIONS } from '../constants/regions'
 
 export default function RegionsMap (props: SvgProps) {
   const navigation: any = useNavigation()

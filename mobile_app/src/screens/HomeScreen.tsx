@@ -5,10 +5,11 @@ import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { useNavigation } from '@react-navigation/native'
 import RegionCard from '../components/RegionCard'
 import FoodCarousel from '../components/FoodCarousel'
-import { COLORS, REGIONS } from '../constants'
+import { REGIONS } from '../constants/regions'
 import InputSearch from '../components/InputSearch'
 import { DISHES } from '../mocks/dishes'
 import LinearGradient from 'react-native-linear-gradient'
+import { COLORS } from '../constants/theme'
 
 export default function HomeScreen() {
   const [searchText, setSearchText] = useState('')

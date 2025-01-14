@@ -1,4 +1,4 @@
-import { View, TextInput, Pressable, Alert } from 'react-native'
+import { View, TextInput, Pressable } from 'react-native'
 import React, { useEffect } from 'react'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { MagnifyingGlassIcon } from 'react-native-heroicons/outline'

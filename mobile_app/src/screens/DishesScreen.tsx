@@ -4,7 +4,7 @@ import FoodCard from '../components/FoodCard'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import InputSearch from '../components/InputSearch'
 import { DISHES } from '../mocks/dishes'
-import { REGIONS } from '../constants'
+import { REGIONS } from '../constants/regions'
 import { useNavigation } from '@react-navigation/native'
 import { InboxIcon } from 'react-native-heroicons/outline'
 

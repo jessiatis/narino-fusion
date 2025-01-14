@@ -1,4 +1,4 @@
-import { MENU_NAV } from '../constants'
+import { MENU_NAV } from '../constants/menuNav'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Text, View } from 'react-native'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
