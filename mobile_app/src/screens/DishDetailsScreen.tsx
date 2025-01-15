@@ -8,29 +8,40 @@ import { REGIONS } from '../constants/regions'
 import { HeartIcon, MapPinIcon } from 'react-native-heroicons/solid'
 import { COLORS } from '../constants/theme'
 import { useFavorites } from '../context/FavoritesContext'
+import ImageView from 'react-native-image-viewing'
 
 type Props = { route?: { params: { dish: DishType }}}
 
 const DishDetailsScreen = ({ route }: Props) => {
+  const [imageIndex, setImageIndex] = useState(0);
+  const [isImageViewVisible, setIsImageViewVisible] = useState(false);
+
   const { dish } = route!.params
-  const navigation = useNavigation()
-  const region = REGIONS.find(({id})=> id === dish.regionId)!
   const { verifyFavorite, toggleFavorite } = useFavorites()
-  
   const [isFavorite, setIsFavorite] = useState(verifyFavorite(dish.id));
 
+  const navigation = useNavigation()
+  const region = REGIONS.find(({id})=> id === dish.regionId)!
+
+  // Toggle favorito
   const onFavorite = async () => {
     setIsFavorite(prev => !prev)
     await toggleFavorite(dish.id)
   }
-  const onImage = (uri: string) => Alert.alert(`[🚩 Pendiente]: Imagen (${uri})`)
+
+  // Visualizar fotografía
+  const onImage = (index: number) => {
+    setImageIndex(index);
+    setIsImageViewVisible(true);
+  }
+
   const onMap = () => Alert.alert('[🚩 Pendiente]: MAP')
   const onAR = () => Alert.alert('[🚩 Pendiente]: AR')
 
   return (
     <View className="flex-1">
       <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
-
+      
       {/* Imagen de fondo */}
       <View className="w-full absolute inset-0">
         <Image
@@ -97,7 +108,11 @@ const DishDetailsScreen = ({ route }: Props) => {
           <View className="w-full h-40 mb-4">
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {dish.photographs.map((photo, index) => (
-                <Pressable key={index} className={'h-full ml-3 ' + (index === dish.photographs.length - 1 && 'mr-3')} onPress={() => onImage(photo)}>
+                <Pressable 
+                  key={index} 
+                  className={'h-full ml-3 ' + (index === dish.photographs.length - 1 && 'mr-3')} 
+                  onPress={() => onImage(index)}
+                >
                   <Image
                     className="w-60 h-40 rounded-lg"
                     source={{ uri: photo }}
@@ -155,6 +170,17 @@ const DishDetailsScreen = ({ route }: Props) => {
           </View>
         </View>
       </ScrollView>
+
+      {/* Overlay del visualizador */}
+      {isImageViewVisible && <View className='w-full h-full absolute top-0 left-0 bg-black' />}
+
+      {/* Visualizador de fotografías */}
+      <ImageView
+        images={dish.photographs.map(photo => ({ uri: photo }))}
+        imageIndex={imageIndex}
+        visible={isImageViewVisible}
+        onRequestClose={() => setIsImageViewVisible(false)}
+      />
     </View>
   )
 }
