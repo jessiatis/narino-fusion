@@ -14,10 +14,6 @@ const Stack = createStackNavigator()
 export default function App() {
   const [isFirstLaunch, setIsFirstLaunch] = useState<boolean | null>(null)
 
-  useEffect(()=>{
-    SplashScreen.hide()
-  },[])
-
   useEffect(() => {
     const checkFirstLaunch = async () => {
       try {
@@ -30,6 +26,10 @@ export default function App() {
         }
       } catch (error) {
         setIsFirstLaunch(false)
+      } finally {
+        setTimeout(()=>{
+          SplashScreen.hide()
+        }, 300)
       }
     }
     checkFirstLaunch()
