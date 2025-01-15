@@ -2,7 +2,7 @@ export const REGIONS = [
   {
     id: 1,
     name: 'Pacífica',
-    color: '#d5bd1c',
+    color: '#f0c200',
     description: 'Un lugar cálido y lleno de vida, con lluvias que alimentan manglares y selvas tropicales llenas de color y biodiversidad.',
     image: 'https://narinofusion.co/wp-content/uploads/2022/07/menu-heading-background-1.webp',
   },
