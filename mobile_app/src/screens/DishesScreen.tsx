@@ -7,6 +7,7 @@ import { DISHES } from '../mocks/dishes'
 import { REGIONS } from '../constants/regions'
 import { useNavigation } from '@react-navigation/native'
 import { InboxIcon } from 'react-native-heroicons/outline'
+import { useFavorites } from '../context/FavoritesContext'
 
 // Filtros de categoría
 const CATEGORY_FILTERS = [
@@ -29,6 +30,8 @@ export default function DishesScreen() {
   const navigation: any = useNavigation()
   const currentRoute = navigation.getState().index
   const params = navigation?.getState()?.routes[currentRoute]?.params
+  
+  const { favorites } = useFavorites()
   
   // Inicializar el estado con los parámetros
   useEffect(()=>{
@@ -57,13 +60,15 @@ export default function DishesScreen() {
 
   // Filtrar los platos
   const filteredDishes = [...DISHES].filter((dish) => {
+    const isFavorite = favorites.includes(dish.id)
+    const regionName = REGIONS.find(({id}) => id === dish.regionId)?.name ?? ''
     const matchesSearchText = normalizeText(dish.name).includes(normalizeText(searchText))
     const matchesCategory =
       selectedCategory === 'Todo' ||
       selectedCategory === null ||
-      (selectedCategory === 'Favoritos' && dish.isFavorite) ||
-      (selectedCategory === 'No-Favoritos' && !dish.isFavorite) ||
-      (selectedCategory === `Región ${REGIONS.find(({id}) => id === dish.regionId)?.name ?? ''}`)
+      (selectedCategory === 'Favoritos' && isFavorite) ||
+      (selectedCategory === 'No-Favoritos' && !isFavorite) ||
+      (selectedCategory === `Región ${regionName}`)
 
     return matchesSearchText && matchesCategory
   })

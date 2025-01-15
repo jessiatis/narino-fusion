@@ -14,8 +14,7 @@ export const DISHES: DishType[] = [
       'https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg',
       'https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp',
       'https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg',
-    ],
-    isFavorite: false,
+    ]
   },
   {
     id: 2,
@@ -30,8 +29,7 @@ export const DISHES: DishType[] = [
       'https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg',
       'https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg',
       'https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp',
-    ],
-    isFavorite: true,
+    ]
   },
   {
     id: 3,
@@ -46,8 +44,7 @@ export const DISHES: DishType[] = [
       'https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg',
       'https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp',
       'https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg',
-    ],
-    isFavorite: false,
+    ]
   },
   {
     id: 4,
@@ -62,8 +59,7 @@ export const DISHES: DishType[] = [
       'https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg',
       'https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg',
       'https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp',
-    ],
-    isFavorite: true,
+    ]
   },
   {
     id: 5,
@@ -78,7 +74,6 @@ export const DISHES: DishType[] = [
       'https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg',
       'https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp',
       'https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg',
-    ],
-    isFavorite: false,
+    ]
   },
 ]

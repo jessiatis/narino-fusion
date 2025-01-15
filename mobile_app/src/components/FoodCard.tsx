@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, Image, TouchableOpacity, Alert } from 'react-native'
 import { HeartIcon } from 'react-native-heroicons/solid'
 import { CubeIcon } from 'react-native-heroicons/outline'
@@ -6,6 +6,7 @@ import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { DishType } from '../types'
 import { REGIONS } from '../constants/regions'
 import { COLORS } from '../constants/theme'
+import { useFavorites } from '../context/FavoritesContext'
 
 export interface FoodCardProps extends DishType {
   minified?: boolean;
@@ -16,17 +17,25 @@ export interface FoodCardProps extends DishType {
 }
 
 const FoodCard: React.FC<FoodCardProps> = ({
+  id,
   backgroundImg,
   regionId,
   name: dishName,
   description,
-  isFavorite = false,
   minified = false,
-  onFavorite = () => { Alert.alert('[📌 Pendiente: Favorito]') },
   onMap = () => { Alert.alert('[📌 Pendiente: Mapa]') },
   onAR = () => { Alert.alert('[📌 Pendiente: AR]') },
 }) => {
+  const { verifyFavorite, toggleFavorite } = useFavorites()
   const region = REGIONS.find(({id})=> id === regionId)!
+  
+  const [isFavorite, setIsFavorite] = useState(verifyFavorite(id));
+
+  const onFavorite = async () => {
+    setIsFavorite(prev => !prev)
+    await toggleFavorite(id)
+  }
+
   return (
     <View
       className="relative rounded-2xl overflow-hidden shadow-lg bg-white justify-between items-center "
@@ -96,9 +105,12 @@ const FoodCard: React.FC<FoodCardProps> = ({
       </View>
 
       {/* Favorite Button */}
-      <TouchableOpacity className="absolute top-3 right-3 bg-slate-50 p-3 shadow-lg shadow-primary-800 rounded-full" onPress={onFavorite}>
+      <TouchableOpacity 
+        className="absolute top-3 right-3 bg-slate-50 p-3 shadow-lg shadow-primary-800 rounded-full" 
+        onPress={onFavorite}
+      >
         <HeartIcon
-          size={minified ? 20 : 30 }
+          size={minified ? 20 : 30}
           color={COLORS[isFavorite ? 'secondary' : 'primary']}
           opacity={isFavorite ? 1 : 0.5}
         />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Text, View, Image, ScrollView, StatusBar, TouchableOpacity, Alert, Pressable } from 'react-native'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { useNavigation } from '@react-navigation/native'
@@ -7,6 +7,7 @@ import { ArrowLeftIcon, CubeIcon } from 'react-native-heroicons/outline'
 import { REGIONS } from '../constants/regions'
 import { HeartIcon, MapPinIcon } from 'react-native-heroicons/solid'
 import { COLORS } from '../constants/theme'
+import { useFavorites } from '../context/FavoritesContext'
 
 type Props = { route?: { params: { dish: DishType }}}
 
@@ -14,7 +15,14 @@ const DishDetailsScreen = ({ route }: Props) => {
   const { dish } = route!.params
   const navigation = useNavigation()
   const region = REGIONS.find(({id})=> id === dish.regionId)!
-  const onFavorite = () => Alert.alert('[🚩 Pendiente]: Favorito')
+  const { verifyFavorite, toggleFavorite } = useFavorites()
+  
+  const [isFavorite, setIsFavorite] = useState(verifyFavorite(dish.id));
+
+  const onFavorite = async () => {
+    setIsFavorite(prev => !prev)
+    await toggleFavorite(dish.id)
+  }
   const onImage = (uri: string) => Alert.alert(`[🚩 Pendiente]: Imagen (${uri})`)
   const onMap = () => Alert.alert('[🚩 Pendiente]: MAP')
   const onAR = () => Alert.alert('[🚩 Pendiente]: AR')
@@ -46,12 +54,15 @@ const DishDetailsScreen = ({ route }: Props) => {
           </TouchableOpacity>
 
           {/* Botón favorito */}
-          <TouchableOpacity className="w-auto self-end bg-white shadow-lg shadow-primary-800 p-3 rounded-full" onPress={onFavorite}>
+          <TouchableOpacity 
+            className="w-auto self-end bg-white shadow-lg shadow-primary-800 p-3 rounded-full" 
+            onPress={onFavorite}
+          >
             <Text className="aspect-square text-center">
               <HeartIcon
                 size={30}
-                color={COLORS[dish.isFavorite ? 'secondary' : 'primary']}
-                opacity={dish.isFavorite ? 1 : 0.5}
+                color={COLORS[isFavorite ? 'secondary' : 'primary']}
+                opacity={isFavorite ? 1 : 0.5}
               />
             </Text>
           </TouchableOpacity>

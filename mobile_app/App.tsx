@@ -6,6 +6,7 @@ import WelcomeScreen from './src/screens/WelcomeScreen'
 import DishesScreen from './src/screens/DishesScreen'
 import DishDetailsScreen from './src/screens/DishDetailsScreen'
 import TabNavigator from './src/components/TabNavigator'
+import { FavoritesProvider } from './src/context/FavoritesContext'
 
 const Stack = createStackNavigator()
 
@@ -34,13 +35,15 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {isFirstLaunch && <Stack.Screen name="Welcome" component={WelcomeScreen} />}
-        <Stack.Screen name="MainTabs" component={TabNavigator} />
-        <Stack.Screen name="Dishes" component={DishesScreen} />
-        <Stack.Screen name="DishDetails" component={DishDetailsScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <FavoritesProvider>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          {isFirstLaunch && <Stack.Screen name="Welcome" component={WelcomeScreen} />}
+          <Stack.Screen name="MainTabs" component={TabNavigator} />
+          <Stack.Screen name="Dishes" component={DishesScreen} />
+          <Stack.Screen name="DishDetails" component={DishDetailsScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </FavoritesProvider>
   )
 }
