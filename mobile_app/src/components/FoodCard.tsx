@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, Text, Image, TouchableOpacity, Alert } from 'react-native'
 import { HeartIcon } from 'react-native-heroicons/solid'
 import { CubeIcon } from 'react-native-heroicons/outline'
@@ -26,11 +26,16 @@ const FoodCard: React.FC<FoodCardProps> = ({
   onMap = () => { Alert.alert('[📌 Pendiente: Mapa]') },
   onAR = () => { Alert.alert('[📌 Pendiente: AR]') },
 }) => {
+  const [isFavorite, setIsFavorite] = useState(false);
   const { verifyFavorite, toggleFavorite } = useFavorites()
   const region = REGIONS.find(({id})=> id === regionId)!
-  
-  const [isFavorite, setIsFavorite] = useState(verifyFavorite(id));
 
+  // Actualizar el estado favorito
+  useEffect(() => {
+    setIsFavorite(verifyFavorite(id));
+  }, [id, verifyFavorite]);
+
+  // Manejar el cambio de estado favorito
   const onFavorite = async () => {
     setIsFavorite(prev => !prev)
     await toggleFavorite(id)
