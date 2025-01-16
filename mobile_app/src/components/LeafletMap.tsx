@@ -1,9 +1,12 @@
-import React from 'react'
-import { Alert, View } from 'react-native'
+import React, { useCallback, useRef } from 'react'
+import { View } from 'react-native'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import { WebView } from 'react-native-webview'
 import { DISHES } from '../mocks/dishes'
 import { DishType } from '../types'
+import { BottomSheetModal, BottomSheetModalProvider } from '@gorhom/bottom-sheet'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import MapBottomSheet from './MapBottomSheet'
 
 interface MapProps {
   latitude: number
@@ -32,6 +35,9 @@ export default function LeafletMap({
   markerImage
 }: MapProps) {
   
+  const [selectedDish, setSelectedDish] = React.useState<DishType | null>(null);
+  const bottomSheetRef = useRef<BottomSheetModal>(null);
+
   const htmlContent = `
     <!DOCTYPE html>
     <html>
@@ -57,27 +63,39 @@ export default function LeafletMap({
     </html>
   `.trim()
 
+  const handlePresentModalPress = useCallback(() => {
+    bottomSheetRef.current?.present();
+  }, []);
+  
   const onSelectedDish = (dish: DishType) => {
-    Alert.alert(`${dish.name} es el plato seleccionado.`);
+    setSelectedDish(dish);
+    handlePresentModalPress()
   }
 
   return (
-    <View 
-      className='flex-1 overflow-hidden'
-      style={{ height, width }}
-    >
-      <WebView
-        source={{ html: htmlContent }}
-        scrollEnabled={false}
-        onError={(syntheticEvent) => {
-          const { nativeEvent } = syntheticEvent
-          console.warn('WebView error: ', nativeEvent)
-        }}
-        onMessage={(e) => {
-          onSelectedDish(JSON.parse(e.nativeEvent.data))
-        }}
-      />
-    </View>
+    <GestureHandlerRootView>
+      <BottomSheetModalProvider>
+        <View 
+          className='flex-1 overflow-hidden'
+          style={{ height, width }}
+        >
+          <WebView
+            source={{ html: htmlContent }}
+            scrollEnabled={false}
+            onError={(syntheticEvent) => {
+              const { nativeEvent } = syntheticEvent
+              console.warn('WebView error: ', nativeEvent)
+            }}
+            onMessage={(e) => {
+              onSelectedDish(JSON.parse(e.nativeEvent.data))
+            }}
+          />
+
+        </View>
+
+        <MapBottomSheet bottomSheetRef={bottomSheetRef} dish={selectedDish} />
+      </BottomSheetModalProvider>
+    </GestureHandlerRootView>
   )
 }
 
@@ -182,7 +200,7 @@ const getMapScripts = (latitude: number, longitude: number, zoom: number, marker
       circle.addTo(map);
 
       // Centrar el mapa en el marcador seleccionado
-      map.setView([marker.getLatLng().lat - 0.3, marker.getLatLng().lng], ${ZOOM.default});
+      map.setView([marker.getLatLng().lat - 0.2, marker.getLatLng().lng], ${ZOOM.default});
 
       if (dish) {
         window.ReactNativeWebView.postMessage(JSON.stringify(dish));
