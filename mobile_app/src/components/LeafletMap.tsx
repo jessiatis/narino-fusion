@@ -2,6 +2,7 @@ import React from 'react'
 import { View } from 'react-native'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import { WebView } from 'react-native-webview'
+import { DISHES } from '../mocks/dishes'
 
 interface MapProps {
   latitude: number
@@ -12,7 +13,7 @@ interface MapProps {
   width?: number
 }
 
-const SIZE_IMAGE = 50
+const SIZE_IMAGE = 60
 const ZOOM = { default: 9, max: 14, min: 8 }
 const LIMIT_ZONE = { 
   top: '3.1',
@@ -48,6 +49,9 @@ export default function LeafletMap({
             box-shadow: 0 3px 6px rgba(0,0,0,0.3);
             object-fit: cover;
             aspect-ratio: 1;
+          }
+          .custom-marker.opaque {
+            opacity: 0.5;
           }
           .leaflet-marker-icon {
             background: none;
@@ -101,6 +105,23 @@ export default function LeafletMap({
           L.marker([${latitude}, ${longitude}], {
             icon: customIcon
           }).addTo(map);
+
+          // Agregar los otros platos con marcadores opacos
+          const otherDishes = ${JSON.stringify(DISHES)};
+          otherDishes.forEach(dish => {
+            if (dish.location.lat !== ${latitude} || dish.location.long !== ${longitude}) {
+              const opaqueIcon = L.divIcon({
+                html: \`<img src="\${dish.backgroundImg}" class="custom-marker opaque">\`,
+                className: '',
+                iconSize: [50, 50],
+                iconAnchor: [25, 25]
+              });
+              
+              L.marker([dish.location.lat, dish.location.long], {
+                icon: opaqueIcon
+              }).addTo(map);
+            }
+          });
         </script>
       </body>
     </html>
