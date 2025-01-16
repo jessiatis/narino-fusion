@@ -17,10 +17,10 @@ interface MapProps {
 const SIZE_IMAGE = 60
 const ZOOM = { default: 9, max: 14, min: 8 }
 const LIMIT_ZONE = { 
-  top: '3.1',
-  right: '-76.5',
-  bottom: '-0.1',
-  left: '-79.3'
+  top: '3.7',
+  right: '-76.3',
+  bottom: '-0.7',
+  left: '-79.7'
 }
 
 export default function LeafletMap({ 
@@ -180,6 +180,9 @@ const getMapScripts = (latitude: number, longitude: number, zoom: number, marker
       this.currentMarker = marker;
       this.currentCircle = circle;
       circle.addTo(map);
+
+      // Centrar el mapa en el marcador seleccionado
+      map.setView([marker.getLatLng().lat - 0.3, marker.getLatLng().lng], ${ZOOM.default});
 
       if (dish) {
         window.ReactNativeWebView.postMessage(JSON.stringify(dish));
