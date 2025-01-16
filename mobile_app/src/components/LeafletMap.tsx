@@ -13,11 +13,12 @@ interface MapProps {
 }
 
 const SIZE_IMAGE = 50
+const ZOOM = { default: 9, max: 14, min: 8 }
 
 export default function LeafletMap({ 
   latitude, 
   longitude, 
-  zoom = 13,
+  zoom = ZOOM.default,
   height = hp(100),
   width = wp(100),
   markerImage
@@ -52,7 +53,9 @@ export default function LeafletMap({
         <div id="map"></div>
         <script>
           const map = L.map('map', {
-            zoomControl: false
+            zoomControl: false,
+            minZoom: ${ZOOM.min},
+            maxZoom:  ${ZOOM.max}
           }).setView([${latitude}, ${longitude}], ${zoom});
           
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -61,7 +64,7 @@ export default function LeafletMap({
 
           // Agregar controles de zoom en la esquina inferior izquierda
           L.control.zoom({
-            position: 'bottomleft'
+            position: 'bottomright'
           }).addTo(map);
 
           // Crear un círculo con un radio de 5km

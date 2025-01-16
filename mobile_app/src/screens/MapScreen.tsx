@@ -25,7 +25,7 @@ export default function MapScreen({ route }: Props) {
       
       {/* Botón de regreso */}
       <TouchableOpacity
-        className="absolute top-12 left-4 z-50 w-auto self-start p-3 bg-white border-2 border-slate-400/50 shadow-lg shadow-black/70 rounded-full"
+        className="absolute top-12 left-4 z-50 w-auto self-start p-3 bg-white border-2 border-slate-400/30 shadow-lg shadow-black/70 rounded-full"
         onPress={() => navigation.goBack()}
       >
         <ArrowLeftIcon size={24} strokeWidth={1.8} color={COLORS.primary} />
@@ -35,7 +35,6 @@ export default function MapScreen({ route }: Props) {
       <LeafletMap
         latitude={latitude}
         longitude={longitude}
-        zoom={8}
         markerImage={markerImage}
       />
     </View>
