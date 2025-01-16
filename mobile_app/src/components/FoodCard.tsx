@@ -47,7 +47,8 @@ const FoodCard: React.FC<FoodCardProps> = ({
   const onMap = () => {
     navigation.navigate('Map', {
       latitude: lat,
-      longitude: long
+      longitude: long,
+      markerImage: backgroundImg
     })
   }
 

@@ -1,22 +1,26 @@
 import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import { View } from 'react-native'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import { WebView } from 'react-native-webview'
 
 interface MapProps {
   latitude: number
   longitude: number
+  markerImage: string
   zoom?: number
   height?: number
   width?: number
 }
+
+const SIZE_IMAGE = 50
 
 export default function LeafletMap({ 
   latitude, 
   longitude, 
   zoom = 13,
   height = hp(100),
-  width = wp(100)
+  width = wp(100),
+  markerImage
 }: MapProps) {
   
   const htmlContent = `
@@ -29,11 +33,18 @@ export default function LeafletMap({
         <style>
           body { margin: 0; }
           #map { height: 100dvh; }
-          .leaflet-control-zoom {
-            position: fixed;
-            bottom: 20px;
-            right: 10px;
-            z-index: 1000;
+          .custom-marker {
+            width: ${SIZE_IMAGE}px;
+            height: ${SIZE_IMAGE}px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+            object-fit: cover;
+            aspect-ratio: 1;
+          }
+          .leaflet-marker-icon {
+            background: none;
+            border: none;
           }
         </style>
       </head>
@@ -53,8 +64,27 @@ export default function LeafletMap({
             position: 'bottomleft'
           }).addTo(map);
 
-          // Agregar marcador
-          L.marker([${latitude}, ${longitude}]).addTo(map);
+          // Crear un círculo con un radio de 5km
+          const circle = L.circle([${latitude}, ${longitude}], {
+            radius: 5000, // 5000 metros = 5km
+            fillColor: '#3388ff',
+            fillOpacity: 0.2,
+            color: '#3388ff',
+            weight: 2
+          }).addTo(map);
+
+          // Crear un ícono personalizado con la imagen del plato en el centro del círculo
+          const customIcon = L.divIcon({
+            html: \`<img src="${markerImage}" class="custom-marker">\`,
+            className: '',
+            iconSize: [50, 50],
+            iconAnchor: [25, 25]
+          });
+
+          // Agregar marcador personalizado en el centro
+          L.marker([${latitude}, ${longitude}], {
+            icon: customIcon
+          }).addTo(map);
         </script>
       </body>
     </html>

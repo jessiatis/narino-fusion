@@ -39,7 +39,8 @@ const DishDetailsScreen = ({ route }: Props) => {
   const onMap = () => {
     navigation.navigate('Map', {
       latitude: dish.location.lat,
-      longitude: dish.location.long
+      longitude: dish.location.long,
+      markerImage: dish.backgroundImg
     })
   }
 

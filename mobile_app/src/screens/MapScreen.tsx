@@ -10,14 +10,14 @@ type Props = {
     params: {
       latitude: number
       longitude: number
-      title: string
+      markerImage: string
     }
   }
 }
 
 export default function MapScreen({ route }: Props) {
   const navigation = useNavigation()
-  const { latitude, longitude, title } = route!.params
+  const { latitude, longitude, markerImage } = route!.params
 
   return (
     <View className="flex-1">
@@ -36,6 +36,7 @@ export default function MapScreen({ route }: Props) {
         latitude={latitude}
         longitude={longitude}
         zoom={8}
+        markerImage={markerImage}
       />
     </View>
   )
