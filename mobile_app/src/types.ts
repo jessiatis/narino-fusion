@@ -5,6 +5,7 @@ export interface DishType {
   location: { lat: number, long: number };
   regionId: number;
   description: string;
+  details: string;
   ingredients: string[];
   photographs: string[];
 }
