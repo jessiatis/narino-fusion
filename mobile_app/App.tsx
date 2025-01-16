@@ -8,6 +8,7 @@ import DishDetailsScreen from './src/screens/DishDetailsScreen'
 import TabNavigator from './src/components/TabNavigator'
 import { FavoritesProvider } from './src/context/FavoritesContext'
 import SplashScreen from 'react-native-splash-screen'
+import MapScreen from './src/screens/MapScreen'
 
 const Stack = createStackNavigator()
 
@@ -47,6 +48,7 @@ export default function App() {
           <Stack.Screen name="MainTabs" component={TabNavigator} />
           <Stack.Screen name="Dishes" component={DishesScreen} />
           <Stack.Screen name="DishDetails" component={DishDetailsScreen} />
+          <Stack.Screen name="Map" component={MapScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </FavoritesProvider>

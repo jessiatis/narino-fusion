@@ -7,12 +7,12 @@ import { DishType } from '../types'
 import { REGIONS } from '../constants/regions'
 import { COLORS } from '../constants/theme'
 import { useFavorites } from '../context/FavoritesContext'
+import { useNavigation } from '@react-navigation/native'
 
 export interface FoodCardProps extends DishType {
   minified?: boolean;
   className?: string;
   onFavorite?: () => void;
-  onMap?: () => void;
   onAR?: () => void;
 }
 
@@ -22,13 +22,15 @@ const FoodCard: React.FC<FoodCardProps> = ({
   regionId,
   name: dishName,
   description,
+  location: { lat, long },
   minified = false,
-  onMap = () => { Alert.alert('[📌 Pendiente: Mapa]') },
   onAR = () => { Alert.alert('[📌 Pendiente: AR]') },
 }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const { verifyFavorite, toggleFavorite } = useFavorites()
   const region = REGIONS.find(({id})=> id === regionId)!
+
+  const navigation: any = useNavigation()
 
   // Actualizar el estado favorito
   useEffect(() => {
@@ -39,6 +41,14 @@ const FoodCard: React.FC<FoodCardProps> = ({
   const onFavorite = async () => {
     setIsFavorite(prev => !prev)
     await toggleFavorite(id)
+  }
+
+  // Abrir leaflet map
+  const onMap = () => {
+    navigation.navigate('Map', {
+      latitude: lat,
+      longitude: long
+    })
   }
 
   return (

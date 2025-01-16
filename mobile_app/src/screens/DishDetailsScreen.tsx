@@ -20,7 +20,7 @@ const DishDetailsScreen = ({ route }: Props) => {
   const { verifyFavorite, toggleFavorite } = useFavorites()
   const [isFavorite, setIsFavorite] = useState(verifyFavorite(dish.id));
 
-  const navigation = useNavigation()
+  const navigation: any = useNavigation()
   const region = REGIONS.find(({id})=> id === dish.regionId)!
 
   // Toggle favorito
@@ -35,7 +35,14 @@ const DishDetailsScreen = ({ route }: Props) => {
     setIsImageViewVisible(true);
   }
 
-  const onMap = () => Alert.alert('[🚩 Pendiente]: MAP')
+  // Abrir leaflet map
+  const onMap = () => {
+    navigation.navigate('Map', {
+      latitude: dish.location.lat,
+      longitude: dish.location.long
+    })
+  }
+
   const onAR = () => Alert.alert('[🚩 Pendiente]: AR')
 
   return (

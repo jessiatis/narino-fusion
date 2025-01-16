@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, StatusBar, Text, View } from 'react-native'
+import { StatusBar, Text, View } from 'react-native'
 import { heightPercentageToDP, heightPercentageToDP as hp, widthPercentageToDP } from 'react-native-responsive-screen'
 import RegionsMap from '../components/RegionsMap'
 
