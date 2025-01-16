@@ -84,42 +84,77 @@ export default function LeafletMap({
             position: 'bottomright'
           }).addTo(map);
 
-          // Crear un círculo con un radio de 5km
-          const circle = L.circle([${latitude}, ${longitude}], {
-            radius: 5000, // 5000 metros = 5km
-            fillColor: '#3388ff',
-            fillOpacity: 0.2,
-            color: '#3388ff',
-            weight: 2
-          }).addTo(map);
+          let currentCircle = null;
+          let currentMarker = null;
 
-          // Crear un ícono personalizado con la imagen del plato en el centro del círculo
-          const customIcon = L.divIcon({
-            html: \`<img src="${markerImage}" class="custom-marker">\`,
-            className: '',
-            iconSize: [50, 50],
-            iconAnchor: [25, 25]
+          function createCircle(lat, lng) {
+            return L.circle([lat, lng], {
+              radius: 5000,
+              fillColor: '#3388ff',
+              fillOpacity: 0.2,
+              color: '#3388ff',
+              weight: 2
+            });
+          }
+
+          function createMarker(lat, lng, imgSrc, isOpaque = false) {
+            const customIcon = L.divIcon({
+              html: \`<img src="\${imgSrc}" class="custom-marker \${isOpaque ? 'opaque' : ''}">\`,
+              className: '',
+              iconSize: [50, 50],
+              iconAnchor: [25, 25]
+            });
+
+            return L.marker([lat, lng], {
+              icon: customIcon
+            });
+          }
+
+          function selectMarker(marker, circle) {
+            if (currentMarker) {
+              // Hacer opaco el marcador anterior
+              const prevIcon = currentMarker.getIcon();
+              prevIcon.options.html = prevIcon.options.html.replace('custom-marker', 'custom-marker opaque');
+              currentMarker.setIcon(prevIcon);
+            }
+            if (currentCircle) {
+              currentCircle.remove();
+            }
+
+            // Actualizar el marcador seleccionado
+            const newIcon = marker.getIcon();
+            newIcon.options.html = newIcon.options.html.replace('opaque', '');
+            marker.setIcon(newIcon);
+
+            currentMarker = marker;
+            currentCircle = circle;
+            circle.addTo(map);
+          }
+
+          // Crear y seleccionar el marcador inicial
+          const initialCircle = createCircle(${latitude}, ${longitude});
+          const initialMarker = createMarker(${latitude}, ${longitude}, "${markerImage}");
+          initialMarker.addTo(map);
+          
+          // Agregar evento click al marcador inicial
+          initialMarker.on('click', function() {
+            selectMarker(initialMarker, initialCircle);
           });
-
-          // Agregar marcador personalizado en el centro
-          L.marker([${latitude}, ${longitude}], {
-            icon: customIcon
-          }).addTo(map);
+          
+          selectMarker(initialMarker, initialCircle);
 
           // Agregar los otros platos con marcadores opacos
           const otherDishes = ${JSON.stringify(DISHES)};
           otherDishes.forEach(dish => {
             if (dish.location.lat !== ${latitude} || dish.location.long !== ${longitude}) {
-              const opaqueIcon = L.divIcon({
-                html: \`<img src="\${dish.backgroundImg}" class="custom-marker opaque">\`,
-                className: '',
-                iconSize: [50, 50],
-                iconAnchor: [25, 25]
+              const marker = createMarker(dish.location.lat, dish.location.long, dish.backgroundImg, true);
+              const circle = createCircle(dish.location.lat, dish.location.long);
+              
+              marker.on('click', function() {
+                selectMarker(marker, circle);
               });
               
-              L.marker([dish.location.lat, dish.location.long], {
-                icon: opaqueIcon
-              }).addTo(map);
+              marker.addTo(map);
             }
           });
         </script>
