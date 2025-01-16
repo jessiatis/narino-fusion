@@ -33,7 +33,7 @@ export default function WelcomeScreen({navigation}: any) {
           source={{ uri: 'https://narinofusion.co/wp-content/uploads/2024/09/Vertical-negativo.png' }}
           style={{ width: wp(100), height: hp(30), marginBottom: hp(7) }}
         />
-        <Text className="w-80 text-center text-white font-light" style={{fontSize: hp(2.9), lineHeight: hp(4)}}>
+        <Text className="text-center text-white font-light" style={{fontSize: wp(4), lineHeight: hp(4)}}>
           Descubre los sabores auténticos de nuestras regiones, donde cada plato cuenta una historia.
         </Text>
       </View>
@@ -41,7 +41,7 @@ export default function WelcomeScreen({navigation}: any) {
 
       {/* Botón de continuar */}
       <View className="w-full justify-between items-center flex-row p-6">
-        <Text className="text-white text-center font-extralight" style={{fontSize: hp(2.7)}}>
+        <Text className="text-white text-center font-light opacity-70" style={{fontSize: wp(3)}}>
           ¡Esperamos que lo disfrutes!
         </Text>
         <Pressable

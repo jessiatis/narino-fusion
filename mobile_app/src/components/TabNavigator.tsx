@@ -30,11 +30,11 @@ export default function TabNavigator () {
           const { icon: Icon, label } = MENU_NAV.find(({ name }) => name === route.name)!
           const backgroundColor = focused ? '#70811c' : 'transparent'
           return (
-            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <View style={{ width: wp(20),justifyContent: 'center', alignItems: 'center' }}>
               <View style={{ backgroundColor, padding: 10, borderRadius: 25 }}>
                 <Icon color={color} size={size} strokeWidth={1.3} />
               </View>
-              <Text style={{ color, fontSize: hp(1.5), marginTop: 2 }}>{label}</Text>
+              <Text style={{ color, fontSize: wp(2), marginTop: 2 }}>{label}</Text>
             </View>
           )
         },
