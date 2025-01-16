@@ -14,6 +14,12 @@ interface MapProps {
 
 const SIZE_IMAGE = 50
 const ZOOM = { default: 9, max: 14, min: 8 }
+const LIMIT_ZONE = { 
+  top: '3.1',
+  right: '-76.5',
+  bottom: '-0.1',
+  left: '-79.3'
+}
 
 export default function LeafletMap({ 
   latitude, 
@@ -52,10 +58,17 @@ export default function LeafletMap({
       <body>
         <div id="map"></div>
         <script>
+          // Definir los límites de la región de Nariño
+          const northEast = L.latLng(${LIMIT_ZONE.top}, ${LIMIT_ZONE.right});
+          const southWest = L.latLng(${LIMIT_ZONE.bottom}, ${LIMIT_ZONE.left});
+          const bounds = L.latLngBounds(southWest, northEast);
+
           const map = L.map('map', {
             zoomControl: false,
             minZoom: ${ZOOM.min},
-            maxZoom:  ${ZOOM.max}
+            maxZoom: ${ZOOM.max},
+            maxBounds: bounds,
+            maxBoundsViscosity: 1.0 // Hace que el mapa "rebote" al llegar al límite
           }).setView([${latitude}, ${longitude}], ${zoom});
           
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
