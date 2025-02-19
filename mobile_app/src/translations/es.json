@@ -54,5 +54,9 @@
     "yourRightsDescription": "Tienes derecho a acceder, corregir, y eliminar tu información personal. También puedes optar por no recibir comunicaciones de marketing. Para ejercer estos derechos, por favor contáctanos a [correo electrónico de contacto].",
     "changesToPolicy": "7. Cambios en la Política de Privacidad",
     "changesToPolicyDescription": "Podemos actualizar esta Política de Privacidad de vez en cuando. Te notificaremos sobre cualquier cambio significativo y te proporcionaremos la versión actualizada."
+  },
+  "regions": {
+    "title": "Regiones",
+    "description": "Selecciona una región para ver los platos típicos de la zona:"
   }
 }

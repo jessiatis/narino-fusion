@@ -52,5 +52,9 @@
     "securityDescription": "We implement security measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction.",
     "yourRights": "6. Your Rights",
     "yourRightsDescription": "You have the right to access, correct, and delete your personal information. You may also opt out of receiving marketing communications. To exercise these rights, please contact us at [contact email]."
+  },
+  "regions": {
+    "title": "Regions",
+    "description": "Select a region to see the typical dishes of the area:"
   }
 }
