@@ -103,10 +103,10 @@ const FoodCard: React.FC<FoodCardProps> = ({
               Región {region.name}
             </Text>
           </View>
-          <Text className="text-lg font-bold text-primary-900/80" numberOfLines={1} ellipsizeMode="tail">
+          <Text className="w-3/5 text-lg font-bold text-primary-900/80" numberOfLines={1} ellipsizeMode="tail">
             {dishName}
           </Text>
-          <Text className="text-sm text-primary-900/70 -mt-0.5" numberOfLines={1} ellipsizeMode="tail">
+          <Text className="w-3/5 text-sm text-primary-900/70 -mt-0.5" numberOfLines={1} ellipsizeMode="tail">
             {description}
           </Text>
         </View>
