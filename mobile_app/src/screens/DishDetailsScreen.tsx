@@ -9,12 +9,14 @@ import { HeartIcon, MapPinIcon } from 'react-native-heroicons/solid'
 import { COLORS } from '../constants/theme'
 import { useFavorites } from '../context/FavoritesContext'
 import ImageView from 'react-native-image-viewing'
+import { useTranslation } from 'react-i18next'
 
 type Props = { route?: { params: { dish: DishType }}}
 
 const DishDetailsScreen = ({ route }: Props) => {
   const [imageIndex, setImageIndex] = useState(0);
   const [isImageViewVisible, setIsImageViewVisible] = useState(false);
+  const { t } = useTranslation()
 
   const { dish } = route!.params
   const { verifyFavorite, toggleFavorite } = useFavorites()
@@ -107,7 +109,7 @@ const DishDetailsScreen = ({ route }: Props) => {
             <View className="flex-row items-center gap-1.5 mb-4">
               <View className="w-2 h-2 rounded-full aspect-square" style={{backgroundColor: region.color}} />
               <Text className="uppercase text-sm tracking-widest font-semibold opacity-90" style={{color: region.color}}>
-                Región {region.name}
+                {t('dishDetails.region')} {region.name}
               </Text>
             </View>
           </View>
@@ -116,9 +118,9 @@ const DishDetailsScreen = ({ route }: Props) => {
           <View className="w-full h-40 mb-4">
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {dish.photographs.map((photo, index) => (
-                <Pressable 
-                  key={index} 
-                  className={'h-full ml-3 ' + (index === dish.photographs.length - 1 && 'mr-3')} 
+                <Pressable
+                  key={index}
+                  className={'h-full ml-3 ' + (index === dish.photographs.length - 1 && 'mr-3')}
                   onPress={() => onImage(index)}
                 >
                   <Image
@@ -134,7 +136,7 @@ const DishDetailsScreen = ({ route }: Props) => {
           {/* Detalles e ingredientes */}
           <View className="mb-6 px-4">
             <Text className="text-base text-slate-500 mb-5">{dish.description}</Text>
-            <Text className="text-xl font-medium text-slate-700 mb-2">Ingredientes</Text>
+            <Text className="text-xl font-medium text-slate-700 mb-2">{t('dishDetails.ingredients')}</Text>
             <View className="flex-row flex-wrap gap-1.5">
               {dish.ingredients.map(ingredient => (
                 <View key={ingredient} className="bg-slate-200 border border-slate-300/80 px-4 py-2 rounded-full">
@@ -148,7 +150,7 @@ const DishDetailsScreen = ({ route }: Props) => {
 
           {/* CTA mapa */}
           <View className="w-full px-4 mb-6">
-            <Text className="text-xl font-medium text-slate-700 mb-2">Sabores con origen</Text>
+            <Text className="text-xl font-medium text-slate-700 mb-2">{t('dishDetails.originFlavors')}</Text>
             <View className="flex-row items-center">
               <Pressable className="w-14 aspect-square border-4 rounded-lg border-white mr-4" onPress={onMap}>
                 <Image
@@ -157,7 +159,7 @@ const DishDetailsScreen = ({ route }: Props) => {
                   source={{ uri: 'https://raw.githubusercontent.com/gist/hepplerj/2f405df580f66923091ad604ccf2fffc/raw/bc7097cf7a072ce0cbd0c5350db33781529e4618/thumbnail.png' }}
                 />
               </Pressable>
-              <Text className="flex-grow text-slate-500 text-lg leading-5">Descubre las regiones donde puedes deleitarte con este exquisito plato.</Text>
+              <Text className="flex-grow text-slate-500 text-lg leading-5">{t('dishDetails.discoverRegions')}</Text>
             </View>
           </View>
 
@@ -165,8 +167,8 @@ const DishDetailsScreen = ({ route }: Props) => {
           <View className="w-full px-4 mb-4">
             <TouchableOpacity className="bg-primary-600 shadow-lg shadow-primary-600 p-4 rounded-xl flex-row justify-between items-center overflow-hidden" onPress={onAR}>
               <View>
-                <Text className="flex-grow text-white font-bold text-2xl">¡Servir plato en</Text>
-                <Text className="flex-grow text-white font-medium text-xl">Realidad Aumentada!</Text>
+                <Text className="flex-grow text-white font-bold text-2xl">{t('dishDetails.serveInAR')}</Text>
+                <Text className="flex-grow text-white font-medium text-xl">{t('dishDetails.augmentedReality')}</Text>
               </View>
               <View className="-m-16 -mr-7">
                 <CubeIcon color={COLORS.accent} size={120} />

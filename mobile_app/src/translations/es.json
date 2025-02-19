@@ -7,5 +7,13 @@
     ],
     "recommendated": "Recomendados",
     "all": "Ver todo"
+  },
+  "dishDetails": {
+    "region": "Región",
+    "ingredients": "Ingredientes",
+    "originFlavors": "Sabores con origen",
+    "discoverRegions": "Descubre las regiones donde puedes deleitarte con este exquisito plato.",
+    "serveInAR": "¡Servir plato en",
+    "augmentedReality": "Realidad Aumentada!"
   }
 }
