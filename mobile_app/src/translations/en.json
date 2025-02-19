@@ -15,5 +15,10 @@
     "discoverRegions": "Discover the regions where you can enjoy this exquisite dish.",
     "serveInAR": "Serve dish in",
     "augmentedReality": "Augmented Reality!"
+  },
+  "dishes": {
+    "listTitle": "List of dishes",
+    "recipeNotFound": "Recipe not found.",
+    "endOfList": "You've reached the end!"
   }
 }

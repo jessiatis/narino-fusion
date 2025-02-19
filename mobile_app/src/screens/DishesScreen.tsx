@@ -8,14 +8,7 @@ import { REGIONS } from '../constants/regions'
 import { useNavigation } from '@react-navigation/native'
 import { InboxIcon } from 'react-native-heroicons/outline'
 import { useFavorites } from '../context/FavoritesContext'
-
-// Filtros de categoría
-const CATEGORY_FILTERS = [
-  'Todo',
-  'Favoritos',
-  ...REGIONS.map(({ name }) => `Región ${name}`),
-  'No-Favoritos',
-]
+import { useTranslation } from 'react-i18next'
 
 // Normalización de texto para búsqueda
 const normalizeText = (text: string) =>
@@ -24,6 +17,7 @@ const normalizeText = (text: string) =>
 export default function DishesScreen() {
   const [searchText, setSearchText] = useState('')
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const { t } = useTranslation()
 
   const scrollRef = useRef<ScrollView>(null)
 
@@ -32,6 +26,14 @@ export default function DishesScreen() {
   const params = navigation?.getState()?.routes[currentRoute]?.params
   
   const { favorites } = useFavorites()
+
+  // Filtros de categoría
+  const CATEGORY_FILTERS = [
+    t('dishes.categories.all'),
+    t('dishes.categories.favorites'),
+    ...REGIONS.map(({ name }) => `${t('dishes.categories.region')} ${name}`),
+    t('dishes.categories.nonFavorites'),
+  ]
   
   // Inicializar el estado con los parámetros
   useEffect(()=>{
@@ -79,7 +81,7 @@ export default function DishesScreen() {
 
       <ScrollView showsVerticalScrollIndicator={false} className="mt-10">
         <Text className="text-primary-900 font-light text-3xl text-center mb-3 mt-5">
-          Lista de platos
+          {t('dishes.listTitle')}
         </Text>
 
         {/* Campo de búsqueda */}
@@ -135,7 +137,7 @@ export default function DishesScreen() {
             <InboxIcon color="#64748b" opacity={0.7} size={70} strokeWidth={1} />
           )}
           <Text className="text-center text-slate-500 text-lg">
-            {filteredDishes.length ? '¡Has llegado al final!' : 'Receta no encontrada.'}
+            {filteredDishes.length ? t('dishes.endOfList') : t('dishes.recipeNotFound')}
           </Text>
         </View>
       </ScrollView>
