@@ -19,6 +19,23 @@
   "dishes": {
     "listTitle": "Lista de platos",
     "recipeNotFound": "Receta no encontrada.",
-    "endOfList": "¡Has llegado al final!"
+    "endOfList": "¡Has llegado al final!",
+    "categories": {
+      "all": "Todo",
+      "favorites": "Favoritos",
+      "nonFavorites": "No-Favoritos",
+      "region": "Región"
+    }
+  },
+  "more": {
+    "moreContent": "Más contenido en:",
+    "visitWebsite": "Visitar nuestro sitio web",
+    "contactUs": "Contáctanos",
+    "sendComment": "Enviar un comentario",
+    "suggestDish": "Sugerir un plato o un lugar",
+    "rateApp": "Calificar esta app",
+    "shareApp": "Compartir la app",
+    "privacyPolicy": "Política de privacidad",
+    "version": "Versión 1.0.0 -"
   }
 }
