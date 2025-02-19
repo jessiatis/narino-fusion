@@ -9,6 +9,7 @@ import TabNavigator from './src/components/TabNavigator'
 import { FavoritesProvider } from './src/context/FavoritesContext'
 import SplashScreen from 'react-native-splash-screen'
 import MapScreen from './src/screens/MapScreen'
+import PrivacyPoliciesScreen from './src/screens/PrivacyPoliciesScreen'
 
 const Stack = createStackNavigator()
 
@@ -49,6 +50,7 @@ export default function App() {
           <Stack.Screen name="Dishes" component={DishesScreen} />
           <Stack.Screen name="DishDetails" component={DishDetailsScreen} />
           <Stack.Screen name="Map" component={MapScreen} />
+          <Stack.Screen name="PrivatePolicies" component={PrivacyPoliciesScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </FavoritesProvider>
