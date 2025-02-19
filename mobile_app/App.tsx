@@ -18,6 +18,20 @@ const Stack = createStackNavigator()
 export default function App() {
   const [isFirstLaunch, setIsFirstLaunch] = useState<boolean | null>(null)
 
+  // Cargar idioma
+  useEffect(()=>{
+    const translate = async () => {
+      try {
+        const lng = await AsyncStorage.getItem('language')
+        await i18n.changeLanguage(lng || 'es')
+      } catch (error) {
+        console.error('Error changing language:', error);
+      }
+    }
+    translate()
+  }, [])
+
+  // Verificar si es la primera vez que se abre la app
   useEffect(() => {
     const checkFirstLaunch = async () => {
       try {

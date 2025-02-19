@@ -10,12 +10,11 @@ const resources = {
 };
 
 i18n
-.use(initReactI18next)
-.init({
-  debug: true,
-  lng: 'en',
-  fallbackLng: 'en',
-  resources,
-});
+  .use(initReactI18next)
+  .init({
+    lng: 'es',
+    fallbackLng: 'es',
+    resources,
+  });
 
 export default i18n;

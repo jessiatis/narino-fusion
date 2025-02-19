@@ -11,14 +11,20 @@ import { DISHES } from '../mocks/dishes'
 import LinearGradient from 'react-native-linear-gradient'
 import { COLORS } from '../constants/theme'
 import { useTranslation } from 'react-i18next'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function HomeScreen() {
   const [searchText, setSearchText] = useState('')
 
   const navigation: any = useNavigation()
   const { t, i18n } = useTranslation();
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
+  const changeLanguage = async (lng: string) => {
+    try {
+      i18n.changeLanguage(lng);
+      await AsyncStorage.setItem('language', lng);
+    } catch (error) {
+      console.error('Error saving language:', error);
+    }
   };
   
   const recommendedFood = DISHES
