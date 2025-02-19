@@ -37,5 +37,20 @@
     "shareApp": "Share the app",
     "privacyPolicy": "Privacy Policy",
     "version": "Version 1.0.0 -"
+  },
+  "privacyPolicy": {
+    "lastUpdated": "Last updated: February 19, 2025",
+    "introduction": "1. Introduction",
+    "introductionDescription": "At [Company Name], we value your privacy and are committed to protecting your personal information. This Privacy Policy describes how we collect, use, and share your personal information when you use our services.",
+    "informationCollected": "2. Information We Collect",
+    "informationCollectedDescription": "We collect personal information that you provide directly to us, as well as information that we obtain automatically when you use our services. This information may include your name, email address, phone number, and usage data.",
+    "useOfInformation": "3. Use of Information",
+    "useOfInformationDescription": "We use the collected information to provide and improve our services, personalize your experience, and communicate with you about updates and offers. We may also use your information for analytics and security purposes.",
+    "sharingInformation": "4. Sharing Information",
+    "sharingInformationDescription": "We do not share your personal information with third parties without your consent, except when necessary to comply with the law, protect our rights, or provide our services.",
+    "security": "5. Security",
+    "securityDescription": "We implement security measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction.",
+    "yourRights": "6. Your Rights",
+    "yourRightsDescription": "You have the right to access, correct, and delete your personal information. You may also opt out of receiving marketing communications. To exercise these rights, please contact us at [contact email]."
   }
 }

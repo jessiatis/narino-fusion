@@ -37,5 +37,22 @@
     "shareApp": "Compartir la app",
     "privacyPolicy": "Política de privacidad",
     "version": "Versión 1.0.0 -"
+  },
+  "privacyPolicy": {
+    "lastUpdated": "Última actualización: 19 de febrero de 2025",
+    "introduction": "1. Introducción",
+    "introductionDescription": "En [Nombre de la Empresa], valoramos tu privacidad y nos comprometemos a proteger tu información personal. Esta Política de Privacidad describe cómo recopilamos, usamos, y compartimos tu información personal cuando utilizas nuestros servicios.",
+    "informationCollected": "2. Información que Recopilamos",
+    "informationCollectedDescription": "Recopilamos información personal que nos proporcionas directamente, así como información que obtenemos automáticamente cuando utilizas nuestros servicios. Esta información puede incluir tu nombre, dirección de correo electrónico, número de teléfono, y datos de uso.",
+    "useOfInformation": "3. Uso de la Información",
+    "useOfInformationDescription": "Utilizamos la información recopilada para proporcionar y mejorar nuestros servicios, personalizar tu experiencia, y comunicarnos contigo sobre actualizaciones y ofertas. También podemos usar tu información para fines de análisis y seguridad.",
+    "sharingInformation": "4. Compartir Información",
+    "sharingInformationDescription": "No compartimos tu información personal con terceros sin tu consentimiento, excepto cuando sea necesario para cumplir con la ley, proteger nuestros derechos, o proporcionar nuestros servicios.",
+    "security": "5. Seguridad",
+    "securityDescription": "Implementamos medidas de seguridad para proteger tu información personal contra accesos no autorizados, divulgación, alteración, o destrucción.",
+    "yourRights": "6. Tus Derechos",
+    "yourRightsDescription": "Tienes derecho a acceder, corregir, y eliminar tu información personal. También puedes optar por no recibir comunicaciones de marketing. Para ejercer estos derechos, por favor contáctanos a [correo electrónico de contacto].",
+    "changesToPolicy": "7. Cambios en la Política de Privacidad",
+    "changesToPolicyDescription": "Podemos actualizar esta Política de Privacidad de vez en cuando. Te notificaremos sobre cualquier cambio significativo y te proporcionaremos la versión actualizada."
   }
 }
