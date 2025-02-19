@@ -10,6 +10,8 @@ import { FavoritesProvider } from './src/context/FavoritesContext'
 import SplashScreen from 'react-native-splash-screen'
 import MapScreen from './src/screens/MapScreen'
 import PrivacyPoliciesScreen from './src/screens/PrivacyPoliciesScreen'
+import { I18nextProvider } from 'react-i18next'
+import i18n from './src/translations/i18n.config'
 
 const Stack = createStackNavigator()
 
@@ -42,17 +44,19 @@ export default function App() {
   }
 
   return (
-    <FavoritesProvider>
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          {isFirstLaunch && <Stack.Screen name="Welcome" component={WelcomeScreen} />}
-          <Stack.Screen name="MainTabs" component={TabNavigator} />
-          <Stack.Screen name="Dishes" component={DishesScreen} />
-          <Stack.Screen name="DishDetails" component={DishDetailsScreen} />
-          <Stack.Screen name="Map" component={MapScreen} />
-          <Stack.Screen name="PrivatePolicies" component={PrivacyPoliciesScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </FavoritesProvider>
+    <I18nextProvider i18n={i18n}>
+      <FavoritesProvider>
+        <NavigationContainer>
+          <Stack.Navigator screenOptions={{ headerShown: false }}>
+            {isFirstLaunch && <Stack.Screen name="Welcome" component={WelcomeScreen} />}
+            <Stack.Screen name="MainTabs" component={TabNavigator} />
+            <Stack.Screen name="Dishes" component={DishesScreen} />
+            <Stack.Screen name="DishDetails" component={DishDetailsScreen} />
+            <Stack.Screen name="Map" component={MapScreen} />
+            <Stack.Screen name="PrivatePolicies" component={PrivacyPoliciesScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </FavoritesProvider>
+    </I18nextProvider>
   )
 }

@@ -10,10 +10,17 @@ import InputSearch from '../components/InputSearch'
 import { DISHES } from '../mocks/dishes'
 import LinearGradient from 'react-native-linear-gradient'
 import { COLORS } from '../constants/theme'
+import { useTranslation } from 'react-i18next'
 
 export default function HomeScreen() {
   const [searchText, setSearchText] = useState('')
+
   const navigation: any = useNavigation()
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+  
   const recommendedFood = DISHES
 
   return (
@@ -37,7 +44,7 @@ export default function HomeScreen() {
           source={{uri: 'https://narinofusion.co/wp-content/uploads/2024/09/Vertical-negativo.png'}}
         />
         <Pressable
-          onPress={() => Alert.alert('[📌 Pendiente]')}
+          onPress={() => changeLanguage(i18n.language === 'es' ? 'en' : 'es')}
         >
           <LanguageIcon size={hp(4)} color={COLORS.accent} />
         </Pressable>
@@ -56,12 +63,12 @@ export default function HomeScreen() {
             className="text-primary-100 font-light"
             style={{ fontSize: hp(3.6), marginBottom: hp(-1.3) }}
           >
-            Explora nuestra
+            {t('home.title.0')}
           </Text>
           <Text
             className="text-primary-100 font-light"
             style={{ fontSize: hp(3.6) }}
-          ><Text className="text-primary-50 font-semibold">gastronomía cultural</Text> aquí</Text>
+          ><Text className="text-primary-50 font-semibold">{t('home.title.1')}</Text> {t('home.title.2')}</Text>
         </View>
 
         {/* Campo de búsqueda */}
@@ -89,10 +96,10 @@ export default function HomeScreen() {
         <View className="bg-gray-50 pb-44 -mt-1">
           <View className="flex-row justify-between items-center px-4 mb-3">
             <Text className="text-gray-600 text-2xl font-semibold">
-              Recomendados
+              {t('home.recommendated')}
             </Text>
             <Pressable onPress={() => navigation.navigate('Dishes')}>
-              <Text className="text-primary-600">Ver todos</Text>
+              <Text className="text-primary-600">{t('home.all')}</Text>
             </Pressable>
           </View>
 

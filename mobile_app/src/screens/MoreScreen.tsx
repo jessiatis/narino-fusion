@@ -13,7 +13,7 @@ import {
 import { Share } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const DOMAIN = 'narinofusión.co' 
+const DOMAIN = 'narinofusion.co' 
 const PLAY_STORE_APP_ID = 'com.whatsapp' // 🚩 Cambiar por ID de app
 
 export default function MoreScreen() {
