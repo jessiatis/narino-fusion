@@ -3,29 +3,30 @@ import { EllipsisHorizontalIcon, HomeIcon, MapPinIcon, QueueListIcon } from 'rea
 import DishesScreen from '../screens/DishesScreen'
 import MoreScreen from '../screens/MoreScreen'
 import RegionsScreen from '../screens/RegionsScreen'
+import { useTranslation } from 'react-i18next'
 
 export const MENU_NAV = [
   {
     name: 'Home',
-    label: 'Inicio',
+    label: 'menuNav.home',
     icon: HomeIcon,
     component: HomeScreen,
   },
   {
     name: 'Regions',
-    label: 'Regiones',
+    label: 'menuNav.regions',
     icon: MapPinIcon,
     component: RegionsScreen,
   },
   {
     name: 'Dishes',
-    label: 'Lista de platos',
+    label: 'menuNav.dishes',
     icon: QueueListIcon,
     component: DishesScreen,
   },
   {
     name: 'More',
-    label: 'Más',
+    label: 'menuNav.more',
     icon: EllipsisHorizontalIcon,
     component: MoreScreen,
   },

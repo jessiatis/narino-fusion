@@ -3,11 +3,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Text, View } from 'react-native'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import Svg, { Path } from 'react-native-svg'
+import { useTranslation } from 'react-i18next'
 
 const Tab = createBottomTabNavigator()
 
 // Barra de navegación
 export default function TabNavigator () {
+  const { t } = useTranslation()
+
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -34,7 +37,7 @@ export default function TabNavigator () {
               <View style={{ backgroundColor, padding: 10, borderRadius: 25 }}>
                 <Icon color={color} size={size} strokeWidth={1.3} />
               </View>
-              <Text style={{ color, fontSize: wp(2), marginTop: 2 }}>{label}</Text>
+              <Text style={{ color, fontSize: wp(3), marginTop: 2 }}>{t(label)}</Text>
             </View>
           )
         },

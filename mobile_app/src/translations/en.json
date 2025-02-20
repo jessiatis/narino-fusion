@@ -70,5 +70,11 @@
   },
   "regionCard": {
     "region": "Region"
+  },
+  "menuNav": {
+    "home": "Home",
+    "regions": "Regions",
+    "dishes": "Dishes",
+    "more": "More"
   }
 }

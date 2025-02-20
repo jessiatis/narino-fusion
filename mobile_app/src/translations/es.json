@@ -72,5 +72,11 @@
   },
   "regionCard": {
     "region": "Región"
+  },
+  "menuNav": {
+    "home": "Inicio",
+    "regions": "Regiones",
+    "dishes": "Lista de platos",
+    "more": "Más"
   }
 }
