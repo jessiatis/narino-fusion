@@ -25,7 +25,143 @@
       "favorites": "Favorites",
       "nonFavorites": "Non-Favorites",
       "region": "Region"
-    }
+    },
+    "recipes": [
+      {
+        "id": 1,
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
+        "regionId": 1,
+        "name": "Corn Bread",
+        "location": {
+          "lat": 1.804904,
+          "long": -78.770073
+        },
+        "description": "Traditional bread made from corn, characteristic of the Andean trails, notable for its smooth texture and slightly sweet flavor.",
+        "details": "Corn Bread is a delicious traditional bread made from corn, known for its smooth texture and slightly sweet touch. Perfect for accompanying any meal and an icon of the region's culinary traditions.",
+        "ingredients": [
+          "Corn",
+          "Water",
+          "Salt",
+          "Sugar",
+          "Yeast"
+        ],
+        "photographs": [
+          "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
+          "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp",
+          "https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg",
+          "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
+          "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg"
+        ]
+      },
+      {
+        "id": 2,
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp",
+        "regionId": 2,
+        "name": "Egg Arepa",
+        "location": {
+          "lat": 2.479253,
+          "long": -78.107561
+        },
+        "description": "Delicious fried arepa filled with egg, a popular dish on the Atlantic coast, ideal for an energetic breakfast.",
+        "details": "Egg Arepa is an iconic dish of the Atlantic coast, characterized by its fried corn flour dough filled with egg. This delicious delicacy is served hot and widely enjoyed as breakfast or a snack.",
+        "ingredients": [
+          "Corn flour",
+          "Egg",
+          "Water",
+          "Salt",
+          "Oil"
+        ],
+        "photographs": [
+          "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg",
+          "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
+          "https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg",
+          "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
+          "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp"
+        ]
+      },
+      {
+        "id": 3,
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg",
+        "regionId": 3,
+        "name": "Fish Sancocho",
+        "location": {
+          "lat": 0.828582,
+          "long": -77.641990
+        },
+        "description": "Comforting fish soup accompanied by yuca and plantain, typical of coastal regions and highly appreciated in family gatherings.",
+        "details": "Fish Sancocho is a traditional soup that combines fresh fish with yuca, plantain, and various herbs and spices. This comforting dish is known for its robust flavor and is often part of family celebrations in the Pacific region.",
+        "ingredients": [
+          "Fish",
+          "Yuca",
+          "Plantain",
+          "Potato",
+          "Cilantro",
+          "Yam",
+          "Onion",
+          "Garlic"
+        ],
+        "photographs": [
+          "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
+          "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp",
+          "https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg",
+          "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
+          "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg"
+        ]
+      },
+      {
+        "id": 4,
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
+        "regionId": 3,
+        "name": "Grilled Pirarucú",
+        "location": {
+          "lat": 1.916618,
+          "long": -78.058379
+        },
+        "description": "Grilled pirarucú fish, a delicacy of the Amazon known for its juicy meat and unique flavor.",
+        "details": "Grilled Pirarucú is a highlighted dish of the Amazon, prepared with the large pirarucú fish grilled with garlic, lemon, and spices. Its meat is soft yet robust, offering a unique gastronomic experience that reflects the richness of the region.",
+        "ingredients": [
+          "Pirarucú",
+          "Garlic",
+          "Lemon",
+          "Salt",
+          "Pepper",
+          "Oil"
+        ],
+        "photographs": [
+          "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg",
+          "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
+          "https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg",
+          "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
+          "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp"
+        ]
+      },
+      {
+        "id": 5,
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg",
+        "regionId": 1,
+        "name": "Mamona",
+        "location": {
+          "lat": 2.000956,
+          "long": -77.453120
+        },
+        "description": "Marinated grilled beef, a symbol of the plains' gastronomy, ideal for enjoying at parties and gatherings.",
+        "details": "Mamona is a traditional dish made from marinated and grilled beef, known for its intense flavor and tender texture. It is usually accompanied by yuca and salads, becoming a favorite at gatherings and festivities.",
+        "ingredients": [
+          "Beef",
+          "Garlic",
+          "Salt",
+          "Pepper",
+          "Beer"
+        ],
+        "photographs": [
+          "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
+          "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp",
+          "https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg",
+          "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
+          "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg"
+        ]
+      }
+    ]
   },
   "more": {
     "moreContent": "More content in:",

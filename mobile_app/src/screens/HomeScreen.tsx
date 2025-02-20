@@ -7,7 +7,6 @@ import RegionCard from '../components/RegionCard'
 import FoodCarousel from '../components/FoodCarousel'
 import { REGIONS } from '../constants/regions'
 import InputSearch from '../components/InputSearch'
-import { DISHES } from '../mocks/dishes'
 import LinearGradient from 'react-native-linear-gradient'
 import { COLORS } from '../constants/theme'
 import { useTranslation } from 'react-i18next'
@@ -18,6 +17,7 @@ export default function HomeScreen() {
 
   const navigation: any = useNavigation()
   const { t, i18n } = useTranslation();
+  
   const changeLanguage = async (lng: string) => {
     try {
       i18n.changeLanguage(lng);
@@ -27,7 +27,7 @@ export default function HomeScreen() {
     }
   };
   
-  const recommendedFood = DISHES
+  const recommendedFood:any = t('dishes.recipes', { returnObjects: true });
 
   return (
     <LinearGradient 

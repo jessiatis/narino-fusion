@@ -2,11 +2,12 @@ import React, { useCallback, useRef } from 'react'
 import { View } from 'react-native'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import { WebView } from 'react-native-webview'
-import { DISHES } from '../mocks/dishes'
 import { DishType } from '../types'
 import { BottomSheetModal, BottomSheetModalProvider } from '@gorhom/bottom-sheet'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import MapBottomSheet from './MapBottomSheet'
+import { useTranslation } from 'react-i18next'
+import i18next from 'i18next'
 
 interface MapProps {
   latitude: number
@@ -34,95 +35,14 @@ export default function LeafletMap({
   width = wp(100),
   markerImage
 }: MapProps) {
+  const { t } = useTranslation()
   
   const [selectedDish, setSelectedDish] = React.useState<DishType | null>(null);
   const bottomSheetRef = useRef<BottomSheetModal>(null);
-
-  const htmlContent = `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link 
-          rel="stylesheet" 
-          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
-        />
-        <script 
-          src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        ></script>
-        <style>
-          ${mapStyles}
-        </style>
-      </head>
-      <body>
-        <div id="map"></div>
-        <script>
-          ${getMapScripts(latitude, longitude, zoom, markerImage)}
-        </script>
-      </body>
-    </html>
-  `.trim()
-
-  const handlePresentModalPress = useCallback(() => {
-    bottomSheetRef.current?.present();
-  }, []);
   
-  const onSelectedDish = (dish: DishType) => {
-    setSelectedDish(dish);
-    handlePresentModalPress()
-  }
-
-  return (
-    <GestureHandlerRootView>
-      <BottomSheetModalProvider>
-        <View 
-          className='flex-1 overflow-hidden'
-          style={{ height, width }}
-        >
-          <WebView
-            source={{ html: htmlContent }}
-            scrollEnabled={false}
-            onError={(syntheticEvent) => {
-              const { nativeEvent } = syntheticEvent
-              console.warn('WebView error: ', nativeEvent)
-            }}
-            onMessage={(e) => {
-              onSelectedDish(JSON.parse(e.nativeEvent.data))
-            }}
-          />
-
-        </View>
-
-        <MapBottomSheet bottomSheetRef={bottomSheetRef} dish={selectedDish} />
-      </BottomSheetModalProvider>
-    </GestureHandlerRootView>
-  )
-}
-
-
-// Estilos CSS para el mapa
-const mapStyles = /*css*/`
-  body { margin: 0; }
-  #map { height: 100dvh; }
-  .custom-marker {
-    width: ${SIZE_IMAGE}px;
-    height: ${SIZE_IMAGE}px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-    object-fit: cover;
-    aspect-ratio: 1;
-  }
-  .custom-marker.opaque { opacity: 0.5; }
-  .leaflet-marker-icon {
-    background: none;
-    border: none;
-  }
-`
-
-
-// Funciones auxiliares del mapa
-const getMapScripts = (latitude: number, longitude: number, zoom: number, markerImage: string) => /*js*/`
+  const dishes: any = i18next.t('dishes.recipes', { returnObjects: true })
+  // Funciones auxiliares del mapa
+  const getMapScripts = (latitude: number, longitude: number, zoom: number, markerImage: string) => /*js*/`
   // Configuración inicial del mapa
   const setupMap = () => {
     const mapBounds = {
@@ -210,7 +130,7 @@ const getMapScripts = (latitude: number, longitude: number, zoom: number, marker
 
   // Inicialización del mapa y elementos
   const map = setupMap();
-  const initialDish = ${JSON.stringify(DISHES.find(d => d.location.lat === latitude && d.location.long === longitude))};
+  const initialDish = ${JSON.stringify(dishes.find((d: any) => d.location.lat === latitude && d.location.long === longitude))};
   const initialElements = {
     circle: createMapElements.circle(${latitude}, ${longitude}),
     marker: createMapElements.marker(${latitude}, ${longitude}, "${markerImage}", false, initialDish?.id)
@@ -222,8 +142,8 @@ const getMapScripts = (latitude: number, longitude: number, zoom: number, marker
   );
   markerManager.select(initialElements.marker, initialElements.circle);
 
-  // Agregar marcadores adicionales
-  const otherDishes = ${JSON.stringify(DISHES)};
+  // Agregar marcadores adicionalet('dishes.recipes', { returnObject: true })
+  const otherDishes = ${JSON.stringify(t('dishes.recipes', { returnObject: true }))};
   otherDishes.forEach(dish => {
     const isDifferentLocation = dish.location.lat !== ${latitude} || dish.location.long !== ${longitude};
     
@@ -245,4 +165,87 @@ const getMapScripts = (latitude: number, longitude: number, zoom: number, marker
       additionalElements.marker.addTo(map);
     }
   });
+  `
+  
+  const htmlContent = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link 
+          rel="stylesheet" 
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+        />
+        <script 
+          src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        ></script>
+        <style>
+          ${mapStyles}
+        </style>
+      </head>
+      <body>
+        <div id="map"></div>
+        <script>
+          ${getMapScripts(latitude, longitude, zoom, markerImage)}
+        </script>
+      </body>
+    </html>
+  `.trim()
+
+  const handlePresentModalPress = useCallback(() => {
+    bottomSheetRef.current?.present();
+  }, []);
+  
+  const onSelectedDish = (dish: DishType) => {
+    setSelectedDish(dish);
+    handlePresentModalPress()
+  }
+
+  return (
+    <GestureHandlerRootView>
+      <BottomSheetModalProvider>
+        <View 
+          className='flex-1 overflow-hidden'
+          style={{ height, width }}
+        >
+          <WebView
+            source={{ html: htmlContent }}
+            scrollEnabled={false}
+            onError={(syntheticEvent) => {
+              const { nativeEvent } = syntheticEvent
+              console.warn('WebView error: ', nativeEvent)
+            }}
+            onMessage={(e) => {
+              onSelectedDish(JSON.parse(e.nativeEvent.data))
+            }}
+          />
+
+        </View>
+
+        <MapBottomSheet bottomSheetRef={bottomSheetRef} dish={selectedDish} />
+      </BottomSheetModalProvider>
+    </GestureHandlerRootView>
+  )
+}
+
+
+// Estilos CSS para el mapa
+const mapStyles = /*css*/`
+  body { margin: 0; }
+  #map { height: 100dvh; }
+  .custom-marker {
+    width: ${SIZE_IMAGE}px;
+    height: ${SIZE_IMAGE}px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    object-fit: cover;
+    aspect-ratio: 1;
+  }
+  .custom-marker.opaque { opacity: 0.5; }
+  .leaflet-marker-icon {
+    background: none;
+    border: none;
+  }
 `
+

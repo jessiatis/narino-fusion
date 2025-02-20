@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import FoodCard from '../components/FoodCard'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import InputSearch from '../components/InputSearch'
-import { DISHES } from '../mocks/dishes'
 import { REGIONS } from '../constants/regions'
 import { useNavigation } from '@react-navigation/native'
 import { InboxIcon } from 'react-native-heroicons/outline'
@@ -62,7 +61,9 @@ export default function DishesScreen() {
   }
 
   // Filtrar los platos
-  const filteredDishes = [...DISHES].filter((dish) => {
+  const dishes:any = t('dishes.recipes', { returnObjects: true })
+  
+  const filteredDishes = [...dishes].filter((dish) => {
     const isFavorite = favorites.includes(dish.id)
     const regionName = REGIONS.find(({id}) => id === dish.regionId)?.name ?? ''
     const matchesSearchText = normalizeText(dish.name).includes(normalizeText(searchText))
