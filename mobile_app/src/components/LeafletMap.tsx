@@ -7,7 +7,6 @@ import { BottomSheetModal, BottomSheetModalProvider } from '@gorhom/bottom-sheet
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import MapBottomSheet from './MapBottomSheet'
 import { useTranslation } from 'react-i18next'
-import i18next from 'i18next'
 
 interface MapProps {
   latitude: number
@@ -39,8 +38,9 @@ export default function LeafletMap({
   
   const [selectedDish, setSelectedDish] = React.useState<DishType | null>(null);
   const bottomSheetRef = useRef<BottomSheetModal>(null);
-  
-  const dishes: any = i18next.t('dishes.recipes', { returnObjects: true })
+
+  const dishes: any = t('dishes.recipes', { returnObjects: true })
+
   // Funciones auxiliares del mapa
   const getMapScripts = (latitude: number, longitude: number, zoom: number, markerImage: string) => /*js*/`
   // Configuración inicial del mapa
@@ -142,8 +142,8 @@ export default function LeafletMap({
   );
   markerManager.select(initialElements.marker, initialElements.circle);
 
-  // Agregar marcadores adicionalet('dishes.recipes', { returnObject: true })
-  const otherDishes = ${JSON.stringify(t('dishes.recipes', { returnObject: true }))};
+  // Agregar marcadores adicionales
+  const otherDishes = ${JSON.stringify(dishes)};
   otherDishes.forEach(dish => {
     const isDifferentLocation = dish.location.lat !== ${latitude} || dish.location.long !== ${longitude};
     
