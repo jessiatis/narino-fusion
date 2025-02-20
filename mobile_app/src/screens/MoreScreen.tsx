@@ -61,10 +61,10 @@ export default function MoreScreen() {
   ];
 
   return (
-    <View className="flex-1 bg-slate-200" style={{ paddingTop: hp(5) }}>
+    <View className="flex-1 bg-slate-200" style={{ paddingTop: hp(4) }}>
       <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
 
-      <ScrollView showsVerticalScrollIndicator={false} className="mt-10">
+      <ScrollView showsVerticalScrollIndicator={false} className="mt-7">
         <Text className="text-primary-800 font-light text-xl pl-4">
           {t('more.moreContent')}
         </Text>
