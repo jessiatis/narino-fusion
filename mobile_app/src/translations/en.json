@@ -62,5 +62,10 @@
   },
   "inputSearch": {
     "placeholder": "Search dish (Ex: Corn Bread)"
+  },
+  "mapBottomSheet": {
+    "region": "Region",
+    "noDishSelected": "No dish selected",
+    "viewDetails": "View details"
   }
 }

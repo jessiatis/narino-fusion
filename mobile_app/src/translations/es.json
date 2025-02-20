@@ -64,5 +64,10 @@
   },
   "inputSearch": {
     "placeholder": "Buscar plato (Ej: Pan de Maíz)"
+  },
+  "mapBottomSheet": {
+    "region": "Región",
+    "noDishSelected": "No se ha seleccionado ningún plato",
+    "viewDetails": "Ver detalles"
   }
 }

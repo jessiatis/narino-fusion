@@ -8,10 +8,11 @@ import { REGIONS } from "../constants/regions";
 import { COLORS } from "../constants/theme";
 import { useFavorites } from "../context/FavoritesContext";
 import { useNavigation } from "@react-navigation/native";
+import { useTranslation } from 'react-i18next'
 
 interface MapBottomSheetProps {
   bottomSheetRef: React.RefObject<BottomSheetModal>
-  dish: DishType | null; 
+  dish: DishType | null;
 }
 
 export default function MapBottomSheet({ dish: selectedDish, bottomSheetRef }: MapBottomSheetProps) {
@@ -21,6 +22,7 @@ export default function MapBottomSheet({ dish: selectedDish, bottomSheetRef }: M
 
   const navigation: any = useNavigation()
   const { verifyFavorite, toggleFavorite } = useFavorites()
+  const { t } = useTranslation()
 
   const region = REGIONS.find(region => region.id === dish?.regionId)
 
@@ -79,7 +81,7 @@ export default function MapBottomSheet({ dish: selectedDish, bottomSheetRef }: M
 
                 }}
               />
-              
+
               {/* Information Box */}
               <View
                 className="bottom-0 left-0 right-0 bg-white p-4 rounded-lg shadow-md flex-row justify-between items-center"
@@ -97,22 +99,22 @@ export default function MapBottomSheet({ dish: selectedDish, bottomSheetRef }: M
 
 
                     <Text className="uppercase text-xs tracking-widest font-semibold opacity-90" style={{color: region?.color}}>
-                      Región {region?.name}
+                      {t('mapBottomSheet.region')} {region?.name}
                     </Text>
 
                   </View>
                   <Text className="text-lg font-bold text-primary-900/80" numberOfLines={1} ellipsizeMode="tail" style={{width: widthPercentageToDP(50)}}>
-                    {dish.name} 
+                    {dish.name}
                   </Text>
                   <Text className="text-sm text-primary-900/70 -mt-0.5" numberOfLines={2} ellipsizeMode="tail" style={{width: widthPercentageToDP(50)}}>
                     {dish.description}
                   </Text>
                 </View>
               </View>
-        
+
               {/* Favorite Button */}
-              <TouchableOpacity 
-                className="absolute top-3 right-3 bg-slate-50 p-3 shadow-lg shadow-primary-800 rounded-full" 
+              <TouchableOpacity
+                className="absolute top-3 right-3 bg-slate-50 p-3 shadow-lg shadow-primary-800 rounded-full"
                 onPress={onFavorite}
               >
                 <HeartIcon
@@ -122,16 +124,16 @@ export default function MapBottomSheet({ dish: selectedDish, bottomSheetRef }: M
                 />
               </TouchableOpacity>
             </View>
-            
+
             {/* Botones de acción */}
             <View className="flex-row justify-between items-center p-4 pt-0">
               <TouchableOpacity className="flex-1 bg-primary-500 p-2 rounded-md" onPress={() => navigation.navigate('DishDetails', { dish })}>
-                <Text className="text-white text-lg font-semibold text-center">Ver detalles</Text>
+                <Text className="text-white text-lg font-semibold text-center">{t('mapBottomSheet.viewDetails')}</Text>
               </TouchableOpacity>
             </View>
           </>
         ) : (
-          <Text className='text-3xl'>No se ha seleccionado ningun plato</Text>
+          <Text className='text-3xl'>{t('mapBottomSheet.noDishSelected')}</Text>
         )}
       </BottomSheetView>
     </BottomSheetModal>
