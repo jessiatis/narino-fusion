@@ -1,6 +1,6 @@
 import { View, TextInput, Pressable } from 'react-native'
 import React, { useEffect } from 'react'
-import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import { MagnifyingGlassIcon } from 'react-native-heroicons/outline'
 import { useNavigation } from '@react-navigation/native'
 import { useTranslation } from 'react-i18next'
@@ -28,16 +28,16 @@ export default function InputSearch({value, onChangeText, onSearch }: InputSearc
       style={{ marginHorizontal: hp(2), padding: hp(0.4) }}
     >
       <TextInput
-        className="flex-1 text-base tracking-wider"
+        className="flex-1 text-lg tracking-wider text-gray-600"
         value={value}
         onChangeText={onChangeText}
         placeholder={t('inputSearch.placeholder')}
         placeholderTextColor="#9ca3af"
-        style={{ fontSize: hp(2.4), marginBottom: hp(0.3), paddingLeft: hp(3) }}
+        style={{ marginBottom: hp(0.3), paddingLeft: hp(2.3) }}
       />
       <Pressable
         className="bg-slate-200 rounded-full"
-        style={{ padding: hp(2) }}
+        style={{ padding: hp(1.7) }}
         onPress={onSearch}
       >
         <MagnifyingGlassIcon size={hp(3.6)} strokeWidth={2.3} color="#555b25" />
