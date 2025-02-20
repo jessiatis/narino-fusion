@@ -64,7 +64,9 @@ export default function MapBottomSheet({ dish: selectedDish, bottomSheetRef }: M
               style={{
                 width: '100%',
                 height: 'auto',
-                padding: hp(0.7),
+                paddingHorizontal: hp(0.7),
+                paddingTop: hp(0.5),
+                paddingBottom: hp(1),
                 flexDirection: 'row',
               }}
             >
