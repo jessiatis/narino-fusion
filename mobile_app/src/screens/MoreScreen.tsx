@@ -4,8 +4,9 @@ import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import LinkBlock from '../components/LinkBlock';
 import {
   ArrowTopRightOnSquareIcon,
+  ChatBubbleBottomCenterTextIcon,
+  ChatBubbleLeftRightIcon,
   EnvelopeIcon,
-  QuestionMarkCircleIcon,
   ShareIcon,
   ShieldCheckIcon,
   StarIcon,
@@ -15,7 +16,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 
 const DOMAIN = 'narinofusion.co'
-const PLAY_STORE_APP_ID = 'com.whatsapp' // 🚩 Cambiar por ID de app
+const PLAY_STORE_APP_ID = 'com.narino_fusion'
 
 export default function MoreScreen() {
   const navigation: any = useNavigation()
@@ -28,12 +29,12 @@ export default function MoreScreen() {
       action: () => Linking.openURL(`https://www.${DOMAIN}`)
     },
     {
-      icon: QuestionMarkCircleIcon,
+      icon: ChatBubbleLeftRightIcon,
       label: t('more.contactUs'),
       action: () => Linking.openURL(`https://${DOMAIN}/contacto`)
     },
     {
-      icon: EnvelopeIcon,
+      icon: ChatBubbleBottomCenterTextIcon,
       label: t('more.sendComment'),
       action: () => Linking.openURL(`mailto:info@${DOMAIN}?subject=Comentarios%20sobre%20la%20app`)
     },
@@ -69,7 +70,7 @@ export default function MoreScreen() {
         </Text>
 
         {/* Links */}
-        <View className="p-4 pl-6 gap-y-2 mb-4">
+        <View className="p-4 pl-6 gap-y-2">
           {LINKS.map(({ icon: Icon, label, action }, i) => (
             <TouchableOpacity key={i} onPress={action}>
               <LinkBlock icon={Icon} label={label} />
@@ -94,7 +95,7 @@ export default function MoreScreen() {
         </View>
 
         {/* Versión */}
-        <View className="pb-28 pt-5">
+        <View className="pb-28 pt-4">
           <Text className="text-center text-slate-500">
             {t('more.version')} {new Date().getFullYear()}
           </Text>
