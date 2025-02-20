@@ -99,7 +99,7 @@ export default function MapBottomSheet({ dish: selectedDish, bottomSheetRef }: M
 
 
                     <Text className="uppercase text-xs tracking-widest font-semibold opacity-90" style={{color: region?.color}}>
-                      {t('mapBottomSheet.region')} {region?.name}
+                      {region?.name && t(region.name)}
                     </Text>
 
                   </View>

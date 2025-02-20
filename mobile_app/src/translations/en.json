@@ -55,7 +55,19 @@
   },
   "regions": {
     "title": "Regions",
-    "description": "Select a region to see the typical dishes of the area:"
+    "description": "Select a region to see the typical dishes of the area:",
+    "pacifica": {
+      "name": "Pacifica region",
+      "description": "A warm and vibrant place, with rains that nourish mangroves and tropical rainforests full of color and biodiversity."
+    },
+    "andina": {
+      "name": "Andina region",
+      "description": "Home to imposing mountains, such as the Galeras volcano, with unique landscapes that combine highlands and deep canyons."
+    },
+    "amazonia": {
+      "name": "Amazonia region",
+      "description": "A magical corner of dense forests and mountains, where the La Cocha lagoon becomes a true paradise."
+    }
   },
   "foodCard": {
     "region": "Region"

@@ -31,9 +31,10 @@ export default function DishesScreen() {
   const CATEGORY_FILTERS = [
     t('dishes.categories.all'),
     t('dishes.categories.favorites'),
-    ...REGIONS.map(({ name }) => `${t('dishes.categories.region')} ${name}`),
+    ...REGIONS.map(({ name }) => t(name)),
     t('dishes.categories.nonFavorites'),
   ]
+
   
   // Inicializar el estado con los parámetros
   useEffect(()=>{
@@ -45,14 +46,14 @@ export default function DishesScreen() {
     if (params?.regionId) {
       const region = REGIONS.find((region) => region.id === params.regionId)
       if (region) {
-        setSelectedCategory(`Región ${region.name}`)
+        setSelectedCategory(region.name)
       }
       navigation.setParams({ regionId: null })
     }
   }, [params])
 
   // Scroll automático al entrar
-  const index = CATEGORY_FILTERS.indexOf(selectedCategory ?? 'Todo')
+  const index = CATEGORY_FILTERS.indexOf(selectedCategory ?? t('dishes.categories.all'))
   if (index >= 0 && scrollRef.current) {
     scrollRef.current.scrollTo({
       x: index * 70,
@@ -66,11 +67,11 @@ export default function DishesScreen() {
     const regionName = REGIONS.find(({id}) => id === dish.regionId)?.name ?? ''
     const matchesSearchText = normalizeText(dish.name).includes(normalizeText(searchText))
     const matchesCategory =
-      selectedCategory === 'Todo' ||
+      selectedCategory === t('dishes.categories.all') ||
       selectedCategory === null ||
-      (selectedCategory === 'Favoritos' && isFavorite) ||
-      (selectedCategory === 'No-Favoritos' && !isFavorite) ||
-      (selectedCategory === `Región ${regionName}`)
+      (selectedCategory === t('dishes.categories.favorites') && isFavorite) ||
+      (selectedCategory === t('dishes.categories.nonFavorites') && !isFavorite) ||
+      (selectedCategory === t(regionName))
 
     return matchesSearchText && matchesCategory
   })

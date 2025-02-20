@@ -57,7 +57,19 @@
   },
   "regions": {
     "title": "Regiones",
-    "description": "Selecciona una región para ver los platos típicos de la zona:"
+    "description": "Selecciona una región para ver los platos típicos de la zona:",
+    "pacifica": {
+      "name": "Región Pacífica",
+      "description": "Un lugar cálido y lleno de vida, con lluvias que alimentan manglares y selvas tropicales llenas de color y biodiversidad."
+    },
+    "andina": {
+      "name": "Región Andina",
+      "description": "El hogar de montañas imponentes, como el volcán Galeras, con paisajes únicos que combinan altiplanos y profundos cañones."
+    },
+    "amazonia": {
+      "name": "Región Amazónica",
+      "description": "Un rincón mágico de bosques espesos y montañas, donde la laguna de La Cocha se convierte en un verdadero paraíso."
+    }
   },
   "foodCard": {
     "region": "Región"

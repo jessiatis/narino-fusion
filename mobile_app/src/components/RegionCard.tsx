@@ -46,7 +46,7 @@ export default function RegionCard({ region }: { region: Region }) {
             className="font-bold text-white"
             style={{ fontSize: hp(2.7) }}
           >
-            {t('regionCard.region')} {region.name}
+            {t(region.name)}
           </Text>
         </View>
         <Text
@@ -56,7 +56,7 @@ export default function RegionCard({ region }: { region: Region }) {
             marginTop: hp(0.5),
           }}
         >
-          {region.description}
+          {t(region.description)}
         </Text>
       </View>
     </Pressable>

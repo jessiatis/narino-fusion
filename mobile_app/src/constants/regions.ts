@@ -1,23 +1,23 @@
 export const REGIONS = [
   {
     id: 1,
-    name: 'Pacífica',
+    name: 'regions.pacifica.name',
     color: '#f0c200',
-    description: 'Un lugar cálido y lleno de vida, con lluvias que alimentan manglares y selvas tropicales llenas de color y biodiversidad.',
+    description: 'regions.pacifica.description',
     image: 'https://narinofusion.co/wp-content/uploads/2022/07/menu-heading-background-1.webp',
   },
   {
     id: 2,
-    name: 'Andina',
+    name: 'regions.andina.name',
     color: '#078930',
-    description: 'El hogar de montañas imponentes, como el volcán Galeras, con paisajes únicos que combinan altiplanos y profundos cañones.',
+    description: 'regions.andina.description',
     image: 'https://narinofusion.co/wp-content/uploads/2022/07/menu-heading-background-2.webp',
   },
   {
     id: 3,
-    name: 'Amazónica',
+    name: 'regions.amazonia.name',
     color: '#ff7f00',
-    description: 'Un rincón mágico de bosques espesos y montañas, donde la laguna de La Cocha se convierte en un verdadero paraíso.',
+    description: 'regions.amazonia.description',
     image: 'https://narinofusion.co/wp-content/uploads/2022/07/menu-heading-background-3.webp',
   },
 ]

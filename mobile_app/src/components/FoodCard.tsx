@@ -102,7 +102,7 @@ const FoodCard: React.FC<FoodCardProps> = ({
           <View className="flex-row items-center gap-1.5 mb-1">
             <View className="w-1.5 h-1.5 rounded-full aspect-square" style={{backgroundColor: region.color}} />
             <Text className="uppercase text-xs tracking-widest font-semibold opacity-90" style={{color: region.color}}>
-              {t('foodCard.region')} {region.name}
+              {t(region.name)}
             </Text>
           </View>
           <Text className="w-3/5 text-lg font-bold text-primary-900/80" numberOfLines={1} ellipsizeMode="tail">
