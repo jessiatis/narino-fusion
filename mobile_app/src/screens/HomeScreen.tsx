@@ -1,5 +1,5 @@
 import { View, Text, StatusBar, ScrollView, Pressable, Image, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { LanguageIcon } from 'react-native-heroicons/outline'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { useNavigation } from '@react-navigation/native'
@@ -14,6 +14,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function HomeScreen() {
   const [searchText, setSearchText] = useState('')
+  const [indexRegion, setIndexRegion] = useState(Math.floor(Math.random() * REGIONS.length))
 
   const navigation: any = useNavigation()
   const { t, i18n } = useTranslation();
@@ -26,6 +27,14 @@ export default function HomeScreen() {
       console.error('Error saving language:', error);
     }
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndexRegion((prevIndex) => (prevIndex + 1) % REGIONS.length);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  },[])
   
   const recommendedFood:any = t('dishes.recipes', { returnObjects: true });
 
@@ -97,7 +106,7 @@ export default function HomeScreen() {
             paddingVertical: hp(3),
           }}
         >
-          <RegionCard region={REGIONS[0]} />
+          <RegionCard region={REGIONS[indexRegion]} />
         </View>
 
         {/* Recomendados */}
