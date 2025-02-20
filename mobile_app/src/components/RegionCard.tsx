@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, Image, Alert, Pressable } from 'react-native'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
+import { useTranslation } from 'react-i18next'
 
 interface Region {
   id: number;
@@ -11,6 +12,8 @@ interface Region {
 }
 
 export default function RegionCard({ region }: { region: Region }) {
+  const { t } = useTranslation()
+
   return (
     <Pressable
       className="w-full flex-col relative -mt-20"
@@ -43,7 +46,7 @@ export default function RegionCard({ region }: { region: Region }) {
             className="font-bold text-white"
             style={{ fontSize: hp(2.7) }}
           >
-            Región {region.name}
+            {t('regionCard.region')} {region.name}
           </Text>
         </View>
         <Text

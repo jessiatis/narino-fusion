@@ -67,5 +67,8 @@
     "region": "Region",
     "noDishSelected": "No dish selected",
     "viewDetails": "View details"
+  },
+  "regionCard": {
+    "region": "Region"
   }
 }

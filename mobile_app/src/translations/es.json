@@ -69,5 +69,8 @@
     "region": "Región",
     "noDishSelected": "No se ha seleccionado ningún plato",
     "viewDetails": "Ver detalles"
+  },
+  "regionCard": {
+    "region": "Región"
   }
 }
