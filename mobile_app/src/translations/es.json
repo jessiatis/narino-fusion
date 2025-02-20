@@ -61,5 +61,8 @@
   },
   "foodCard": {
     "region": "Región"
+  },
+  "inputSearch": {
+    "placeholder": "Buscar plato (Ej: Pan de Maíz)"
   }
 }

@@ -59,5 +59,8 @@
   },
   "foodCard": {
     "region": "Region"
+  },
+  "inputSearch": {
+    "placeholder": "Search dish (Ex: Corn Bread)"
   }
 }

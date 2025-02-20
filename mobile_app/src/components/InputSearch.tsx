@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { MagnifyingGlassIcon } from 'react-native-heroicons/outline'
 import { useNavigation } from '@react-navigation/native'
+import { useTranslation } from 'react-i18next'
 
 interface InputSearchProps {
   value: string
@@ -12,14 +13,15 @@ interface InputSearchProps {
 
 export default function InputSearch({value, onChangeText, onSearch }: InputSearchProps) {
   const navigation = useNavigation()
-  
+  const { t } = useTranslation()
+
   useEffect(() => {
     const unsubscribe = navigation.addListener('blur', () => {
       onChangeText('')
     })
     return unsubscribe
   }, [navigation])
-  
+
   return (
     <View
       className="flex-row items-center rounded-full bg-gray-50"
@@ -29,7 +31,7 @@ export default function InputSearch({value, onChangeText, onSearch }: InputSearc
         className="flex-1 text-base tracking-wider"
         value={value}
         onChangeText={onChangeText}
-        placeholder={'Buscar plato (Ej: Pan de Maíz)'}
+        placeholder={t('inputSearch.placeholder')}
         placeholderTextColor="#9ca3af"
         style={{ fontSize: hp(2.4), marginBottom: hp(0.3), paddingLeft: hp(3) }}
       />
