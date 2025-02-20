@@ -1,0 +1,53 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/3DModels/3DModel.gltf",
+      "sha1": "5b1d5228d0ddbea46641825b50f7e0be73074735"
+    },
+    {
+      "path": "src/assets/3DModels/3DModel_Custom.glb",
+      "sha1": "3956d381f1ff25048d0901147a10028ed9a76411"
+    },
+    {
+      "path": "src/assets/3DModels/3DModel_LowPoly.gltf",
+      "sha1": "a244bf57c33be82897ab612ac8befed92667bd18"
+    },
+    {
+      "path": "src/assets/food/food1.png",
+      "sha1": "2d2bb427e9e5970da6658a2a44193d10f7bcd970"
+    },
+    {
+      "path": "src/assets/food/food2.png",
+      "sha1": "27713ae871080211cc4e8ca6a9751dc8565d18cd"
+    },
+    {
+      "path": "src/assets/food/food3.png",
+      "sha1": "c0f51be3a5114166439c0fafbb308dca239d86da"
+    },
+    {
+      "path": "src/assets/food/food4.png",
+      "sha1": "94811d3bf8e489e374fb75c6cba2e02e00017b5f"
+    },
+    {
+      "path": "src/assets/food/food5.png",
+      "sha1": "2d2bb427e9e5970da6658a2a44193d10f7bcd970"
+    },
+    {
+      "path": "src/assets/food/food6.png",
+      "sha1": "27713ae871080211cc4e8ca6a9751dc8565d18cd"
+    },
+    {
+      "path": "src/assets/food/food7.png",
+      "sha1": "c0f51be3a5114166439c0fafbb308dca239d86da"
+    },
+    {
+      "path": "src/assets/food/food8.png",
+      "sha1": "94811d3bf8e489e374fb75c6cba2e02e00017b5f"
+    },
+    {
+      "path": "src/assets/regions/placeholder.png",
+      "sha1": "68b135892519dadf05217cc45771af75afb51999"
+    }
+  ]
+}

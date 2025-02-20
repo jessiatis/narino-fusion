@@ -14,6 +14,18 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-narino_fusion-narino_fusionTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-narino_fusion-narino_fusionTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		F7E23004FAC7414B9D660682 /* food1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ADB17297D4D4F4992E3A631 /* food1.png */; };
+		B497DD1521D04A9C90E0DC9D /* food2.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA01B4850DB4AB78807F0A7 /* food2.png */; };
+		D0AEA6C190204E4BBB56691D /* food3.png in Resources */ = {isa = PBXBuildFile; fileRef = C0425A16C6494F3FA1F676B7 /* food3.png */; };
+		7DC6549B884C4DE8A6B6E77A /* food4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F745C937C5943E088181415 /* food4.png */; };
+		77056E87AA6C4DA2837145CD /* food5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F29691B21314151A11B7E10 /* food5.png */; };
+		04262F06432440DABACAF425 /* food6.png in Resources */ = {isa = PBXBuildFile; fileRef = 7896AD3C09D749ACA30F687F /* food6.png */; };
+		43685BC3B58542998AA58868 /* food7.png in Resources */ = {isa = PBXBuildFile; fileRef = 8761F93C4B274FB1B7505E71 /* food7.png */; };
+		0FA437EE7F174917A79D2A1E /* food8.png in Resources */ = {isa = PBXBuildFile; fileRef = 734FC016E2634AC89C7563E4 /* food8.png */; };
+		953E7D9E57894E1DB898B3DB /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = B586674F8FC24D26B03E0490 /* placeholder.png */; };
+		BF4D9C5EFF9F4A0FB00DA7B2 /* 3DModel.gltf in Resources */ = {isa = PBXBuildFile; fileRef = 91A23DBE7D5B4E94A58439A4 /* 3DModel.gltf */; };
+		2B09C28C30E24F5FB93517B4 /* 3DModel_Custom.glb in Resources */ = {isa = PBXBuildFile; fileRef = B24304C3D3B54489A8FCB41E /* 3DModel_Custom.glb */; };
+		E9802EBA6DAE42C4AE40A322 /* 3DModel_LowPoly.gltf in Resources */ = {isa = PBXBuildFile; fileRef = 6B1AEAF43D024849885D4886 /* 3DModel_LowPoly.gltf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +57,18 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = narino_fusion/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-narino_fusion-narino_fusionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-narino_fusion-narino_fusionTests.release.xcconfig"; path = "Target Support Files/Pods-narino_fusion-narino_fusionTests/Pods-narino_fusion-narino_fusionTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		7ADB17297D4D4F4992E3A631 /* food1.png */ = {isa = PBXFileReference; name = "food1.png"; path = "../src/assets/food/food1.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FDA01B4850DB4AB78807F0A7 /* food2.png */ = {isa = PBXFileReference; name = "food2.png"; path = "../src/assets/food/food2.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C0425A16C6494F3FA1F676B7 /* food3.png */ = {isa = PBXFileReference; name = "food3.png"; path = "../src/assets/food/food3.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0F745C937C5943E088181415 /* food4.png */ = {isa = PBXFileReference; name = "food4.png"; path = "../src/assets/food/food4.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6F29691B21314151A11B7E10 /* food5.png */ = {isa = PBXFileReference; name = "food5.png"; path = "../src/assets/food/food5.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7896AD3C09D749ACA30F687F /* food6.png */ = {isa = PBXFileReference; name = "food6.png"; path = "../src/assets/food/food6.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8761F93C4B274FB1B7505E71 /* food7.png */ = {isa = PBXFileReference; name = "food7.png"; path = "../src/assets/food/food7.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		734FC016E2634AC89C7563E4 /* food8.png */ = {isa = PBXFileReference; name = "food8.png"; path = "../src/assets/food/food8.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B586674F8FC24D26B03E0490 /* placeholder.png */ = {isa = PBXFileReference; name = "placeholder.png"; path = "../src/assets/regions/placeholder.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		91A23DBE7D5B4E94A58439A4 /* 3DModel.gltf */ = {isa = PBXFileReference; name = "3DModel.gltf"; path = "../src/assets/3DModels/3DModel.gltf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B24304C3D3B54489A8FCB41E /* 3DModel_Custom.glb */ = {isa = PBXFileReference; name = "3DModel_Custom.glb"; path = "../src/assets/3DModels/3DModel_Custom.glb"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6B1AEAF43D024849885D4886 /* 3DModel_LowPoly.gltf */ = {isa = PBXFileReference; name = "3DModel_LowPoly.gltf"; path = "../src/assets/3DModels/3DModel_LowPoly.gltf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +148,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				A2977C290CD74372891C1232 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -149,6 +174,26 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		A2977C290CD74372891C1232 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				7ADB17297D4D4F4992E3A631 /* food1.png */,
+				FDA01B4850DB4AB78807F0A7 /* food2.png */,
+				C0425A16C6494F3FA1F676B7 /* food3.png */,
+				0F745C937C5943E088181415 /* food4.png */,
+				6F29691B21314151A11B7E10 /* food5.png */,
+				7896AD3C09D749ACA30F687F /* food6.png */,
+				8761F93C4B274FB1B7505E71 /* food7.png */,
+				734FC016E2634AC89C7563E4 /* food8.png */,
+				B586674F8FC24D26B03E0490 /* placeholder.png */,
+				91A23DBE7D5B4E94A58439A4 /* 3DModel.gltf */,
+				B24304C3D3B54489A8FCB41E /* 3DModel_Custom.glb */,
+				6B1AEAF43D024849885D4886 /* 3DModel_LowPoly.gltf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -245,6 +290,18 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				F7E23004FAC7414B9D660682 /* food1.png in Resources */,
+				B497DD1521D04A9C90E0DC9D /* food2.png in Resources */,
+				D0AEA6C190204E4BBB56691D /* food3.png in Resources */,
+				7DC6549B884C4DE8A6B6E77A /* food4.png in Resources */,
+				77056E87AA6C4DA2837145CD /* food5.png in Resources */,
+				04262F06432440DABACAF425 /* food6.png in Resources */,
+				43685BC3B58542998AA58868 /* food7.png in Resources */,
+				0FA437EE7F174917A79D2A1E /* food8.png in Resources */,
+				953E7D9E57894E1DB898B3DB /* placeholder.png in Resources */,
+				BF4D9C5EFF9F4A0FB00DA7B2 /* 3DModel.gltf in Resources */,
+				2B09C28C30E24F5FB93517B4 /* 3DModel_Custom.glb in Resources */,
+				E9802EBA6DAE42C4AE40A322 /* 3DModel_LowPoly.gltf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

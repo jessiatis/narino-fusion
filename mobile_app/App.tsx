@@ -12,6 +12,7 @@ import MapScreen from './src/screens/MapScreen'
 import PrivacyPoliciesScreen from './src/screens/PrivacyPoliciesScreen'
 import { I18nextProvider } from 'react-i18next'
 import i18n from './src/translations/i18n.config'
+import ARViewerScreen from './src/screens/ARViewerScreen'
 
 const Stack = createStackNavigator()
 
@@ -68,6 +69,7 @@ export default function App() {
             <Stack.Screen name="DishDetails" component={DishDetailsScreen} />
             <Stack.Screen name="Map" component={MapScreen} />
             <Stack.Screen name="PrivatePolicies" component={PrivacyPoliciesScreen} />
+            <Stack.Screen name="ARViewer" component={ARViewerScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </FavoritesProvider>

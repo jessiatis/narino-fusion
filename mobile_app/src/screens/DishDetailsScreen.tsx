@@ -46,8 +46,6 @@ const DishDetailsScreen = ({ route }: Props) => {
     })
   }
 
-  const onAR = () => Alert.alert('[🚩 Pendiente]: AR')
-
   return (
     <View className="flex-1">
       <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
@@ -97,7 +95,10 @@ const DishDetailsScreen = ({ route }: Props) => {
             </TouchableOpacity>
 
             {/* Botón AR */}
-            <TouchableOpacity className="h-auto bg-primary-600 shadow-lg shadow-primary-800 p-3 rounded-full flex-row items-center" onPress={onAR}>
+            <TouchableOpacity 
+              className="h-auto bg-primary-600 shadow-lg shadow-primary-800 p-3 rounded-full flex-row items-center" 
+              onPress={() => navigation.navigate('ARViewer', { dish })}
+            >
               <CubeIcon color={COLORS.accent} size={30} />
               <Text className="font-bold text-xl text-primary-100 ml-1">3D</Text>
             </TouchableOpacity>
@@ -165,7 +166,10 @@ const DishDetailsScreen = ({ route }: Props) => {
 
           {/* Botón AR */}
           <View className="w-full px-4 mb-4">
-            <TouchableOpacity className="bg-primary-600 shadow-lg shadow-primary-600 p-4 rounded-xl flex-row justify-between items-center overflow-hidden" onPress={onAR}>
+            <TouchableOpacity 
+              className="bg-primary-600 shadow-lg shadow-primary-600 p-4 rounded-xl flex-row justify-between items-center overflow-hidden" 
+              onPress={() => navigation.navigate('ARViewer', { dish })}
+            >
               <View>
                 <Text className="flex-grow text-white font-bold text-2xl">{t('dishDetails.serveInAR')}</Text>
                 <Text className="flex-grow text-white font-medium text-xl">{t('dishDetails.augmentedReality')}</Text>

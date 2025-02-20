@@ -118,4 +118,6 @@ dependencies {
     }
 
     implementation project(':react-native-splash-screen')
+    
+    implementation 'com.google.ar:core:1.33.0'
 }

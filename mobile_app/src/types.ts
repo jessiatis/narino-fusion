@@ -8,4 +8,5 @@ export interface DishType {
   details: string;
   ingredients: string[];
   photographs: string[];
+  "3DModel": string;
 }

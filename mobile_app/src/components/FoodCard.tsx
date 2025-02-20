@@ -25,7 +25,7 @@ const FoodCard: React.FC<FoodCardProps> = ({
   description,
   location: { lat, long },
   minified = false,
-  onAR = () => { Alert.alert('[📌 Pendiente: AR]') },
+  ...props
 }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const { verifyFavorite, toggleFavorite } = useFavorites()
@@ -115,7 +115,10 @@ const FoodCard: React.FC<FoodCardProps> = ({
 
         {/* AR Button */}
         {!minified && (
-          <TouchableOpacity className="bg-primary-600 -mr-8 aspect-square border border-primary-800/50 shadow-lg shadow-primary-700 rounded justify-center items-center px-4 ml-4" onPress={onAR}>
+          <TouchableOpacity 
+            className="bg-primary-600 -mr-8 aspect-square border border-primary-800/50 shadow-lg shadow-primary-700 rounded justify-center items-center px-4 ml-4" 
+            onPress={() => navigation.navigate('ARViewer', { dish: props })}
+          >
             <CubeIcon color="#f6ff52" size={30} />
             <Text className="text-[#f6ff52] font-bold">3D</Text>
           </TouchableOpacity>
