@@ -52,7 +52,7 @@
           "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
           "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg"
         ],
-        "3DModel": "3DModel_Custom.glb"
+        "3DModel": "pan_de_maiz.glb"
       },
       {
         "id": 2,
@@ -79,7 +79,7 @@
           "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
           "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp"
         ],
-        "3DModel": "3DModel_LowPoly.gltf"
+        "3DModel": "fruit_tart_1k.glb"
       },
       {
         "id": 3,
@@ -109,7 +109,7 @@
           "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
           "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg"
         ],
-        "3DModel": "3DModel.gltf"
+        "3DModel": "pan_de_maiz.glb"
       },
       {
         "id": 4,
@@ -137,7 +137,7 @@
           "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
           "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp"
         ],
-        "3DModel": "3DModel_Custom.glb"
+        "3DModel": "fruit_tart_1k.glb"
       },
       {
         "id": 5,
@@ -164,7 +164,7 @@
           "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
           "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg"
         ],
-        "3DModel": "3DModel_Custom.glb"
+        "3DModel": "pan_de_maiz.glb"
       }
     ]
   },
