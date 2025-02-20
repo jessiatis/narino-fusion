@@ -6,12 +6,8 @@
       "sha1": "9ab11b23a87e21f4785fe121e6ebb991292ed303"
     },
     {
-      "path": "src/assets/3DModels/paz_de_maiz.glb",
+      "path": "src/assets/3DModels/pan_de_maiz.glb",
       "sha1": "3374c09c4947c09d1688655f0b0e5bf656224490"
-    },
-    {
-      "path": "src/assets/3DModels/ppppan_de_maiz.glb",
-      "sha1": "113b137964ee460b840b6de0714e56c28274ac11"
     },
     {
       "path": "src/assets/food/food1.png",

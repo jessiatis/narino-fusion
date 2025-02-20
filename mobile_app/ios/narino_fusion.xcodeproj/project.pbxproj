@@ -24,8 +24,7 @@
 		0FA437EE7F174917A79D2A1E /* food8.png in Resources */ = {isa = PBXBuildFile; fileRef = 734FC016E2634AC89C7563E4 /* food8.png */; };
 		953E7D9E57894E1DB898B3DB /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = B586674F8FC24D26B03E0490 /* placeholder.png */; };
 		D8DD27B5BBEE4AD1BF874D16 /* fruit_tart_1k.glb in Resources */ = {isa = PBXBuildFile; fileRef = 786274EC860541D1B73FEF64 /* fruit_tart_1k.glb */; };
-		DDFDA7611DB2496EBFEC7DBF /* paz_de_maiz.glb in Resources */ = {isa = PBXBuildFile; fileRef = A301218F47D64845829B7715 /* paz_de_maiz.glb */; };
-		55EBB40F17A34A24B1713850 /* ppppan_de_maiz.glb in Resources */ = {isa = PBXBuildFile; fileRef = FA87A6BF5B764BB3A21007A5 /* ppppan_de_maiz.glb */; };
+		C5152488BA004D71B35264D1 /* pan_de_maiz.glb in Resources */ = {isa = PBXBuildFile; fileRef = 2154E79E1A254D5888067100 /* pan_de_maiz.glb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +66,7 @@
 		734FC016E2634AC89C7563E4 /* food8.png */ = {isa = PBXFileReference; name = "food8.png"; path = "../src/assets/food/food8.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		B586674F8FC24D26B03E0490 /* placeholder.png */ = {isa = PBXFileReference; name = "placeholder.png"; path = "../src/assets/regions/placeholder.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		786274EC860541D1B73FEF64 /* fruit_tart_1k.glb */ = {isa = PBXFileReference; name = "fruit_tart_1k.glb"; path = "../src/assets/3DModels/fruit_tart_1k.glb"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A301218F47D64845829B7715 /* paz_de_maiz.glb */ = {isa = PBXFileReference; name = "paz_de_maiz.glb"; path = "../src/assets/3DModels/paz_de_maiz.glb"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		FA87A6BF5B764BB3A21007A5 /* ppppan_de_maiz.glb */ = {isa = PBXFileReference; name = "ppppan_de_maiz.glb"; path = "../src/assets/3DModels/ppppan_de_maiz.glb"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2154E79E1A254D5888067100 /* pan_de_maiz.glb */ = {isa = PBXFileReference; name = "pan_de_maiz.glb"; path = "../src/assets/3DModels/pan_de_maiz.glb"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,8 +186,7 @@
 				734FC016E2634AC89C7563E4 /* food8.png */,
 				B586674F8FC24D26B03E0490 /* placeholder.png */,
 				786274EC860541D1B73FEF64 /* fruit_tart_1k.glb */,
-				A301218F47D64845829B7715 /* paz_de_maiz.glb */,
-				FA87A6BF5B764BB3A21007A5 /* ppppan_de_maiz.glb */,
+				2154E79E1A254D5888067100 /* pan_de_maiz.glb */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -300,8 +297,7 @@
 				0FA437EE7F174917A79D2A1E /* food8.png in Resources */,
 				953E7D9E57894E1DB898B3DB /* placeholder.png in Resources */,
 				D8DD27B5BBEE4AD1BF874D16 /* fruit_tart_1k.glb in Resources */,
-				DDFDA7611DB2496EBFEC7DBF /* paz_de_maiz.glb in Resources */,
-				55EBB40F17A34A24B1713850 /* ppppan_de_maiz.glb in Resources */,
+				C5152488BA004D71B35264D1 /* pan_de_maiz.glb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
