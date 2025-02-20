@@ -1,4 +1,4 @@
-import { View, Text, StatusBar, ScrollView, Pressable, Alert, Image } from 'react-native'
+import { View, Text, StatusBar, ScrollView, Pressable, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { LanguageIcon } from 'react-native-heroicons/outline'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
@@ -49,11 +49,13 @@ export default function HomeScreen() {
           alt="Logo SENA"
           source={{uri: 'https://narinofusion.co/wp-content/uploads/2024/09/Vertical-negativo.png'}}
         />
-        <Pressable
+        <TouchableOpacity
+          className='flex-row items-center gap-2'
           onPress={() => changeLanguage(i18n.language === 'es' ? 'en' : 'es')}
         >
-          <LanguageIcon size={hp(4)} color={COLORS.accent} />
-        </Pressable>
+          <LanguageIcon size={hp(4)} color={COLORS.accent} /> 
+          <Text className='text-white font-semibold' style={{fontSize: hp(2)}}>{i18n.language === 'es' ? 'EN' : 'ES'}</Text>
+        </TouchableOpacity>
       </View>
 
       <ScrollView
