@@ -45,7 +45,7 @@ export default function DishesScreen() {
     if (params?.regionId) {
       const region = REGIONS.find((region) => region.id === params.regionId)
       if (region) {
-        setSelectedCategory(region.name)
+        setSelectedCategory(t(region.name))
       }
       navigation.setParams({ regionId: null })
     }
