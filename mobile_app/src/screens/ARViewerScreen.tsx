@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Alert, Linking, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { ArViewerView } from 'react-native-ar-viewer';
 import { DishType } from '../types';
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, View, Image, ScrollView, StatusBar, TouchableOpacity, Alert, Pressable } from 'react-native'
+import { Text, View, Image, ScrollView, StatusBar, TouchableOpacity, Pressable } from 'react-native'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { useNavigation } from '@react-navigation/native'
 import { DishType } from '../types'

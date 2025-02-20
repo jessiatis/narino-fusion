@@ -1,7 +1,8 @@
 import React from 'react'
-import { View, Text, Image, Alert, Pressable } from 'react-native'
+import { View, Text, Image, Pressable } from 'react-native'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { useTranslation } from 'react-i18next'
+import { useNavigation } from '@react-navigation/native';
 
 interface Region {
   id: number;
@@ -12,6 +13,7 @@ interface Region {
 }
 
 export default function RegionCard({ region }: { region: Region }) {
+  const navigation: any = useNavigation()
   const { t } = useTranslation()
 
   return (
@@ -28,10 +30,7 @@ export default function RegionCard({ region }: { region: Region }) {
         shadowRadius: 3,
         elevation: 5,
       }}
-      onPress={() => {
-        console.log(region.name)
-        Alert.alert(`Seleccionaste la ${region.name}`)
-      }}
+      onPress={() => navigation.navigate('Dishes', { regionId: region.id })}
     >
       <Image
         className="flex-1"

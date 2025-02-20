@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Alert, Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import { BottomSheetView, BottomSheetModal } from "@gorhom/bottom-sheet";
 import { DishType } from "../types";
 import { heightPercentageToDP as hp, widthPercentageToDP } from "react-native-responsive-screen";
@@ -34,11 +34,6 @@ export default function MapBottomSheet({ dish: selectedDish, bottomSheetRef }: M
       setSnapPoint(null)
     }, 150);
   },[selectedDish])
-
-
-  const onAR = () => {
-    Alert.alert('[📌 Pendiente: Map]')
-  }
 
   // Actualizar el estado favorito
   useEffect(() => {
