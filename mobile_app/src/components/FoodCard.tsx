@@ -8,6 +8,7 @@ import { REGIONS } from '../constants/regions'
 import { COLORS } from '../constants/theme'
 import { useFavorites } from '../context/FavoritesContext'
 import { useNavigation } from '@react-navigation/native'
+import { useTranslation } from 'react-i18next'
 
 export interface FoodCardProps extends DishType {
   minified?: boolean;
@@ -31,6 +32,7 @@ const FoodCard: React.FC<FoodCardProps> = ({
   const region = REGIONS.find(({id})=> id === regionId)!
 
   const navigation: any = useNavigation()
+  const { t } = useTranslation()
 
   // Actualizar el estado favorito
   useEffect(() => {
@@ -100,7 +102,7 @@ const FoodCard: React.FC<FoodCardProps> = ({
           <View className="flex-row items-center gap-1.5 mb-1">
             <View className="w-1.5 h-1.5 rounded-full aspect-square" style={{backgroundColor: region.color}} />
             <Text className="uppercase text-xs tracking-widest font-semibold opacity-90" style={{color: region.color}}>
-              Región {region.name}
+              {t('foodCard.region')} {region.name}
             </Text>
           </View>
           <Text className="w-3/5 text-lg font-bold text-primary-900/80" numberOfLines={1} ellipsizeMode="tail">

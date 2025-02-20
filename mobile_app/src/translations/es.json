@@ -58,5 +58,8 @@
   "regions": {
     "title": "Regiones",
     "description": "Selecciona una región para ver los platos típicos de la zona:"
+  },
+  "foodCard": {
+    "region": "Región"
   }
 }

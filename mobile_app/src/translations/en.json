@@ -56,5 +56,8 @@
   "regions": {
     "title": "Regions",
     "description": "Select a region to see the typical dishes of the area:"
+  },
+  "foodCard": {
+    "region": "Region"
   }
 }
