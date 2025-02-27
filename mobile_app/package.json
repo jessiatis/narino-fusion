@@ -1,6 +1,6 @@
 {
   "name": "narino_fusion",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "npx react-native start --reset-cache",

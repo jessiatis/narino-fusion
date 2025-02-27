@@ -1,4 +1,4 @@
-package com.narino_fusion
+package co.narinofusion
 
 import android.app.Application
 import com.facebook.react.PackageList

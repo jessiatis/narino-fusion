@@ -16,7 +16,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 
 const DOMAIN = 'narinofusion.co'
-const PLAY_STORE_APP_ID = 'com.narino_fusion'
+const PLAY_STORE_APP_ID = 'co.narinofusion'
 
 export default function MoreScreen() {
   const navigation: any = useNavigation()
