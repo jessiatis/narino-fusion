@@ -2,12 +2,32 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/3DModels/fruit_tart_1k.glb",
-      "sha1": "9ab11b23a87e21f4785fe121e6ebb991292ed303"
+      "path": "src/assets/3DModels/cuy_asado.glb",
+      "sha1": "b8aba9990ddc7e0466228c0bc4dc26763ccf4df8"
+    },
+    {
+      "path": "src/assets/3DModels/dulce_de_chilacuan.glb",
+      "sha1": "cbf4ba055e1c318e8e6688d1793e4cd3041506df"
+    },
+    {
+      "path": "src/assets/3DModels/empanadas.glb",
+      "sha1": "3663f79ac432aa294f49416a7c25c9031670b3bc"
+    },
+    {
+      "path": "src/assets/3DModels/frito_pastuso.glb",
+      "sha1": "cdc1fd055e03230a3e825b2cac48ff20d07f3298"
+    },
+    {
+      "path": "src/assets/3DModels/helado_de_paila.glb",
+      "sha1": "0ea0863f9935bb330b22991190ea4d6933578961"
+    },
+    {
+      "path": "src/assets/3DModels/lapingachos.glb",
+      "sha1": "0480576aaac06aef7973944c6cde75ff7865af82"
     },
     {
       "path": "src/assets/3DModels/pan_de_maiz.glb",
-      "sha1": "3374c09c4947c09d1688655f0b0e5bf656224490"
+      "sha1": "222b09a51eca53e3f4b7e13ce4e6f94cc158c008"
     },
     {
       "path": "src/assets/food/food1.png",

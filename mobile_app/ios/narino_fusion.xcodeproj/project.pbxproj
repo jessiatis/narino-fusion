@@ -23,8 +23,13 @@
 		43685BC3B58542998AA58868 /* food7.png in Resources */ = {isa = PBXBuildFile; fileRef = 8761F93C4B274FB1B7505E71 /* food7.png */; };
 		0FA437EE7F174917A79D2A1E /* food8.png in Resources */ = {isa = PBXBuildFile; fileRef = 734FC016E2634AC89C7563E4 /* food8.png */; };
 		953E7D9E57894E1DB898B3DB /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = B586674F8FC24D26B03E0490 /* placeholder.png */; };
-		D8DD27B5BBEE4AD1BF874D16 /* fruit_tart_1k.glb in Resources */ = {isa = PBXBuildFile; fileRef = 786274EC860541D1B73FEF64 /* fruit_tart_1k.glb */; };
-		C5152488BA004D71B35264D1 /* pan_de_maiz.glb in Resources */ = {isa = PBXBuildFile; fileRef = 2154E79E1A254D5888067100 /* pan_de_maiz.glb */; };
+		8A9BF9CD05E1497CAA31FAD6 /* dulce_de_chilacuan.glb in Resources */ = {isa = PBXBuildFile; fileRef = 307F6440F3CA4910969B3B5A /* dulce_de_chilacuan.glb */; };
+		B22D0315444E43AA9BD7B752 /* empanadas.glb in Resources */ = {isa = PBXBuildFile; fileRef = 0D01379DD31E46688E16CBE4 /* empanadas.glb */; };
+		71AF58F4D7A345DE9385F9A6 /* frito_pastuso.glb in Resources */ = {isa = PBXBuildFile; fileRef = CA9CA921BD014593BE0F9C46 /* frito_pastuso.glb */; };
+		210A5970D3794EFB876CF399 /* helado_de_paila.glb in Resources */ = {isa = PBXBuildFile; fileRef = C53549BD05F644E4B4460AEA /* helado_de_paila.glb */; };
+		25CE3990C32D4B9DABC1A6ED /* pan_de_maiz.glb in Resources */ = {isa = PBXBuildFile; fileRef = 81149FB599534D72B50C14DA /* pan_de_maiz.glb */; };
+		C6ED485B1C24459C8D193826 /* cuy_asado.glb in Resources */ = {isa = PBXBuildFile; fileRef = FA4157F075EE4B748975E709 /* cuy_asado.glb */; };
+		E49DEEDFAE034161B8A6B7E3 /* lapingachos.glb in Resources */ = {isa = PBXBuildFile; fileRef = ACDEB9A90CEA405986A6FA8E /* lapingachos.glb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +70,13 @@
 		8761F93C4B274FB1B7505E71 /* food7.png */ = {isa = PBXFileReference; name = "food7.png"; path = "../src/assets/food/food7.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		734FC016E2634AC89C7563E4 /* food8.png */ = {isa = PBXFileReference; name = "food8.png"; path = "../src/assets/food/food8.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		B586674F8FC24D26B03E0490 /* placeholder.png */ = {isa = PBXFileReference; name = "placeholder.png"; path = "../src/assets/regions/placeholder.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		786274EC860541D1B73FEF64 /* fruit_tart_1k.glb */ = {isa = PBXFileReference; name = "fruit_tart_1k.glb"; path = "../src/assets/3DModels/fruit_tart_1k.glb"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2154E79E1A254D5888067100 /* pan_de_maiz.glb */ = {isa = PBXFileReference; name = "pan_de_maiz.glb"; path = "../src/assets/3DModels/pan_de_maiz.glb"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		307F6440F3CA4910969B3B5A /* dulce_de_chilacuan.glb */ = {isa = PBXFileReference; name = "dulce_de_chilacuan.glb"; path = "../src/assets/3DModels/dulce_de_chilacuan.glb"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0D01379DD31E46688E16CBE4 /* empanadas.glb */ = {isa = PBXFileReference; name = "empanadas.glb"; path = "../src/assets/3DModels/empanadas.glb"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CA9CA921BD014593BE0F9C46 /* frito_pastuso.glb */ = {isa = PBXFileReference; name = "frito_pastuso.glb"; path = "../src/assets/3DModels/frito_pastuso.glb"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C53549BD05F644E4B4460AEA /* helado_de_paila.glb */ = {isa = PBXFileReference; name = "helado_de_paila.glb"; path = "../src/assets/3DModels/helado_de_paila.glb"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		81149FB599534D72B50C14DA /* pan_de_maiz.glb */ = {isa = PBXFileReference; name = "pan_de_maiz.glb"; path = "../src/assets/3DModels/pan_de_maiz.glb"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FA4157F075EE4B748975E709 /* cuy_asado.glb */ = {isa = PBXFileReference; name = "cuy_asado.glb"; path = "../src/assets/3DModels/cuy_asado.glb"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ACDEB9A90CEA405986A6FA8E /* lapingachos.glb */ = {isa = PBXFileReference; name = "lapingachos.glb"; path = "../src/assets/3DModels/lapingachos.glb"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,8 +195,13 @@
 				8761F93C4B274FB1B7505E71 /* food7.png */,
 				734FC016E2634AC89C7563E4 /* food8.png */,
 				B586674F8FC24D26B03E0490 /* placeholder.png */,
-				786274EC860541D1B73FEF64 /* fruit_tart_1k.glb */,
-				2154E79E1A254D5888067100 /* pan_de_maiz.glb */,
+				307F6440F3CA4910969B3B5A /* dulce_de_chilacuan.glb */,
+				0D01379DD31E46688E16CBE4 /* empanadas.glb */,
+				CA9CA921BD014593BE0F9C46 /* frito_pastuso.glb */,
+				C53549BD05F644E4B4460AEA /* helado_de_paila.glb */,
+				81149FB599534D72B50C14DA /* pan_de_maiz.glb */,
+				FA4157F075EE4B748975E709 /* cuy_asado.glb */,
+				ACDEB9A90CEA405986A6FA8E /* lapingachos.glb */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -296,8 +311,13 @@
 				43685BC3B58542998AA58868 /* food7.png in Resources */,
 				0FA437EE7F174917A79D2A1E /* food8.png in Resources */,
 				953E7D9E57894E1DB898B3DB /* placeholder.png in Resources */,
-				D8DD27B5BBEE4AD1BF874D16 /* fruit_tart_1k.glb in Resources */,
-				C5152488BA004D71B35264D1 /* pan_de_maiz.glb in Resources */,
+				8A9BF9CD05E1497CAA31FAD6 /* dulce_de_chilacuan.glb in Resources */,
+				B22D0315444E43AA9BD7B752 /* empanadas.glb in Resources */,
+				71AF58F4D7A345DE9385F9A6 /* frito_pastuso.glb in Resources */,
+				210A5970D3794EFB876CF399 /* helado_de_paila.glb in Resources */,
+				25CE3990C32D4B9DABC1A6ED /* pan_de_maiz.glb in Resources */,
+				C6ED485B1C24459C8D193826 /* cuy_asado.glb in Resources */,
+				E49DEEDFAE034161B8A6B7E3 /* lapingachos.glb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
