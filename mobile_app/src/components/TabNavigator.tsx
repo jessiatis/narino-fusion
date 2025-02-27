@@ -37,7 +37,7 @@ export default function TabNavigator () {
               <View style={{ backgroundColor, padding: 10, borderRadius: 25 }}>
                 <Icon color={color} size={size} strokeWidth={1.3} />
               </View>
-              <Text style={{ color, fontSize: wp(3), marginTop: 2 }}>{t(label)}</Text>
+              <Text style={{ color, fontSize: wp(3), marginTop: 2, textAlign: 'center' }}>{t(label)}</Text>
             </View>
           )
         },
