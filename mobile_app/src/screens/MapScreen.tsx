@@ -8,14 +8,14 @@ import { COLORS } from '../constants/theme';
 type Props = {
   route?: {
     params: {
-      locations: Array<{ latitude: number; longitude: number; markerImage: string }>
+      dishId: number
     }
   }
 }
 
 export default function MapScreen({ route }: Props) {
   const navigation = useNavigation();
-  const { locations } = route!.params;
+  const { dishId } = route!.params;
 
   return (
     <View className="flex-1">
@@ -30,7 +30,7 @@ export default function MapScreen({ route }: Props) {
       </TouchableOpacity>
 
       {/* Mapa */}
-      <LeafletMap locations={locations} />
+      <LeafletMap dishId={dishId} />
     </View>
   );
 }

@@ -23,7 +23,7 @@ const FoodCard: React.FC<FoodCardProps> = ({
   regionId,
   name: dishName,
   description,
-  location: { lat, long },
+  locations,
   minified = false,
   ...props
 }) => {
@@ -45,13 +45,11 @@ const FoodCard: React.FC<FoodCardProps> = ({
     await toggleFavorite(id)
   }
 
+  
+  
   // Abrir leaflet map
   const onMap = () => {
-    navigation.navigate('Map', {
-      latitude: lat,
-      longitude: long,
-      markerImage: backgroundImg
-    })
+    navigation.navigate('Map', {dishId: id})
   }
 
   return (
@@ -115,8 +113,8 @@ const FoodCard: React.FC<FoodCardProps> = ({
 
         {/* AR Button */}
         {!minified && (
-          <TouchableOpacity 
-            className="bg-primary-600 -mr-8 aspect-square border border-primary-800/50 shadow-lg shadow-primary-700 rounded justify-center items-center px-4 ml-4" 
+          <TouchableOpacity
+            className="bg-primary-600 -mr-8 aspect-square border border-primary-800/50 shadow-lg shadow-primary-700 rounded justify-center items-center px-4 ml-4"
             onPress={() => navigation.navigate('ARViewer', { dish: props })}
           >
             <CubeIcon color="#f6ff52" size={30} />
@@ -126,8 +124,8 @@ const FoodCard: React.FC<FoodCardProps> = ({
       </View>
 
       {/* Favorite Button */}
-      <TouchableOpacity 
-        className="absolute top-3 right-3 bg-slate-50 p-3 shadow-lg shadow-primary-800 rounded-full" 
+      <TouchableOpacity
+        className="absolute top-3 right-3 bg-slate-50 p-3 shadow-lg shadow-primary-800 rounded-full"
         onPress={onFavorite}
       >
         <HeartIcon

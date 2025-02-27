@@ -39,13 +39,7 @@ const DishDetailsScreen = ({ route }: Props) => {
 
   // Abrir leaflet map
   const onMap = () => {
-    navigation.navigate('Map', {
-      locations: dish.locations.map(location => ({
-        latitude: location.lat,
-        longitude: location.long,
-        markerImage: dish.backgroundImg
-      }))
-    })
+    navigation.navigate('Map', {dishId: dish.id})
   }
 
   return (
@@ -127,7 +121,7 @@ const DishDetailsScreen = ({ route }: Props) => {
                   onPress={() => onImage(index)}
                 >
                   <Image
-                    className="w-60 h-40 rounded-lg"
+                    className="w-60 h-40 rounded-lg bg-primary-600/20"
                     source={{ uri: photo }}
                     resizeMode="cover"
                   />
