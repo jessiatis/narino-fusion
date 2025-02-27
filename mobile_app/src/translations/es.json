@@ -16,6 +16,22 @@
     "serveInAR": "¡Servir plato en",
     "augmentedReality": "Realidad Aumentada!"
   },
+  "regions": {
+    "title": "Regiones",
+    "description": "Selecciona una región para ver los platos típicos de la zona:",
+    "pacifica": {
+      "name": "Región Pacífica",
+      "description": "Un lugar cálido y lleno de vida, con lluvias que alimentan manglares y selvas tropicales llenas de color y biodiversidad."
+    },
+    "andina": {
+      "name": "Región Andina",
+      "description": "El hogar de montañas imponentes, como el volcán Galeras, con paisajes únicos que combinan altiplanos y profundos cañones."
+    },
+    "amazonia": {
+      "name": "Región Amazónica",
+      "description": "Un rincón mágico de bosques espesos y montañas, donde la laguna de La Cocha se convierte en un verdadero paraíso."
+    }
+  },
   "dishes": {
     "listTitle": "Lista de platos",
     "recipeNotFound": "Receta no encontrada.",
@@ -30,141 +46,297 @@
       {
         "id": 1,
         "backgroundImg": "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
-        "regionId": 1,
-        "name": "Pan de Maíz",
-        "location": {
-          "lat": 1.804904,
-          "long": -78.770073
-        },
-        "description": "Pan tradicional elaborado a base de maíz, característico de las veredas andinas, que destaca por su textura suave y su sabor ligeramente dulce.",
-        "details": "El Pan de Maíz es un delicioso pan tradicional hecho a base de maíz, siendo conocido por su suave textura y un toque ligeramente dulce. Perfecto para acompañar cualquier comida y un ícono de las tradiciones culinarias de la región.",
+        "regionId": 2,
+        "name": "Pan de maíz",
+        "locations": [
+          {
+            "lat": 0.824460,
+            "long": -77.639251
+          },
+          {
+            "lat": 0.822847,
+            "long": -77.632406
+          },
+          {
+            "lat": 0.829424,
+            "long": -77.651904
+          },
+          {
+            "lat": 0.870737,
+            "long": -77.640564
+          },
+          {
+            "lat": 0.807408,
+            "long": -77.573120
+          }
+        ],
+        "description": "Pan tradicional elaborado a base de maíz, simbolo de identidad nariñense que combina tradición, sabor y cultura. Suave, ligeramente dulce y con un toque crujiente.",
+        "details": "",
         "ingredients": [
-          "Maíz",
-          "Agua",
+          "Harina de maíz",
+          "Harina de trigo",
+          "Mantequilla",
+          "Huevos",
+          "Leche",
           "Sal",
           "Azúcar",
           "Levadura"
         ],
         "photographs": [
-          "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
-          "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp",
-          "https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg",
-          "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
-          "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg"
+          "https://narinofusion.co/wp-content/uploads/2025/02/PAN-DE-MAIZ3.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/PAN-DE-MAIZ-CAFE.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/PAN-DE-MAIZ2.webp"
         ],
         "3DModel": "pan_de_maiz.glb"
       },
       {
         "id": 2,
-        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp",
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2025/02/FRITO-PASTUSO.webp",
         "regionId": 2,
-        "name": "Arepa de Huevo",
-        "location": {
-          "lat": 2.479253,
-          "long": -78.107561
-        },
-        "description": "Deliciosa arepa frita rellena de huevo, un plato popular en la costa atlántica, ideal para un desayuno energético.",
-        "details": "La Arepa de Huevo es un plato icónico de la costa atlántica, caracterizada por su masa de harina de maíz frita, rellena de huevo. Este delicioso manjar se sirve caliente y es ampliamente disfrutado como desayuno o merienda.",
+        "name": "Frito pastuso",
+        "locations": [
+          {
+            "lat": 0.805982,
+            "long": -77.573275
+          },
+          {
+            "lat": 0.806685,
+            "long": -77.582971
+          },
+          {
+            "lat": 0.824660,
+            "long": -77.637659
+          },
+          {
+            "lat": 0.873996,
+            "long": -77.640866
+          },
+          {
+            "lat": 0.959841,
+            "long": -77.731846
+          },
+          {
+            "lat": 1.088334,
+            "long": -77.618728
+          },
+          {
+            "lat": 1.214245,
+            "long": -77.279031
+          }
+        ],
+        "description": "Es una deliciosa combinación de ingredientes que refleja la riqueza culinaria de la zona. Este plato es conocido por su sabor contundente y su capacidad para satisfacer el apetito más exigente.",
+        "details": "",
         "ingredients": [
-          "Harina de maíz",
-          "Huevo",
-          "Agua",
+          "Carne de cerdo",
+          "Mote",
+          "Papa",
+          "Ají",
+          "Queso",
           "Sal",
-          "Aceite"
+          "Especias",
+          "Maicena"
         ],
         "photographs": [
-          "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg",
-          "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
-          "https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg",
-          "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
-          "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp"
+          "https://narinofusion.co/wp-content/uploads/2025/02/FRITO-PASTUSO.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/FRITO-PASTUSO2.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/FRITO-PASTUSO3.webp"
         ],
-        "3DModel": "fruit_tart_1k.glb"
+        "3DModel": "frito_pastuso.glb"
       },
       {
         "id": 3,
-        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg",
-        "regionId": 3,
-        "name": "Sancocho de Pescado",
-        "location": {
-          "lat": 0.828582,
-          "long": -77.641990
-        },
-        "description": "Reconfortante sopa de pescado acompañada de yuca y plátano, típica de las regiones costeras y muy apreciada en encuentros familiares.",
-        "details": "El Sancocho de Pescado es una sopa tradicional que combina pescado fresco con yuca, plátano, y diversas hierbas y especias. Este plato reconfortante es conocido por su sabor robusto y es a menudo parte de las celebraciones familiares en la región del Pacífico.",
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2025/02/CUY-ASADO2.webp",
+        "regionId": 2,
+        "name": "Cuy asado",
+        "locations": [
+          {
+            "lat": 1.167797,
+            "long": -77.298666
+          },
+          {
+            "lat": 1.190577,
+            "long": -77.306012
+          },
+          {
+            "lat": 1.085033,
+            "long": -77.595798
+          },
+          {
+            "lat": 1.087016,
+            "long": -77.619499
+          },
+          {
+            "lat": 0.820972,
+            "long": -77.620826
+          },
+          {
+            "lat": 0.873432,
+            "long": -77.641813
+          }
+        ],
+        "description": "El cuy asado tiene una carne tierna y jugosa, con un sabor ligeramente ahumado debido al proceso de asado. La piel queda crujiente, añadiendo una textura agradable al plato.",
+        "details": "",
         "ingredients": [
-          "Pescado",
-          "Yuca",
-          "Plátano",
+          "Cuy",
           "Papa",
-          "Cilantro",
-          "Ñame",
-          "Cebolla",
-          "Ajo"
+          "Ají",
+          "Sal",
+          "Especias"
         ],
         "photographs": [
-          "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
-          "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp",
-          "https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg",
-          "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
-          "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg"
+          "https://narinofusion.co/wp-content/uploads/2025/02/CUY-ASADO2.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/CUY-ASADO.webp"
         ],
-        "3DModel": "pan_de_maiz.glb"
+        "3DModel": "cuy_asado.glb"
       },
       {
         "id": 4,
-        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2025/02/HELADO-DE-PAILA2.webp",
         "regionId": 3,
-        "name": "Pirarucú Asado",
-        "location": {
-          "lat": 1.916618,
-          "long": -78.058379
-        },
-        "description": "Pez pirarucú asado a la parrilla, un manjar de la Amazonía que destaca por su carne jugosa y sabor único.",
-        "details": "El Pirarucú Asado es un plato destacado de la Amazonía, preparado con el enorme pez pirarucú que se asa con ajo, limón y especias. Su carne es suave y al mismo tiempo robusta, brindando una experiencia gastronómica única que refleja la riqueza de la región.",
+        "name": "Helado de paila",
+        "locations": [
+          {
+            "lat": 1.208926,
+            "long": -77.278770
+          },
+          {
+            "lat": 1.163488,
+            "long": -77.155530
+          },
+          {
+            "lat": 0.824524,
+            "long": -77.634612
+          }
+        ],
+        "description": "Este helado artesanal es famoso por su textura cremosa y su sabor natural, ya que se prepara con frutas frescas y sin conservantes.",
+        "details": "",
         "ingredients": [
-          "Pirarucú",
-          "Ajo",
-          "Limón",
+          "Frutas frescas",
+          "Azúcar",
+          "Agua o Leche",
           "Sal",
-          "Pimienta",
-          "Aceite"
+          "Hielo"
         ],
         "photographs": [
-          "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg",
-          "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
-          "https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg",
-          "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
-          "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp"
+          "https://narinofusion.co/wp-content/uploads/2025/02/HELADO-DE-PAILA3.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/HELADO-DE-PAILA.webp"
         ],
-        "3DModel": "fruit_tart_1k.glb"
+        "3DModel": "helado_de_paila.glb"
       },
       {
         "id": 5,
-        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg",
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2025/02/EMPANADAS.webp",
         "regionId": 1,
-        "name": "Mamona",
-        "location": {
-          "lat": 2.000956,
-          "long": -77.453120
-        },
-        "description": "Carne de res asada marinada, símbolo de la gastronomía llanera, ideal para disfrutar en fiestas y reuniones.",
-        "details": "La Mamona es un platillo tradicional a base de carne de res marinado y cocido a la parrilla, conocido por su sabor intenso y textura tierna. Suele acompañarse con yuca y ensaladas, convirtiéndose en un favorito en reuniones y festividades.",
+        "name": "Empanadas",
+        "locations": [
+          {
+            "lat": 1.788974,
+            "long": -78.791350
+          },
+          {
+            "lat": 1.808827,
+            "long": -78.763782
+          },
+          {
+            "lat": 1.673497,
+            "long": -78.139274
+          }
+        ],
+        "description": "Con una masa dorada y un relleno sabroso de carne, papa, queso o verduras, cada bocado es una explosión de sabor que te transporta a la auténtica gastronomía Nariñense.",
+        "details": "",
         "ingredients": [
-          "Carne de res",
-          "Ajo",
+          "Harina de maíz",
+          "Harina de trigo",
+          "Carne",
+          "Arroz",
           "Sal",
-          "Pimienta",
-          "Cerveza"
+          "Papa",
+          "Aliños",
+          "Aceite",
+          "Ají"
         ],
         "photographs": [
-          "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
-          "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp",
-          "https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg",
-          "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
-          "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg"
+          "https://narinofusion.co/wp-content/uploads/2025/02/EMPANADAS2.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/EMPANADAS3.webp"
         ],
-        "3DModel": "pan_de_maiz.glb"
+        "3DModel": "empanadas.glb"
+      },
+      {
+        "id": 6,
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2025/02/DULCE3.webp",
+        "regionId": 2,
+        "name": "Dulce de Chilacuan",
+        "locations": [
+          {
+            "lat": 1.197436,
+            "long": -77.270842
+          },
+          {
+            "lat": 0.907604,
+            "long": -77.789969
+          },
+          {
+            "lat": 0.882672,
+            "long": -77.700285
+          },
+          {
+            "lat": 0.829769,
+            "long": -77.605973
+          }
+        ],
+        "description": "El dulce de chilacuán tiene un sabor dulce y aromático, con una textura suave y jugosa, es más que un simple postre; es una parte importante de la cultura y la tradición de Nariño.",
+        "details": "",
+        "ingredients": [
+          "Chilacuan",
+          "Panela",
+          "Canela",
+          "Clavos de olor"
+        ],
+        "photographs": [
+          "https://narinofusion.co/wp-content/uploads/2025/02/DULCE1.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/DULCE2.webp"
+        ],
+        "3DModel": "dulce_de_chilacuan.glb"
+      },
+      {
+        "id": 7,
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2025/02/LAPINGACHOS.webp",
+        "regionId": 2,
+        "name": "Lapingachos",
+        "locations": [
+          {
+            "lat": 0.851555,
+            "long": -77.676960
+          },
+          {
+            "lat": 0.829452,
+            "long": -77.606816
+          },
+          {
+            "lat": 0.807023,
+            "long": -77.572581
+          },
+          {
+            "lat": 1.216128,
+            "long": -77.282651
+          }
+        ],
+        "description": "Los lapingachos son una especie de tortillas o croquetas de papa mezcladas con queso, que se fríen hasta quedar doradas y crujientes por fuera, pero suaves y derretidas por dentro.",
+        "details": "",
+        "ingredients": [
+          "Papa",
+          "Queso",
+          "Mantequilla",
+          "Sal",
+          "Aceite",
+          "Carne de cerdo",
+          "Lechuga"
+        ],
+        "photographs": [
+          "https://narinofusion.co/wp-content/uploads/2025/02/LAPINGACHOS.webp",
+          "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home.webp"
+        ],
+        "3DModel": "lapingachos.glb"
       }
     ]
   },
@@ -195,22 +367,6 @@
     "yourRightsDescription": "Tienes derecho a acceder, corregir, y eliminar tu información personal. También puedes optar por no recibir comunicaciones de marketing. Para ejercer estos derechos, por favor contáctanos a [correo electrónico de contacto].",
     "changesToPolicy": "7. Cambios en la Política de Privacidad",
     "changesToPolicyDescription": "Podemos actualizar esta Política de Privacidad de vez en cuando. Te notificaremos sobre cualquier cambio significativo y te proporcionaremos la versión actualizada."
-  },
-  "regions": {
-    "title": "Regiones",
-    "description": "Selecciona una región para ver los platos típicos de la zona:",
-    "pacifica": {
-      "name": "Región Pacífica",
-      "description": "Un lugar cálido y lleno de vida, con lluvias que alimentan manglares y selvas tropicales llenas de color y biodiversidad."
-    },
-    "andina": {
-      "name": "Región Andina",
-      "description": "El hogar de montañas imponentes, como el volcán Galeras, con paisajes únicos que combinan altiplanos y profundos cañones."
-    },
-    "amazonia": {
-      "name": "Región Amazónica",
-      "description": "Un rincón mágico de bosques espesos y montañas, donde la laguna de La Cocha se convierte en un verdadero paraíso."
-    }
   },
   "foodCard": {
     "region": "Región"

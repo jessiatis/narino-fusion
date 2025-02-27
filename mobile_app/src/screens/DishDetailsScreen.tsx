@@ -40,16 +40,18 @@ const DishDetailsScreen = ({ route }: Props) => {
   // Abrir leaflet map
   const onMap = () => {
     navigation.navigate('Map', {
-      latitude: dish.location.lat,
-      longitude: dish.location.long,
-      markerImage: dish.backgroundImg
+      locations: dish.locations.map(location => ({
+        latitude: location.lat,
+        longitude: location.long,
+        markerImage: dish.backgroundImg
+      }))
     })
   }
 
   return (
     <View className="flex-1">
       <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
-      
+
       {/* Imagen de fondo */}
       <View className="w-full absolute inset-0">
         <Image
@@ -73,8 +75,8 @@ const DishDetailsScreen = ({ route }: Props) => {
           </TouchableOpacity>
 
           {/* Botón favorito */}
-          <TouchableOpacity 
-            className="w-auto self-end bg-white shadow-lg shadow-primary-800 p-3 rounded-full" 
+          <TouchableOpacity
+            className="w-auto self-end bg-white shadow-lg shadow-primary-800 p-3 rounded-full"
             onPress={onFavorite}
           >
             <Text className="aspect-square text-center">
@@ -95,8 +97,8 @@ const DishDetailsScreen = ({ route }: Props) => {
             </TouchableOpacity>
 
             {/* Botón AR */}
-            <TouchableOpacity 
-              className="h-auto bg-primary-600 shadow-lg shadow-primary-800 p-3 rounded-full flex-row items-center" 
+            <TouchableOpacity
+              className="h-auto bg-primary-600 shadow-lg shadow-primary-800 p-3 rounded-full flex-row items-center"
               onPress={() => navigation.navigate('ARViewer', { dish })}
             >
               <CubeIcon color={COLORS.accent} size={30} />
@@ -166,8 +168,8 @@ const DishDetailsScreen = ({ route }: Props) => {
 
           {/* Botón AR */}
           <View className="w-full px-4 mb-4">
-            <TouchableOpacity 
-              className="bg-primary-600 shadow-lg shadow-primary-600 p-4 rounded-xl flex-row justify-between items-center overflow-hidden" 
+            <TouchableOpacity
+              className="bg-primary-600 shadow-lg shadow-primary-600 p-4 rounded-xl flex-row justify-between items-center overflow-hidden"
               onPress={() => navigation.navigate('ARViewer', { dish })}
             >
               <View>

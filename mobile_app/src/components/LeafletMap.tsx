@@ -1,48 +1,44 @@
-import React, { useCallback, useRef } from 'react'
-import { View } from 'react-native'
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
-import { WebView } from 'react-native-webview'
-import { DishType } from '../types'
-import { BottomSheetModal, BottomSheetModalProvider } from '@gorhom/bottom-sheet'
-import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import MapBottomSheet from './MapBottomSheet'
-import { useTranslation } from 'react-i18next'
+import React, { useCallback, useRef } from 'react';
+import { View } from 'react-native';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
+import { WebView } from 'react-native-webview';
+import { DishType } from '../types';
+import { BottomSheetModal, BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import MapBottomSheet from './MapBottomSheet';
+import { useTranslation } from 'react-i18next';
 
 interface MapProps {
-  latitude: number
-  longitude: number
-  markerImage: string
-  zoom?: number
-  height?: number
-  width?: number
+  locations: Array<{ latitude: number; longitude: number; markerImage: string }>;
+  zoom?: number;
+  height?: number;
+  width?: number;
 }
 
-const SIZE_IMAGE = 60
-const ZOOM = { default: 9, max: 14, min: 8 }
-const LIMIT_ZONE = { 
+const SIZE_IMAGE = 60;
+const ZOOM = { default: 9, max: 14, min: 8 };
+const LIMIT_ZONE = {
   top: '3.7',
   right: '-76.3',
   bottom: '-0.7',
   left: '-79.7'
-}
+};
 
-export default function LeafletMap({ 
-  latitude, 
-  longitude, 
+export default function LeafletMap({
+  locations,
   zoom = ZOOM.default,
   height = hp(100),
   width = wp(100),
-  markerImage
 }: MapProps) {
-  const { t } = useTranslation()
-  
+  const { t } = useTranslation();
+
   const [selectedDish, setSelectedDish] = React.useState<DishType | null>(null);
   const bottomSheetRef = useRef<BottomSheetModal>(null);
 
-  const dishes: any = t('dishes.recipes', { returnObjects: true })
+  const dishes: any = t('dishes.recipes', { returnObjects: true });
 
   // Funciones auxiliares del mapa
-  const getMapScripts = (latitude: number, longitude: number, zoom: number, markerImage: string) => /*js*/`
+  const getMapScripts = (locations: Array<{ latitude: number; longitude: number; markerImage: string }>) => /*js*/`
   // Configuración inicial del mapa
   const setupMap = () => {
     const mapBounds = {
@@ -54,12 +50,12 @@ export default function LeafletMap({
     const mapConfig = {
       zoomControl: false,
       minZoom: ${ZOOM.min},
-      maxZoom: ${ZOOM.max}, 
+      maxZoom: ${ZOOM.max},
       maxBounds: bounds,
       maxBoundsViscosity: 1.0
     };
 
-    const map = L.map('map', mapConfig).setView([${latitude}, ${longitude}], ${zoom});
+    const map = L.map('map', mapConfig).setView([${locations[0].latitude}, ${locations[0].longitude}], ${zoom});
 
     const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
@@ -67,7 +63,7 @@ export default function LeafletMap({
     tileLayer.addTo(map);
 
     L.control.zoom({ position: 'bottomright' }).addTo(map);
-    
+
     return map;
   }
 
@@ -106,7 +102,7 @@ export default function LeafletMap({
         prevIcon.options.html = prevIcon.options.html.replace('custom-marker', 'custom-marker opaque');
         this.currentMarker.setIcon(prevIcon);
       }
-      
+
       if (this.currentCircle) {
         this.currentCircle.remove();
       }
@@ -130,53 +126,52 @@ export default function LeafletMap({
 
   // Inicialización del mapa y elementos
   const map = setupMap();
-  const initialDish = ${JSON.stringify(dishes.find((d: any) => d.location.lat === latitude && d.location.long === longitude))};
+  const initialDish = ${JSON.stringify(dishes.find((d: any) => d.location.lat === locations[0].latitude && d.location.long === locations[0].longitude))};
   const initialElements = {
-    circle: createMapElements.circle(${latitude}, ${longitude}),
-    marker: createMapElements.marker(${latitude}, ${longitude}, "${markerImage}", false, initialDish?.id)
+    circle: createMapElements.circle(${locations[0].latitude}, ${locations[0].longitude}),
+    marker: createMapElements.marker(${locations[0].latitude}, ${locations[0].longitude}, "${locations[0].markerImage}", false, initialDish?.id)
   };
 
   initialElements.marker.addTo(map);
-  initialElements.marker.on('click', () => 
+  initialElements.marker.on('click', () =>
     markerManager.select(initialElements.marker, initialElements.circle, initialDish)
   );
   markerManager.select(initialElements.marker, initialElements.circle);
 
   // Agregar marcadores adicionales
   const otherDishes = ${JSON.stringify(dishes)};
-  otherDishes.forEach(dish => {
-    const isDifferentLocation = dish.location.lat !== ${latitude} || dish.location.long !== ${longitude};
-    
-    if (isDifferentLocation) {
+  locations.forEach((location, index) => {
+    if (index > 0) {
+      const dish = otherDishes.find((d: any) => d.location.lat === location.latitude && d.location.long === location.longitude);
       const additionalElements = {
         marker: createMapElements.marker(
-          dish.location.lat, 
-          dish.location.long, 
-          dish.backgroundImg, 
+          location.latitude,
+          location.longitude,
+          location.markerImage,
           true,
-          dish.id
+          dish?.id
         ),
-        circle: createMapElements.circle(dish.location.lat, dish.location.long)
+        circle: createMapElements.circle(location.latitude, location.longitude)
       };
-      
-      additionalElements.marker.on('click', () => 
+
+      additionalElements.marker.on('click', () =>
         markerManager.select(additionalElements.marker, additionalElements.circle, dish)
       );
       additionalElements.marker.addTo(map);
     }
   });
-  `
-  
+  `;
+
   const htmlContent = `
     <!DOCTYPE html>
     <html>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link 
-          rel="stylesheet" 
-          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         />
-        <script 
+        <script
           src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         ></script>
         <style>
@@ -186,25 +181,25 @@ export default function LeafletMap({
       <body>
         <div id="map"></div>
         <script>
-          ${getMapScripts(latitude, longitude, zoom, markerImage)}
+          ${getMapScripts(locations)}
         </script>
       </body>
     </html>
-  `.trim()
+  `.trim();
 
   const handlePresentModalPress = useCallback(() => {
     bottomSheetRef.current?.present();
   }, []);
-  
+
   const onSelectedDish = (dish: DishType) => {
     setSelectedDish(dish);
-    handlePresentModalPress()
-  }
+    handlePresentModalPress();
+  };
 
   return (
     <GestureHandlerRootView>
       <BottomSheetModalProvider>
-        <View 
+        <View
           className='flex-1 overflow-hidden'
           style={{ height, width }}
         >
@@ -212,11 +207,11 @@ export default function LeafletMap({
             source={{ html: htmlContent }}
             scrollEnabled={false}
             onError={(syntheticEvent) => {
-              const { nativeEvent } = syntheticEvent
-              console.warn('WebView error: ', nativeEvent)
+              const { nativeEvent } = syntheticEvent;
+              console.warn('WebView error: ', nativeEvent);
             }}
             onMessage={(e) => {
-              onSelectedDish(JSON.parse(e.nativeEvent.data))
+              onSelectedDish(JSON.parse(e.nativeEvent.data));
             }}
           />
 
@@ -225,7 +220,7 @@ export default function LeafletMap({
         <MapBottomSheet bottomSheetRef={bottomSheetRef} dish={selectedDish} />
       </BottomSheetModalProvider>
     </GestureHandlerRootView>
-  )
+  );
 }
 
 
@@ -247,5 +242,4 @@ const mapStyles = /*css*/`
     background: none;
     border: none;
   }
-`
-
+`;
