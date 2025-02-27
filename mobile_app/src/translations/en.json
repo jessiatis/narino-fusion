@@ -20,15 +20,15 @@
     "title": "Regions",
     "description": "Select a region to see the typical dishes of the area:",
     "pacifica": {
-      "name": "Pacifica region",
+      "name": "Pacific Region",
       "description": "A warm and vibrant place, with rains that nourish mangroves and tropical rainforests full of color and biodiversity."
     },
     "andina": {
-      "name": "Andina region",
-      "description": "Home to imposing mountains, such as the Galeras volcano, with unique landscapes that combine highlands and deep canyons."
+      "name": "Andean Region",
+      "description": "Home to imposing mountains, such as the Galeras volcano, with unique landscapes that combine high plateaus and deep canyons."
     },
     "amazonia": {
-      "name": "Amazonia region",
+      "name": "Amazon Region",
       "description": "A magical corner of dense forests and mountains, where the La Cocha lagoon becomes a true paradise."
     }
   },
@@ -46,35 +46,297 @@
       {
         "id": 1,
         "backgroundImg": "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
-        "regionId": 1,
-        "name": "Pan de maíz",
+        "regionId": 2,
+        "name": "Corn Bread",
         "locations": [
           {
-            "lat": 1.804950,
-            "long": -78.771454
+            "lat": 0.824460,
+            "long": -77.639251
           },
           {
-            "lat": 1.804950,
-            "long": -78.771454
+            "lat": 0.822847,
+            "long": -77.632406
+          },
+          {
+            "lat": 0.829424,
+            "long": -77.651904
+          },
+          {
+            "lat": 0.870737,
+            "long": -77.640564
+          },
+          {
+            "lat": 0.807408,
+            "long": -77.573120
           }
         ],
-        "description": "Pan tradicional elaborado a base de maíz, característico de las veredas andinas, que destaca por su textura suave y su sabor ligeramente dulce.",
+        "description": "Traditional bread made from corn, a symbol of Nariño identity that combines tradition, flavor, and culture. Soft, slightly sweet, and with a crispy touch.",
         "details": "",
         "ingredients": [
-          "Maíz",
-          "Agua",
-          "Sal",
-          "Azúcar",
-          "Levadura"
+          "Corn flour",
+          "Wheat flour",
+          "Butter",
+          "Eggs",
+          "Milk",
+          "Salt",
+          "Sugar",
+          "Yeast"
         ],
         "photographs": [
-          "https://narinofusion.co/wp-content/uploads/2024/09/7-1536x799.jpeg",
-          "https://narinofusion.co/wp-content/uploads/2022/07/subscribe-form-background.webp",
-          "https://narinofusion.co/wp-content/uploads/2024/09/Inicio-1536x1024.jpg",
-          "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home-1536x858.webp",
-          "https://narinofusion.co/wp-content/uploads/2024/09/6.jpeg"
+          "https://narinofusion.co/wp-content/uploads/2025/02/PAN-DE-MAIZ3.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/PAN-DE-MAIZ-CAFE.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/PAN-DE-MAIZ2.webp"
         ],
         "3DModel": "pan_de_maiz.glb"
+      },
+      {
+        "id": 2,
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2025/02/FRITO-PASTUSO.webp",
+        "regionId": 2,
+        "name": "Frito Pastuso",
+        "locations": [
+          {
+            "lat": 0.805982,
+            "long": -77.573275
+          },
+          {
+            "lat": 0.806685,
+            "long": -77.582971
+          },
+          {
+            "lat": 0.824660,
+            "long": -77.637659
+          },
+          {
+            "lat": 0.873996,
+            "long": -77.640866
+          },
+          {
+            "lat": 0.959841,
+            "long": -77.731846
+          },
+          {
+            "lat": 1.088334,
+            "long": -77.618728
+          },
+          {
+            "lat": 1.214245,
+            "long": -77.279031
+          }
+        ],
+        "description": "A delicious combination of ingredients that reflects the culinary richness of the area. This dish is known for its hearty flavor and ability to satisfy the most demanding appetites.",
+        "details": "",
+        "ingredients": [
+          "Pork meat",
+          "Corn",
+          "Potato",
+          "Chili",
+          "Cheese",
+          "Salt",
+          "Spices",
+          "Cornstarch"
+        ],
+        "photographs": [
+          "https://narinofusion.co/wp-content/uploads/2025/02/FRITO-PASTUSO.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/FRITO-PASTUSO2.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/FRITO-PASTUSO3.webp"
+        ],
+        "3DModel": "frito_pastuso.glb"
+      },
+      {
+        "id": 3,
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2025/02/CUY-ASADO2.webp",
+        "regionId": 2,
+        "name": "Roasted Guinea Pig",
+        "locations": [
+          {
+            "lat": 1.167797,
+            "long": -77.298666
+          },
+          {
+            "lat": 1.190577,
+            "long": -77.306012
+          },
+          {
+            "lat": 1.085033,
+            "long": -77.595798
+          },
+          {
+            "lat": 1.087016,
+            "long": -77.619499
+          },
+          {
+            "lat": 0.820972,
+            "long": -77.620826
+          },
+          {
+            "lat": 0.873432,
+            "long": -77.641813
+          }
+        ],
+        "description": "Roasted guinea pig has tender and juicy meat, with a slightly smoky flavor due to the roasting process. The skin becomes crispy, adding a pleasant texture to the dish.",
+        "details": "",
+        "ingredients": [
+          "Guinea pig",
+          "Potato",
+          "Chili",
+          "Salt",
+          "Spices"
+        ],
+        "photographs": [
+          "https://narinofusion.co/wp-content/uploads/2025/02/CUY-ASADO2.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/CUY-ASADO.webp"
+        ],
+        "3DModel": "cuy_asado.glb"
+      },
+      {
+        "id": 4,
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2025/02/HELADO-DE-PAILA2.webp",
+        "regionId": 3,
+        "name": "Helado de Paila",
+        "locations": [
+          {
+            "lat": 1.208926,
+            "long": -77.278770
+          },
+          {
+            "lat": 1.163488,
+            "long": -77.155530
+          },
+          {
+            "lat": 0.824524,
+            "long": -77.634612
+          }
+        ],
+        "description": "This artisanal ice cream is famous for its creamy texture and natural flavor, as it is prepared with fresh fruits and no preservatives.",
+        "details": "",
+        "ingredients": [
+          "Fresh fruits",
+          "Sugar",
+          "Water or Milk",
+          "Salt",
+          "Ice"
+        ],
+        "photographs": [
+          "https://narinofusion.co/wp-content/uploads/2025/02/HELADO-DE-PAILA3.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/HELADO-DE-PAILA.webp"
+        ],
+        "3DModel": "helado_de_paila.glb"
+      },
+      {
+        "id": 5,
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2025/02/EMPANADAS.webp",
+        "regionId": 1,
+        "name": "Empanadas",
+        "locations": [
+          {
+            "lat": 1.788974,
+            "long": -78.791350
+          },
+          {
+            "lat": 1.808827,
+            "long": -78.763782
+          },
+          {
+            "lat": 1.673497,
+            "long": -78.139274
+          }
+        ],
+        "description": "With a golden crust and a savory filling of meat, potato, cheese, or vegetables, each bite is an explosion of flavor that transports you to authentic Nariño cuisine.",
+        "details": "",
+        "ingredients": [
+          "Corn flour",
+          "Wheat flour",
+          "Meat",
+          "Rice",
+          "Salt",
+          "Potato",
+          "Seasonings",
+          "Oil",
+          "Chili"
+        ],
+        "photographs": [
+          "https://narinofusion.co/wp-content/uploads/2025/02/EMPANADAS2.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/EMPANADAS3.webp"
+        ],
+        "3DModel": "empanadas.glb"
+      },
+      {
+        "id": 6,
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2025/02/DULCE3.webp",
+        "regionId": 2,
+        "name": "Chilacuán Sweet",
+        "locations": [
+          {
+            "lat": 1.197436,
+            "long": -77.270842
+          },
+          {
+            "lat": 0.907604,
+            "long": -77.789969
+          },
+          {
+            "lat": 0.882672,
+            "long": -77.700285
+          },
+          {
+            "lat": 0.829769,
+            "long": -77.605973
+          }
+        ],
+        "description": "Chilacuán sweet has a sweet and aromatic flavor, with a soft and juicy texture. It is more than just a dessert; it is an important part of the culture and tradition of Nariño.",
+        "details": "",
+        "ingredients": [
+          "Chilacuán",
+          "Panela",
+          "Cinnamon",
+          "Cloves"
+        ],
+        "photographs": [
+          "https://narinofusion.co/wp-content/uploads/2025/02/DULCE1.webp",
+          "https://narinofusion.co/wp-content/uploads/2025/02/DULCE2.webp"
+        ],
+        "3DModel": "dulce_de_chilacuan.glb"
+      },
+      {
+        "id": 7,
+        "backgroundImg": "https://narinofusion.co/wp-content/uploads/2025/02/LAPINGACHOS.webp",
+        "regionId": 2,
+        "name": "Lapingachos",
+        "locations": [
+          {
+            "lat": 0.851555,
+            "long": -77.676960
+          },
+          {
+            "lat": 0.829452,
+            "long": -77.606816
+          },
+          {
+            "lat": 0.807023,
+            "long": -77.572581
+          },
+          {
+            "lat": 1.216128,
+            "long": -77.282651
+          }
+        ],
+        "description": "Lapingachos are a type of potato tortilla or croquette mixed with cheese, fried until golden and crispy on the outside, but soft and melted on the inside.",
+        "details": "",
+        "ingredients": [
+          "Potato",
+          "Cheese",
+          "Butter",
+          "Salt",
+          "Oil",
+          "Pork meat",
+          "Lettuce"
+        ],
+        "photographs": [
+          "https://narinofusion.co/wp-content/uploads/2025/02/LAPINGACHOS.webp",
+          "https://narinofusion.co/wp-content/uploads/2024/07/Lapingachos-home.webp"
+        ],
+        "3DModel": "lapingachos.glb"
       }
     ]
   },
