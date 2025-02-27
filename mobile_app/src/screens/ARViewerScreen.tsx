@@ -22,18 +22,12 @@ export default function ARViewerScreen({ route }: Props) {
       </TouchableOpacity>
 
       <ArViewerView
+        style={{ flex: 1 }}
         model={`file:///android_asset/custom/${dish["3DModel"]}`}
-        style={styles.arView}
-        disableInstantPlacement
         manageDepth
         allowRotate
         allowScale
-        allowTranslate
         planeOrientation='horizontal'
-        onStarted={() => console.log('Iniciado')}
-        onEnded={() => console.log('Finalizado')}
-        onModelPlaced={() => console.log('Modelo mostrado')}
-        onModelRemoved={() => console.log('Modelo ya no es visible')}
       />
     </View>
   );
@@ -46,8 +40,5 @@ const styles = StyleSheet.create({
   },
   list: {
     flex: 1,
-  },
-  arView: {
-    flex: 2,
-  },
+  }
 });
