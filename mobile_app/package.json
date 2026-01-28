@@ -9,7 +9,10 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "clean:android": "cd android && gradlew.bat clean && cd ../"
+    "clean:android": "cd android && gradlew.bat clean && cd ../",
+    "clean:build": "npm run clean:android && npm run build:aab",
+    "build:apk": "cd android && gradlew assembleRelease && cd ../",
+    "build:aab": "cd android && gradlew bundleRelease && cd ../"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "5.0.6",
