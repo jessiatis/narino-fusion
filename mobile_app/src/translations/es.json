@@ -387,5 +387,13 @@
     "regions": "Regiones",
     "dishes": "Lista de platos",
     "more": "Más"
+  },
+  "arWarning": {
+    "title": "⚠️ Advertencia de Seguridad",
+    "description": "Esta función utiliza Realidad Aumentada (RA). Por favor, ten en cuenta lo siguiente antes de continuar:",
+    "parentalSupervision": "La supervisión parental es importante. Los menores de edad deben usar esta función bajo la supervisión de un adulto.",
+    "beAware": "Sé consciente de lo que te rodea. Presta atención a tu entorno mientras usas la Realidad Aumentada para evitar accidentes.",
+    "accept": "Entendido",
+    "goBack": "Volver"
   }
 }
